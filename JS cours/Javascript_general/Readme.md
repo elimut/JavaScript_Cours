@@ -143,6 +143,7 @@ On peut utiliser la syntaxe des commentaires multi pour les mono.
 ###Les variables:
 
 Sorte de petite boîte qui possède un nom et contient une valeur.
+Comme son nom l'indique peut changer de valeur à tout moement.
 Doit être déclarée une et une seule fois dans un programme.
 Il existe deux types de variables:
 - **Globales**: utilisées dans tout le programme, déclarées à la base du code, en dehors de toute fonction.
@@ -155,14 +156,22 @@ Pour déclarer une variable on utilise la syntaxe : **var ou let**.
 var ancienne syntaxe
 let nouvelle, à privilégier.
 
-Le nom d'une variable (règle de nommage des variables):
+Règle de nommage (valable pour les fonctions)= **CamelCase** :
+
+- aucune ponsctuation
+- mise en capitale de la première lettre des mots, sauf le premier
 - doit commencer par une lettre
 - doit contenir uniquement des lettres, _,chiffres
 - aucun espace
-- est sensible à la casse (Se dit de tout programme qui fait une distinction entre les lettres majuscules et les lettres minuscules, et qui ne traite donc pas de la même façon les données ou les commandes selon qu'elles sont entrées en majuscules ou en minuscules.).
+- est sensible à la casse (Se dit de tout programme qui fait une distinction entre les lettres majuscules et les lettres minuscules, et qui ne traite donc pas de la même façon les données ou les commandes selon qu'elles sont entrées en majuscules ou en minuscules).
 
-exemple, la variable prénom est déclarée ainsi: 
+exemple: la variable prénom est déclarée ainsi: 
     let prenom;
+
+exemple :
+    let ma PremiereVariable = "Bonjour";
+    console.log(maPremiereVariable);
+    
 
 ####Initialisation
 
@@ -210,11 +219,25 @@ Exemples:
     let prenom= "david";
     prenom= "nicolas";
 
-####Constante
+###Constante
 
 Pour créer ou déclarer une cosntante en JS, il faut utiliser le mot clef : **const**.
 On la déclare de la même façon que let.
 **Il faut obligatoirement l' initialiser lors de sa déclaration sinon une erreur sera retournée.**
+**Valeur inchangeable**.
+
+ex:
+    const x = 5;
+
+##Les types
+
+###Quelles valeurs peuvent prendre mes variables?
+
+- **String** : chaîne de caractères, texte mis entre "" ou '' ou quotes.
+- **Number** :entiers, réels, float (attention au point).
+- **Booléen**: contient deux valeurs true ou false.
+- **Tableau** : = **array** en JS, il contient plusieurs valeurs classées dans un tableau.
+- **Objet**: contient des propriétés et des méthodes.
 
 
 
