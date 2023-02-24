@@ -240,6 +240,67 @@ ex:
 - **Objet**: contient des propriétés et des méthodes.
 
 
+##Concaténation
+
+Consiste en l' assemblage de textes et de variables.
+On utilise le signe "+", utilisé également pour additionner, JS fait la différence en focntion du type de valeurs qui entourent le +.
+S'il s' agit de nombres: addition, s'il s'agit de textes : concatène.
+
+exemple:
+    let nom = "chat";
+    let prenom = "bahamut";
+    console.log(nom+prenom);
+affichage : chatbahamut
+**Attention aux espaces**
+    let nom = "chat ";
+**espace après le nom**
+
+##Calculs sur variables
+
+Il est possible de faire des claculs sur des variables de type number :
+
+|Opération|Symbole|
+|:-------|:------|
+|addition|+|
+soustraction|-|
+multiplication|*|
+|division|/|
+|modulo (reste division euclidienne|%|
+|incrémenter var de 1|++|
+|décrementer var de 1|--|
+|incrémenter une var de la valeur d'une seconde var|+=|
+|décrémenter une var de la valeur d'une seconde var|-=|
+
+exemple:
+    let x = 6;
+    let y = 7;
+    let addition = x + y;
+
+##Prompt
+
+**Fonction** qui permet de demander à l' utilisateur une information.
+Va ouvrir une boîte de dialogue qui contiendra une question et un champ vide de réponse.
+
+exemple:
+    let age = window.prompt("Quel âge avez-vous?");
+Pour stocker la valeur saisie par l'User dans une variable, il faut attribuer ce prompt à une variable.
+La valeur saisie sera enregistrée dans la variable age.
+
+**Attention, le prompt, renvoie toujours une chaîne de caractères.Ce qui signifie que pour faire des calculs avec cette variable, il va falloir modifier le type de la variable obtenue avec le prompt**.
+
+
+##Conversion
+
+Les fonctions **parentInt** et **parseFloat** servent à convertir une chaîne de caractères en nombre entier pour le premier, et à virgule pour le second.
+
+exemple :
+    age = parseInt(age);
+    age ++;
+conversion de la var age en type number, et incrémentation possible.
+
+
+
+
 
 
 
