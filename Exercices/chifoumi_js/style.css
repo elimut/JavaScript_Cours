@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+img{
+    width: 150px;
+    height: 150px;
+    margin: 30%;
+    border: 3px solid #2d4bb7;
+    padding: 10px;
+}
