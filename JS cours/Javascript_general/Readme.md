@@ -5,18 +5,19 @@
 JavaScript est un langage de programmation du Web. Il a été créé en 1995. Avec les comportements dynamiques qu’il introduit, comme les boîtes de dialogue qui s’affichent à
 l’écran, les formulaires interactifs ou encore les changements d’image au survol de la souris, le
 succès de JavaScript est immédiat. Depuis, le JavaScript fait l’objet de nombreuses évolutions et
-la dernière version a été officialisée en 2016 et constitue la septième édition du standard ECMA.
+la dernière version a été officialisée en 2016 et constitue la septième édition du standard ECMA (ECMAScript est un ensemble de normes concernant les langages de programmation de type script et standardisées par Ecma International dans le cadre de la spécification ECMA-262).
 Son objectif est de dynamiser les pages Web et de les rendre interactives. Exemple un
 slider, grâce à JavaScript, nous pouvons réaliser un défilement automatique des images. Avec JS,
 toute la page (ou le **DOM**) est manipulable et suite à des évènements créés par l’utilisateur, il est
 possible de modifier le code HTML et CSS.
->Le DOM (Document Object Model) est une API qui représente et interagit avec tous types de documents HTML ou XML. Le DOM est un modèle de document chargé dans le navigateur. La représentation du document est un arbre nodal. Chaque nœud représente une partie du document (par exemple, un élément, une chaîne de caractères ou un commentaire).
+>Le DOM (Document Object Model) est une API 5Une API (Application Programming Interface) est un ensemble de fonctionnalités et de règles existant dans un logiciel permettant d'intéragir avec celui-ci de manière automatisée (plutôt que de passer par une interface utilisateur). L'API peut être vue comme un contrat simple passé entre le logiciel qui la propose et d'autres entités, telles que des logiciels ou matériels tiers. qui représente et interagit avec tous types de documents HTML ou XML. Le DOM est un modèle de document chargé dans le navigateur. La représentation du document est un arbre nodal. Chaque nœud représente une partie du document (par exemple, un élément, une chaîne de caractères ou un commentaire).
 
 >Le terme DOM est, au contraire du BOM, un terme standardisé et donc défini de manière officielle. Le DOM est une interface de programmation pour des documents HTML ou XML qui représente le document (la page web actuelle) sous une forme qui permet aux langages de script comme le JavaScript d’y accéder et d’en manipuler le contenu et les styles.
 Le DOM est ainsi une représentation structurée du document sous forme « d’arbre » crée automatiquement par le navigateur. Chaque branche de cet arbre se termine par ce qu’on appelle un nœud qui va contenir des objets. On va finalement pouvoir utiliser ces objets, leurs propriétés et leurs méthodes en JavaScript.
 Le DOM contient ou correspond à un ensemble d’APIs qui font partie du BOM comme l’interface Document par exemple qui représente une page et sert de point d’entrée dans l’arborescence du DOM.
-Pour utiliser les propriétés et méthodes de l’interface Document, nous allons tout simplement utiliser la propriété document de Window. Nous avons déjà utilisée cette propriété de nombreuses fois dans ce cours, notamment lorsqu’on souhaitait injecter du texte dans un paragraphe avec le code document.getElementById('#').innerHTML.
+Pour utiliser les propriétés et méthodes de l’interface.Le terme interface est généralement utilisé en informatique pour désigner un programme permettant un échange de données : Il peut s'agir d'un échange entre deux logiciels : l'interface est, par exemple, un programme qui reformate les données pour assurer la compatibilité entre ces deux logiciels.) Document, nous allons tout simplement utiliser la propriété document de Window. Nous avons déjà utilisée cette propriété de nombreuses fois dans ce cours, notamment lorsqu’on souhaitait injecter du texte dans un paragraphe avec le code document.                       getElementById('#').innerHTML.
 Lorsqu’on demande à un navigateur d’afficher une page Web, celui-ci va automatiquement créer un modèle objet de la page ou du document. Ce modèle objet correspond à une autre représentation de la page sous forme d’arborescence contenant des objets qui sont de type Node (nœuds).
+![DOM](img/javascript-representation-dom.jpg)
 
 Tous les navigateurs sur le marché sont capables d’exécuter JavaScript mais attention, ils
 n’ont pas tous le même moteur. C’est pourquoi il est important de tester son programme sur les
@@ -24,20 +25,25 @@ principaux navigateurs.
 Pour le moment, vous avez appris à taper des lignes de HTML et de CSS, ce sont des
 langages de description, c'est-à-dire que vous décrivez, par le biais de ces langages, ce que vous
 voulez voir apparaître dans le navigateur… et le navigateur vous suit…
-Le JavaScript est quand à lui un langage de programmation impératifs, c'est-à-dire qu’il
+Le JavaScript est quand à lui un **langage de programmation impératif**, c'est-à-dire qu’il
 donne des ordres au navigateur :
 • Affiche ceci !
 • Passe à l’image suivante
 • Si l’utilisateur clique là, alors tu fais ça !!
-• ….
 Ces ordres vont constituer un programme qui est en fait une liste d’instructions qui vont
-être lues et interprétées par un navigateur.
-
-Permet la création de page interactive et vivante à l'aide de **scripts**.
-Script = suite d'instructions qui vont être interprétées par un programme
+être lues et interprétées par un navigateur = **scripts**.
+Script = suite d'instructions qui vont être interprétées par un programme.
 Pour lire le JS il faut un **interpréteur**, tous les nav en possèdent.
-Langage de prog majoritairement **client-side**
->>client side: exécuté du côté de l'ordi de la personne qui demande la page (server-side=exécuté côté serveur(ordi puissant qui stocke les pages et l'envoie quand elles sont demandés par le client).
+>JavaScript est un langage de programmation de script largement utilisé pour animer les sites web.
+Un langage de script est un langage interprété.
+Sa syntaxe est dite de haut niveau, plus proche du langage naturel que du langage machine : par conséquent, il est relativement simple à apprendre et est indépendant de l'aspect matériel de la machine sur lequel il est lancé.
+Langage interprété
+Un langage interprété est un langage qui est exécuté par un autre programme : l'interpréteur.
+Celui-ci lit une ligne de code, l'analyse, l'exécute si elle est correcte et passe à la suivante ; il répète ce processus pour chaque instruction du programme. Un programme en langage interprété est donc exécuté au fur et à mesure de sa lecture.
+![interpréteur](img/interpretation.png)
+
+Langage de programation majoritairement **client-side**
+>client side: exécuté du côté de l'ordi de la personne qui demande la page (server-side=exécuté côté serveur(ordi puissant qui stocke les pages et l'envoie quand elles sont demandés par le client).
 Client intéragit très rarement avec le server-side(php par exemple, traitement des données en arrière plan).
 Client demande page stockée sur serveur,le serveur reçoit demande, le langage server-side est exécuté côté serveur, des calculs sont fait..., une fois exécutation terminée serveur envoie la page qui ne contient que du langage client-side dont JS.Exécution client-side se fait lorsque l'on reçoit la page.
 (node.JS projet pour avoir JS côté serveur?)
@@ -104,6 +110,14 @@ Méthode de préférence.
 
 ##Syntaxes générales et commentaires
 
+###Généralités:
+
+####Afficher des informations:
+- alert("Une deuxième instruction js"); boîte de dialogue (pop-up).
+- document.write("hello"); Affiche une information directement sur notre page, dans le navigateur à l’endroit où le lien vers
+le fichier script est fait.
+- console.log("hello"); Affiche info dans la console (F12),affiche les erreurs, vérification du contenu d'une variable.
+
 **Chaque instruction doit être terminée par un ";"**.
 
 - Texte entre guillemets: "" ou ''
@@ -118,13 +132,22 @@ ex:
 Quand : hiérarchie?
 nouvelle indentation à l'intérieure, si instruction en contient sinon même indentation.
 
-Les commentaires en JS:
+####Les commentaires en JS:
 Il existe des commentaires monoligne et des commentaires multilignes.
 On peut utiliser la syntaxe des commentaires multi pour les mono.
 **// -> mono
 /* début et */ fin -> multi (on peut rajouter une étoile sur les lignes du milieu).**
 
-###Les variables 
+##Gestion des données
+
+###Les variables:
+
+Sorte de petite boîte qui possède un nom et contient une valeur.
+Doit être déclarée une et une seule fois dans un programme.
+Il existe deux types de variables:
+- **Globales**: utilisées dans tout le programme, déclarées à la base du code, en dehors de toute fonction.
+- **Locales**:
+qui ne servent que pour un programme ou fonction particuliers, déclarées au sein de ce programme ou cette fonction.
 
 ####Déclaration
 
@@ -132,7 +155,7 @@ Pour déclarer une variable on utilise la syntaxe : **var ou let**.
 var ancienne syntaxe
 let nouvelle, à privilégier.
 
-Le nom d'une variable:
+Le nom d'une variable (règle de nommage des variables):
 - doit commencer par une lettre
 - doit contenir uniquement des lettres, _,chiffres
 - aucun espace
