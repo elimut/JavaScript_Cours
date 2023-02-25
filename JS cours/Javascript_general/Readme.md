@@ -17,7 +17,7 @@ Le DOM est ainsi une représentation structurée du document sous forme « d’a
 Le DOM contient ou correspond à un ensemble d’APIs qui font partie du BOM comme l’interface Document par exemple qui représente une page et sert de point d’entrée dans l’arborescence du DOM.
 Pour utiliser les propriétés et méthodes de l’interface.Le terme interface est généralement utilisé en informatique pour désigner un programme permettant un échange de données : Il peut s'agir d'un échange entre deux logiciels : l'interface est, par exemple, un programme qui reformate les données pour assurer la compatibilité entre ces deux logiciels.) Document, nous allons tout simplement utiliser la propriété document de Window. Nous avons déjà utilisée cette propriété de nombreuses fois dans ce cours, notamment lorsqu’on souhaitait injecter du texte dans un paragraphe avec le code document.                       getElementById('#').innerHTML.
 Lorsqu’on demande à un navigateur d’afficher une page Web, celui-ci va automatiquement créer un modèle objet de la page ou du document. Ce modèle objet correspond à une autre représentation de la page sous forme d’arborescence contenant des objets qui sont de type Node (nœuds).
-![DOM](img/javascript-representation-dom.jpg)
+![DOM](img/interpretation.png)
 
 Tous les navigateurs sur le marché sont capables d’exécuter JavaScript mais attention, ils
 n’ont pas tous le même moteur. C’est pourquoi il est important de tester son programme sur les
@@ -52,7 +52,7 @@ Client demande page stockée sur serveur,le serveur reçoit demande, le langage 
 Objet= bloc cohérent de code qui sert à effectuer telle ou telle opération.
 
 Js utilisé pour manipuler dynamiquement le code HTML d'un page.
->>Attention différence JAVA et JS, concepts totalement différents, tâches différentes.
+>Attention différence JAVA et JS, concepts totalement différents, tâches différentes.
 
 ##L'environnement de travail
 
@@ -82,7 +82,7 @@ Placer un élément script à la fin de head.
     <title>JavaScript</title>
     </head>
 
-    ###Dans body:
+##Dans body:
 
     <body>
     <script>
@@ -92,7 +92,7 @@ Placer un élément script à la fin de head.
     </body>
 
 
->>**Quand écrit dans fichier Html,on peut utiliser autant de script que nécessaire dans head,body, ou les deux, mais par souci de clarté et performance, on le place dans un même élément.
+>**Quand écrit dans fichier Html,on peut utiliser autant de script que nécessaire dans head,body, ou les deux, mais par souci de clarté et performance, on le place dans un même élément.
 Ceci seront lu linéairement (ordre d'écriture)**.
 
 ###Dans fichier séparé:
@@ -125,6 +125,7 @@ le fichier script est fait.
 - Chiffres décimaux: pas de virgule, mais "."(5.40)
 
 ex:
+
     alert("Une deuxième instruction js");
     alert(5);
 
@@ -136,11 +137,13 @@ nouvelle indentation à l'intérieure, si instruction en contient sinon même in
 Il existe des commentaires monoligne et des commentaires multilignes.
 On peut utiliser la syntaxe des commentaires multi pour les mono.
 **// -> mono
-/* début et */ fin -> multi (on peut rajouter une étoile sur les lignes du milieu).**
+/ * début et * / fin -> multi (on peut rajouter une étoile sur les lignes du milieu).**
 
 ##Gestion des données
 
 ###Les variables:
+
+![schéma](img/variables_schéma.png)
 
 Sorte de petite boîte qui possède un nom et contient une valeur.
 Comme son nom l'indique peut changer de valeur à tout moement.
@@ -166,9 +169,11 @@ Règle de nommage (valable pour les fonctions)= **CamelCase** :
 - est sensible à la casse (Se dit de tout programme qui fait une distinction entre les lettres majuscules et les lettres minuscules, et qui ne traite donc pas de la même façon les données ou les commandes selon qu'elles sont entrées en majuscules ou en minuscules).
 
 exemple: la variable prénom est déclarée ainsi: 
+
     let prenom;
 
 exemple :
+
     let ma PremiereVariable = "Bonjour";
     console.log(maPremiereVariable);
     
@@ -201,6 +206,7 @@ Une variable déclarée avec var peut-être manipulée en haut de code et être 
 Avec let, il faut déclarer la variable avant de l'utiliser.
 
 exemples:
+
     prenom = "paul";
     var = prenom;
 Initialisation suivi de déclaration avec var, ok.
@@ -227,6 +233,7 @@ On la déclare de la même façon que let.
 **Valeur inchangeable**.
 
 ex:
+
     const x = 5;
 
 ##Les types
@@ -238,7 +245,9 @@ ex:
 - **Booléen**: contient deux valeurs true ou false.
 - **Tableau** : = **array** en JS, il contient plusieurs valeurs classées dans un tableau.
 - **Objet**: contient des propriétés et des méthodes.
+![objet schéma](img/objets_schéma.png)
 
+>JavaScript est conçu autour d'un paradigme simple, basé sur les objets. Un objet est un ensemble de propriétés et une propriété est une association entre un nom (aussi appelé clé) et une valeur. La valeur d'une propriété peut être une fonction, auquel cas la propriété peut être appelée « méthode ». En plus des objets natifs fournis par l'environnement, il est possible de construire ses propres objets. Ce chapitre aborde la manipulation d'objets, l'utilisation des propriétés, fonctions et méthodes, il explique également comment créer ses objets.
 
 ##Concaténation
 
@@ -247,11 +256,13 @@ On utilise le signe "+", utilisé également pour additionner, JS fait la diffé
 S'il s' agit de nombres: addition, s'il s'agit de textes : concatène.
 
 exemple:
+
     let nom = "chat";
     let prenom = "bahamut";
     console.log(nom+prenom);
 affichage : chatbahamut
 **Attention aux espaces**
+
     let nom = "chat ";
 **espace après le nom**
 
@@ -272,6 +283,7 @@ multiplication|*|
 |décrémenter une var de la valeur d'une seconde var|-=|
 
 exemple:
+
     let x = 6;
     let y = 7;
     let addition = x + y;
@@ -282,6 +294,7 @@ exemple:
 Va ouvrir une boîte de dialogue qui contiendra une question et un champ vide de réponse.
 
 exemple:
+
     let age = window.prompt("Quel âge avez-vous?");
 Pour stocker la valeur saisie par l'User dans une variable, il faut attribuer ce prompt à une variable.
 La valeur saisie sera enregistrée dans la variable age.
@@ -294,9 +307,429 @@ La valeur saisie sera enregistrée dans la variable age.
 Les fonctions **parentInt** et **parseFloat** servent à convertir une chaîne de caractères en nombre entier pour le premier, et à virgule pour le second.
 
 exemple :
+
     age = parseInt(age);
     age ++;
 conversion de la var age en type number, et incrémentation possible.
+
+##Les tableaux : l'objet array
+
+![tableaux](img/tableaux.png)
+
+###Les propriétés
+
+|Propriété|Description|
+|:--------|:----------|
+|lenght|contient le nombre d' éléments du tableau|
+|input|permet de faire une recherche dans le tableau à l'aide d'un expression régulière|
+|prototype|permet d' ajouter des propriétés personnalisées à l'objet|
+
+###Les méthodes standards
+
+|Méthode|Description|
+|:--------|:----------|
+|concat(tab1,tab2[,tab3,...])|permet de concaténer plusieurs tableaux, créer un tableau à partir de plusieurs tableaux|
+|tableau.join(",")|renvoie une chaîne de caractères contenant tous les éléments du tableau séparé par le séparateur mis en paramètre : vat tab=newArray("pommes","poires")document.write(tab.join(",")renvoie pommes,poires)|
+|tableau.pop()|supprime le dernier élément du tableau et retourne sa valeur|
+|tableau.shift()|supprime le premier élément du tableau |
+|tableau.push(valeur1,valeur2,...)|ajoute un ou plusieurs éléments  en fin de tableau et retourne la nouvelle taille du tableau|
+|tableau.unshift()|supprime le premier élément du tableau|
+|tableau.splice(debut,nbr_elements,"new_1","new-2")|Ajoute/retire des éléments d'un tableau en fonction de la position indiqué.Paramètres: **début**L'indice à partir duquel commencer à changer le tableau (l'indice du premier élement étant 0). Si sa valeur est supérieure à la longueur du tableau array.length, début est ramené à la longueur du tableau array.length. S'il est négatif, le changement commencera d'autant d'éléments à partir de la fin du tableau, c'est à dire à partir de l'index array.length + début. Si array.length + début est inférieur à 0, le changement commencera à l'index 0.**nbASupprimer**Un entier indiquant le nombre d'anciens éléments à remplacer. Si ce paramètre est absent ou si sa valeur est supérieure ou égale à array.length - début, alors les éléments entre début et la fin du tableau seront supprimés. Si nbASupprimer vaut 0, aucun élément ne sera supprimé. Dans ce cas, il est nécessaire de spécifier au moins un nouvel élément.**élemN**Les éléments à ajouter au tableau à partir de début. Si vous ne spécifiez pas de nouvel élément, les anciens éléments seront simplement supprimés du tableau.|
+|tableau.slice(debut,fin)|Renvoie un tableau contenant une partie extraction) des éléments d'un tableau.Le paramètre fin est exclu|
+|Tableau.sort() |trie les éléments d'un tableau.|
+|Tableau.includes(valeur recherché,position)|Permet de savoir si un élément se trouve dans un le tableau elle recoit en paramètre l'element recherché et la position dans le tableau a partir de laquelle la recherche commence, elle retourne true ou false.|
+|Tableau.toString()|Renvoie la chaîne de caractères correspond à l'instruction qui a permis de créer l'objet Array|
+|Tableau.indexOf(valeur,position) |Retourne la position de l'élément mis en paramètre la recherche commence en fonction du deuxième paramètre si ce deuxième paramètre est omis la recherche commence en début de tableau si l'élément n'est pas trouvé elle retourne -1.|
+|Tableau.lastIndexOf(valeur,position)|similaire a indexOf la recherche se faisant à partir de la dernière position.|
+|Tableau.valueOf |Retourne tout simplement la valeur de l'objet Array auquel elle fait référence.|
+|Tableau.reverse()|Inverse l'ordre des éléments du tableau|
+
+Exemples :
+
+    let array3 = ["Javascript", "Php", "Python"];
+    let array4 = ["Ruby", "Solidity"];
+
+concat():
+
+    let newArray = array3.concat(array4);
+
+join() :  
+
+    console.log(array3.join(' -> '));
+->Javascript -> Php -> Python
+
+    console.log(array3.join(' '));
+->Javascript Php Python
+
+.slice():
+
+    console.log(array3.slice(1));
+    ["Php", "Python"]
+->l’extraction commence à l’index 1 jusqu’au dernier index inclus
+
+    console.log(newArray.slice(1, 4));
+->l’extraction commence à l’index 1 et
+s’arrete à l’index 4 (index 4 exclu)
+
+.indexOf() et .forEach():
+
+    console.log(array3.indexOf("Python"));
+->donne l’index de « python » soit 2
+
+    array3.forEach((languages) => console.log(languages));
+->applique un forEach au tableau 3 et renvoi les valeurs de
+chaque index
+
+.every() et .some():
+
+    console.log(array3.every((language) => language == "Php"));
+->renvoie false car tous les index ne sont pas « php »
+
+    console.log(array3.some((language) => language == "Php"));
+->renvoie true car aux moins un index contient « php »
+
+.shift():
+
+    let shift = array3.shift();
+->supprime le premier element du tableau
+
+.pop():
+
+    console.log(array3.pop());
+->supprime le dernier element du tableau et renvoie sa valeur
+
+.splice():
+.splice(index de depart, nb à supprimer, element à ajouter)
+
+    var mesPoissons = ["scalaire", "clown","mandarin","chirurgien"]; 
+
+    var enleves = mesPoissons.splice(2, 0, "tambour");
+    // supprime 0 élément à partir de l'index 2, et insère "tambour"
+    // mesPoissons est ["scalaire", "clown", "tambour", "mandarin", "chirurgien"]
+    // enleves est 0, aucun élément supprimé
+
+    enleves = mesPoissons.splice(3, 1);
+    // supprime 1 élément à partir de l'index 3
+    // mesPoissons est ["scalaire", "clown", "tambour","chirurgien"]
+    // enleves est ["mandarin"]
+    
+    enleves = mesPoissons.splice(2, 1, "trompette");
+    // supprime 1 élément à partir de l'index 2, et insère "trompette"
+
+    enleves = mesPoissons.splice(0, 2, "perroquet", "anémone", "bleu");
+    // mesPoissons est ["perroquet", "anémone", "bleu", "trompette", "chirurgien"]
+    // enleves est ["scalaire", "clown"]
+
+    enleves = mesPoissons.splice(mesPoissons.length - 3, 2);
+    // supprime 2 éléments à partir de l'indice 2
+    // mesPoissons est ["perroquet", "anémone","chirurgien"]
+    // enleves est ["bleu", "trompette"]
+
+    var mesPoissons = ["perroquet", "anémone", "bleu", "trompette", "chirurgien"];
+    enleves = mesPoissons.splice(2);
+    // on retire les éléments à partir de l'indice 2
+    // mesPoissons vaut ["perroquet", "anémone"]
+    // enleves vaut ["bleu", "trompette", "chirurgien"]
+
+    var mesAnimaux = ["cheval", "chien", "chat", "dauphin"];
+    enleves = mesAnimaux.splice(-2, 1);
+    // mesAnimaux vaut ["cheval", "chien", "dauphin"]
+    // enleves vaut ["chat"]
+
+.reduce():
+Reduce permet de calculer toutes les valeurs du tableau
+
+   let arrayNumber = [4, 74, 28, 12, 1];
+    arrayNumber.reduce((x, y) => x + y);
+->donne 119
+ 
+filter():
+permet de filtrer les éléments d’un tableau
+
+    let arrayNumber = [4, 74, 28, 12, 1, 17 , 8];
+    arrayNumber.filter((number) => number > 10);
+->donne (4) [74, 28, 12, 17]
+
+sort():
+permet de trier les éléments d’un tableau
+
+    arrayNumber.sort();
+sans autre précision la méthode tri selon la dizaine ce qui donne :
+->(7) [1, 12, 17, 28, 4, 74, 8]
+
+    arrayNumber.sort((a, b) => a - b);
+->en passant deux paramètres a et b et en indiquant a – b , le tri se fera
+par ordre croissant
+(7) [1, 4, 8, 12, 17, 28, 74]
+
+  arrayNumber.sort((a, b) => b - a);
+->en passant deux paramètres a et b et en indiquant b – a , le tri se fera
+par ordre décroissant
+(7) [74, 28, 17, 12, 8, 4, 1]
+
+##Les objets
+
+![objet](img/objets.png)
+
+Tout comme les tableaux, les objets permettent de stocker beaucoup d'informations dans une seule et même variable.
+Mais contrairement aux tableaux, on ne va pas utiliser un index.
+
+###Création d'un objet
+
+Prenons un tableau qui contient les informations concernant une personne:
+
+    const client = ["jean","pierre","0687440005,"vandingenenannesophie@gmail.com"];
+
+Toutes les informations sont enregistrées dans une seule et même variable,mais ça n'est pas clair.
+
+Pour pouvoir donner une étiquette aux données présentes dans une variable, nous allons utiliser un objet:
+
+    const client= {
+        prenom : "jean",
+        nom : "pierre",
+        telephone : "0687440005",
+        mail : "vandingenenannesophie@gmail.com
+    };
+**Un objet s'ouvre avec des accolades, le nom des propriétés sera suivi de  :puis d'une valeur.**
+
+####Ajout d'une propriété à un objet existant:
+
+Ajoutons la ville ->
+
+    const client = {
+        prenom:"",
+        nom : "",
+        telephone : "",
+        mail :""
+    };
+    cleint.ville = "Lille";
+**Pour ajouter un champ, une nouvelle instruction, le nom de la variable qui contient l'objet, un "." est égal à une valeur.**
+
+####Modification d'une valeur d'une propriété existante:
+
+**On appelle la clé dont nous souhaitons changer la valeur, puis nous lui affectons une nouvelle valeur.**
+
+    client.telephone = "nvl val";
+
+###Lire un objet
+
+Pour accèder à la valeur d'une des étiquettes, il suffit de faire ceci :
+
+    console.log(client.nom);
+nomvar.propriété de la valeur souhaitée
+
+##Les boucles
+
+Faire répèter à l'ordinateur une série d'instructions tant qu'une condition est respectée.
+
+- while
+- for
+- ...
+  
+###While
+
+Exemple:
+Demander à l'user de saisir son âge
+
+    let age = window.prompt("Quel est votre âge?");
+
+    while (isNaN(age)) {
+        age = window.prompt("Merci de répondre un nombre. Quel est votre âge?);
+    }
+
+    console.log("vous avez " + age + " ans.");
+Age demandé, puis :
+"tant que l' âge n'est pas un nombre (is NaN),alors on demande l'âge de nouveau.
+La boucle ne s'arrêtera qu'une fois que la condition, dans parenthèse du while, n'est plus respectée : âge sera un nombre.
+
+Exemple :
+Exécuter la boucle un nombre défini de fois.
+
+    let cpt = 0;
+
+    while(cpt<=20){
+        cpt++;
+        console.log(cpt);
+    }
+La boucle s' exécute tant que le compteur est plus petit que 20.On incrémente le compteur de 1 à chaque tour.
+
+**Attention à bien penser à incrémenter,sion boucle infinie!**.
+
+###For
+
+![for](img/for.png)
+
+Cette boucle est un peu particulière, elle a dans ses paramètres un **index, une condition,et une incrémentation**.
+C'est la boucle utilisée pour parcourir un tableau bien souvent.
+
+    for(let i=0; i<liste.lenght ; i++){
+        console.log(liste[i]);
+    }
+->initialisation : let i=0 = initialisation de l'index qui va être incrémenté.
+->condition : i<liste.lenght = condition qui doit être respectée pour que la boucle continue.
+->incrémentation : i++ = incrémentaiton de l'index.
+Cette boucle passe par chaque case du tableau liste et afficher ce qu'il contient en console.
+
+####Portée de la variable ou scope:
+
+Dans l'exemple précédent nous déclarons la variable i dans la boucle for.Les variables déclarées avec let ne sont utilisables que dans la structure dans laquelle elles sont déclarées.
+
+Exemple:
+
+    for(let i=0; i<liste.lenght ; i++){
+        console.log(liste[i]);
+    }
+    console.log(i);
+->console va retourner une erreur! "i is not defined"
+**Elle ne connaît pas i car déclarée dans for donc non utilisable en dehors.**
+**Valable pour tous les blocs, if, while,...**
+
+##Les conditions
+
+![if](img/if.png)
+![if else](img/else_if.png)
+![switch](img/switch.png)
+
+Structures de contrôle, qui permettent de contrôler les instructions en fonction de l'évolution du programme.
+
+Il en existe deux sortes : conditions et boucles.
+
+Une conditon est un test que va effectuer le programme, et nous allons lui indiquer ce qu'il doit faire si cette condition est vraie,ou faire si fausse.
+
+Exemple:
+Si l'user a plus de 18 ans, on va lui dire qu'il est majeur, sinon, on lui dira qu'il est mineur.
+
+    let age = window.prompt("Quel âge avez-vous?");
+    console.log(age);
+
+    age = parseInt(age);
+->on parse l' age pour le considérer comme un nombre.
+
+    if(age === 18){
+        console.log("vous êtes majeur);
+    }
+    else{
+        console.log("vous êtes mineur");
+    }
+->dans ca cas, si age=19, le programme nous dira que nous sommes mineur,il faut utiliser un autre opérateur.
+
+###Les opérateurs
+
+Voici les différents opérateurs possibles pour effectuer une comparaison entre deux variables :
+
+|Opérateurs|Signification|
+|:------|:------|
+|==|égal à|
+|!=|différent de|
+|===|strictement égal à|
+|!==|strictement différent|
+|>|supérieur|
+|>=|supérieur ou égal|
+|<|inférieur|
+|<=|inférieur ou égal|
+
+###If Else
+
+Structure conditionnelle qui va permettre de tester une condition et de rélaiser des instructions différentes selon qu'elle est vraie ou fausse.
+
+    if(condition){
+        instruction si vraie;
+    }
+    else{
+        instruciton si fausse;
+    }
+Le programme effectuera les instrucitons présentes entre les accolades du if si la condition entre parenthèse retourne true,inon du else si retourne false.
+
+Else non obligatoire.
+
+L'on peut enchaîner les if:
+
+    if(age >= 100){
+        console.log();
+    }
+    else if(age >= 18){
+        console.log();
+    }
+    else{
+        console.log();
+    }
+
+###Conditions multiples
+
+Les conditions dans les structure de contrôle peuvent être multiples.
+C'est là qu'interviennent les **ET et OU**/.
+
+####&&, et
+Exemple:
+
+    let prenom = "paul";
+    if(age >= 100 && prenom === "paul"){
+        console.log("Bonjour paul");
+    }
+**&& = et**
+Il faut que les deux conditions retournent true pour que les instructions puissent être exécutées.
+
+####|| ou
+
+    let prenom = "paul";
+    if(age >= 100 || prenom === "paul"){
+        ;
+    }
+**|| = ou**
+Il faut que l'une des deux conditions retourne true pour l'exécution.
+
+###Switch
+
+Permet de comparer la valeur d'une variable avec une multitude de valeurs possibles et d'agir en fonction.
+Pratique lors de la comparaison d'une variable à plusieurs valeurs.
+**Elle ne teste que l'égalité**.
+
+Exemple:
+
+    let nombre = window.prompt("choississez un nombre entier entre 1 et 8");
+    nombre = parseInt(nombre);
+
+    switch(nombre){
+        case 1 :
+        console.log("");
+        break;
+        case 2 :
+        console.log("");
+        break;
+        default :
+        ;
+        break;
+    }
+->Chaque valeur possible se trouve avec un case, ici comparaison var nombre à des chiffres donc pas de "", si chaîne de caractères ne pas les oublier.
+
+**Default permet de définir une action si aucune des valeurs des case ne correspond au contenu de la variable.Il est optionnel**.
+
+L'on peut définir une même action pour plusieurs valeurs différentes :
+
+    switch(){
+        case : case :
+        ;
+        break;
+    }
+
+##Les fonctions
+
+![fonctions](img/fonctions.png)
+
+Lorsque le code devient trop long et répétitif, il est possible de l'organiser en petites unités appelées **fonctions**, qui vont s'occuper d'une tâche précise.
+
+Leurs avantages:
+- Raccourcire le code en évitant de répéter des lignes de code identiques
+- Appeler une fonction suite à une action de l'user
+
+ 
+
+
+
+
+    
+
+
 
 
 
