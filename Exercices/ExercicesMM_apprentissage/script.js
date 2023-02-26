@@ -172,23 +172,59 @@ console.log(colors[1]);
  Enfin, afficher "Rouge" sur la page web, toujours en utilisant le tableau.*/
 
 
-function verification(x){
+/*function verification(x){
     if (isNaN(x) == true){
         window.prompt("Ceci n'est pas un chiffre, veuillez-saisir un chiffre");
     }
 };
+*let nombre1User = window.prompt("veuillez saisir un chiffre");
+*verification(nombre1User);
+*let operateur = window.prompt("veuillez saisir un opérateur: +, -, *, /");
+*let nombre2User = window.prompt("veuillez saisir un chiffre");
+*verification(nombre2User);
+*console.log(nombre1User,operateur,nombre2User);
+*let user1 = parseInt(nombre1User);
+*let user2 = parseInt(nombre2User);
+*switch (operateur){
+    case "+" : 
+        console.log(user1+user2);
+        p5.innerHTML = "résultat" + " " + (user1+user2);
+        break;
+    case "-" : 
+        console.log(user1-user2);
+        p5.innerHTML = "résultat" + " " + (user1-user2);
+        break;
+    case "*" : 
+        console.log(user1*user2);
+        p5.innerHTML = "résultat" + " " + (user1*user2);
+        break;
+    case "/" : 
+        console.log(user1/user2);
+        p5.innerHTML = "résultat" + " " + (user1/user2);
+        break;
+}
+*Calculaprompt
+Comment fonctionne une calculatrice ?
+On appuie sur des boutons pour construire un calcul, puis on valide, puis la machine nous affiche le résultat du calcul.
+On va devoir cliquer sur des boutons ? Non, pas encore. Notre première calculatrice ne sera pas aussi pratique et jolie. Elle sera un peu bancale et malade, mais on va l'aimer quand même, parce qu'elle fonctionnera.
+Comment va fonctionner la calculaprompt ?
+En demandant à l'utilisateur trois choses d'affilée :
+Un premier nombre ;
+Un opérateur arithmétique (+, /, +, -) ;
+Un second nombre.
+Puis, dans la console du navigateur, on affiche un rappel du calcul complet, par exemple 23 / 100.
+Puis, toujours dans la console, on affiche le résultat du calcul.
+Un exemple pour récapituler le fonctionnement :
+L'utilisateur arrive sur la page ;
+L'utilisateur entre 6 dans un premier window.prompt ;
+L'utilisateur entre * dans un deuxième window.prompt ;
+L'utilisateur entre 10 dans un troisième window.prompt ;
+La console affiche le calcul 6 * 10 ;
+La console affiche le résultat 60 ;*/
 
-let nombre1User = window.prompt("veuillez saisir un chiffre");
-verification(nombre1User);
-let operateur = window.prompt("veuillez saisir un opérateur: +, -, *, /");
-let nombre2User = window.prompt("veuillez saisir un chiffre");
-verification(nombre2User);
-console.log(nombre1User,operateur,nombre2User);
-let user1 = parseInt(nombre1User);
-let user2 = parseInt(nombre2User);
-let operator = operateur.textContent;
-let resultat = user1 + operator + user2;
-document.write(resultat);
+
+document.write("<h1>Salut !</h1>");
+document.write("<p>Ça va ?</p>");
 
 
 

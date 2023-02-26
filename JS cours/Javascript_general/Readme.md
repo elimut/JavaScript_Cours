@@ -1102,7 +1102,26 @@ Rappels: On peut stocker un objet dans un tableau tout comme on peut stocker un 
 - Déclarer une variable « colors » contenant un tableau vide.
 Puis un second temps, ajouter "Rouge" et "Bleu" à ce tableau.
 Enfin, afficher "Rouge" sur la page web, toujours en utilisant le tableau.
+- Calculaprompt:
+Comment fonctionne une calculatrice ?
+On appuie sur des boutons pour construire un calcul, puis on valide, puis la machine nous affiche le résultat du calcul.
+On va devoir cliquer sur des boutons ? Non, pas encore. Notre première calculatrice ne sera pas aussi pratique et jolie. Elle sera un peu bancale et malade, mais on va l'aimer quand même, parce qu'elle fonctionnera.
+Comment va fonctionner la calculaprompt ?
+En demandant à l'utilisateur trois choses d'affilée :
+Un premier nombre ;
+Un opérateur arithmétique (+, /, +, -) ;
+Un second nombre.
+Puis, dans la console du navigateur, on affiche un rappel du calcul complet, par exemple 23 / 100.
+Puis, toujours dans la console, on affiche le résultat du calcul.
+Un exemple pour récapituler le fonctionnement :
+L'utilisateur arrive sur la page ;
+L'utilisateur entre 6 dans un premier window.prompt ;
+L'utilisateur entre * dans un deuxième window.prompt ;
+L'utilisateur entre 10 dans un troisième window.prompt ;
+La console affiche le calcul 6 * 10 ;
+La console affiche le résultat 60 ;
 
+stop : chifoumi , exo3
 
 
 
@@ -1132,4 +1151,3 @@ Enfin, afficher "Rouge" sur la page web, toujours en utilisant le tableau.
 
 
 
-[def]: https://openclassrooms.com/fr/courses/245710-ajax-et-lechange-de-donnees-en-javascript/244798-lobjet-xmlhttprequest
