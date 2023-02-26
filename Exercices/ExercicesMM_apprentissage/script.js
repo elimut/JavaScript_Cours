@@ -163,13 +163,43 @@ console.log(colors[1]);
  *Déclarer une variable colors      contenant les valeurs "Rouge" et "Bleu".Afficher "Bleu" dans la console. En utilisant le tableau, hein !*/
 
 
-let colors = new Array();
-colors[0] = "rouge";
-colors[1] = "bleu";
-console.log(colors[0]);
-/*Déclarer une variable « colors » contenant un tableau vide.
-Puis un second temps, ajouter "Rouge" et "Bleu" à ce tableau.
-Enfin, afficher "Rouge" sur la page web, toujours en utilisant le tableau.*/
+/*let colors = new Array();
+*colors[0] = "rouge";
+*colors[1] = "bleu";
+*console.log(colors[0]);
+ *Déclarer une variable « colors » contenant un tableau vide.
+ Puis un second temps, ajouter "Rouge" et "Bleu" à ce tableau.
+ Enfin, afficher "Rouge" sur la page web, toujours en utilisant le tableau.*/
+
+
+function verification(x){
+    if (isNaN(x) == true){
+        window.prompt("Ceci n'est pas un chiffre, veuillez-saisir un chiffre");
+    }
+};
+
+let nombre1User = window.prompt("veuillez saisir un chiffre");
+verification(nombre1User);
+let operateur = window.prompt("veuillez saisir un opérateur: +, -, *, /");
+let nombre2User = window.prompt("veuillez saisir un chiffre");
+verification(nombre2User);
+console.log(nombre1User,operateur,nombre2User);
+let user1 = parseInt(nombre1User);
+let user2 = parseInt(nombre2User);
+let operator = operateur.textContent;
+let resultat = user1 + operator + user2;
+document.write(resultat);
+
+
+
+
+
+
+
+
+
+
+
 
 
 

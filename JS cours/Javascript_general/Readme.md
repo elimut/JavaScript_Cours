@@ -516,7 +516,8 @@ Ajoutons la ville ->
 Pour accèder à la valeur d'une des étiquettes, il suffit de faire ceci :
 
     console.log(client.nom);
-nomvar.propriété de la valeur souhaitée
+nomvar.propriété de la valeur souhaitée.
+>console.log() est une méthode de l’objet console en JavaScript qui est utilisée pour afficher tout type de variables ou bien des messages devant être affichés à l’utilisateur dans la console d’un navigateur ou dans le terminal.Pour afficher le contenu des variables en JavaScript, on utilise la méthode console.log en passant autant de variables qu’on veut en paramètres : console.log(permiere_variable, deuxieme_variable, ...).
 
 ##Les boucles
 
@@ -1064,7 +1065,7 @@ Il y a plusieurs façons d’écrire une requête Ajax, la syntaxe en JavaScript
 
 [OpenClassroom code](https://openclassrooms.com/fr/courses/245710-ajax-et-lechange-de-donnees-en-javascript/244798-lobjet-xmlhttprequest)
 
-##Exercices :
+##Exercices (voir dossiers exercicesMM) :
 
 - Afficher "Hello World" dans la console du navigateur.
 - Déclarer une variable avec le mot-clé let ayant comme nom « color ».Puis, sur la ligne suivante, lui assigner la valeur « rouge ».
