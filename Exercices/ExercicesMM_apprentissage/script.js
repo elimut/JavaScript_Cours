@@ -160,7 +160,7 @@
 
 /* let colors = ["rouge", "bleu"];
 console.log(colors[1]);
- *Déclarer une variable colors      contenant les valeurs "Rouge" et "Bleu".Afficher "Bleu" dans la console. En utilisant le tableau, hein !*/
+ *Déclarer une variable colorscontenant les valeurs "Rouge" et "Bleu".Afficher "Bleu" dans la console. En utilisant le tableau, hein !*/
 
 
 /*let colors = new Array();
@@ -173,13 +173,16 @@ console.log(colors[1]);
 
 
 /*function verification(x){
-    if (isNaN(x) == true){
+    while (isNaN(x) == true){
         window.prompt("Ceci n'est pas un chiffre, veuillez-saisir un chiffre");
     }
 };
 *let nombre1User = window.prompt("veuillez saisir un chiffre");
 *verification(nombre1User);
 *let operateur = window.prompt("veuillez saisir un opérateur: +, -, *, /");
+*while (operateur != "+" && operateur != "-" && operateur != "/" && operateur != "*"){
+    operateur = window.prompt("veuillez saisir un opérateur: +, -, *, /");
+}
 *let nombre2User = window.prompt("veuillez saisir un chiffre");
 *verification(nombre2User);
 *console.log(nombre1User,operateur,nombre2User);
@@ -223,8 +226,8 @@ La console affiche le calcul 6 * 10 ;
 La console affiche le résultat 60 ;*/
 
 
-document.write("<h1>Salut !</h1>");
-document.write("<p>Ça va ?</p>");
+// document.write("<h1>Salut !</h1>");
+// document.write("<p>Ça va ?</p>");
 
 
 
