@@ -7,25 +7,35 @@ const playerTwo = "O";
 let playerTurn = playerOne;
 
 const winningPatterns = [
-    []
-]
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [3, 4, 6]
+    /* cré d'array d'array chaque cellule = index 012 puis ligne suivante 345 ...
+    0 1 2 pattern = 3x en haut
+    on va faire des tests sur chaque combinaison avec function checkwin et sur chaque index*/
+];
 
-cells.forEach(cell=>{
+cells.forEach(cell=> {
     cell.addEventListener("click", playGame, {once: true});
     /*événements clic entraine fonction playGame pour chaque cellules cells, option once:true = déclencher une seule fois chaque cellule, on ne peut pas reclqiuer sur la même cellule. 9 clics au total*/
 })
 
-function playGame(e){
+function playGame(e) {
     e.target.innerHTML = playerTurn;
     /*comportera évenement, dès qu'on clique affiche sur html le x ou o du joueur. e = element qui a déclencé l'action*/
     
-    if (checkWin(playerTurn)){
+    if (checkWin(playerTurn)) {
         udpateGameStatus("wins"+ playerTurn);
-        return endGame;
+        return endGame();
     }
-    else if (checkDraw()){
+    else if (checkDraw()) {
         udpateGameStatus("draw");
-        return endGame;
+        return endGame();
     }
     
     udpateGameStatus(playerTurn);
@@ -37,15 +47,23 @@ function playGame(e){
 *commence par vérifier le statut en bas*/
 
 function checkWin(playerTurn){
-    /*test de chaque combinaison gagnante, créa de pattern */
+    return winningPatterns.some(combination=> {
+        /* 1 tests de ts les patterns*/
+        return combination.every(index=> {
+            return cells[index].innerHTML == playerTurn;
+            /* on prend cq pattern, on les teste et vérifier sur chacun si = symbole player
+            ex pattern [0 1 2] , fonction va vérifier si 0 1 2 X...*/
+        });
+    })
+    /*test de chaque combinaison gagnante, créa de pattern =modèle = chorégraphie */
 };
 function checkDraw(){
     /*verif chaque cellule, si a le carac de tel ou tel joueur*/
-    /* pour faire des tests sur un array on peut utiliser deux fonctions: somme = toutes les combinaisons ou every = pour faire un test via ce que l'on va renvoyer dans notre fonction*/
+    /* pour faire des tests sur un array on peut utiliser deux fonctions: some = toutes les combinaisons ou every = pour faire un test via ce que l'on va renvoyer dans notre fonction*/
     return [...cells].every(cell=> {
         /*vérifier la cellule si marque joueur un ou deux. et égalité,case toute remplie */
         /* return cells.every(cell=> { modif car cells pas un array mais liste d'éléments, donc on le met dans un array [] et destructure ..., on pourra aisni utiliser .every */
-        return cell.innerHTML == playerOne || cell.innerHTML == playerTwo;
+    return cell.innerHTML == playerOne || cell.innerHTML == playerTwo;
     })
 };
 
@@ -75,6 +93,6 @@ function udpateGameStatus(status){
     endGameStatus.innerHTML = statusText;
 };
 
-function endGame(){document.getElementById("gameEnd").style.display = "block"};
-function reloadGame(){window.location.reloadGame};
+function endGame(){ document.getElementById("gameEnd").style.display = "block" };
+function reloadGame(){ window.location.reload() };
 
