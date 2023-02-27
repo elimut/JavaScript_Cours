@@ -146,7 +146,8 @@ On peut utiliser la syntaxe des commentaires multi pour les mono.
 ![schéma](img/variables_schéma.png)
 
 Sorte de petite boîte qui possède un nom et contient une valeur.
-Comme son nom l'indique peut changer de valeur à tout moement.
+Comme son nom l'indique peut changer de valeur à tout moment.
+Stocke différentes valeurs dans le temps, en écrasant les précédentes.
 Doit être déclarée une et une seule fois dans un programme.
 Il existe deux types de variables:
 - **Globales**: utilisées dans tout le programme, déclarées à la base du code, en dehors de toute fonction.
@@ -155,24 +156,25 @@ qui ne servent que pour un programme ou fonction particuliers, déclarées au se
 
 ####Déclaration
 
-Pour déclarer une variable on utilise la syntaxe : **var ou let**.
-var ancienne syntaxe
-let nouvelle, à privilégier.
+Pour déclarer une variable, on utilise la syntaxe : **var ou let**.
+- var ancienne syntaxe,
+- let nouvelle, à privilégier.
 
 Règle de nommage (valable pour les fonctions)= **CamelCase** :
 
-- aucune ponsctuation
+- Nom unique,
+- Aucune ponctuation, 
 - mise en capitale de la première lettre des mots, sauf le premier
 - doit commencer par une lettre
 - doit contenir uniquement des lettres, _,chiffres
 - aucun espace
 - est sensible à la casse (Se dit de tout programme qui fait une distinction entre les lettres majuscules et les lettres minuscules, et qui ne traite donc pas de la même façon les données ou les commandes selon qu'elles sont entrées en majuscules ou en minuscules).
 
-exemple: la variable prénom est déclarée ainsi: 
+Exemple: la variable prénom est déclarée ainsi: 
 
     let prenom;
 
-exemple :
+Exemple :
 
     let ma PremiereVariable = "Bonjour";
     console.log(maPremiereVariable);
@@ -180,7 +182,7 @@ exemple :
 
 ####Initialisation
 
-Initialiser= assigner une valeur pour la première fois.
+Initialiser = assigner une valeur pour la première fois.
 On utilise le signe **=**.
 
 Elle peut se faire:
@@ -1088,10 +1090,10 @@ Afin de calculer l'âge de l'utilisateur, vous allez avoir besoin d'effectuer un
 - L' user saisit un montant HT, le résultat TTC s'affiche en HTML.
 Il faut réaffciher toutes les informations.Le montant HT est à virgules.
 - Énoncé: Créer puis afficher en HTML un objet représentant une voiture :
-1. La marque de la voiture
-2. Son année de fabrication
-3. Sa date d'achat
-4. La liste des passagers (au moins 2), avec le prénom de chacun des passagers
+La marque de la voiture
+Son année de fabrication
+Sa date d'achat
+La liste des passagers (au moins 2), avec le prénom de chacun des passagers
 Détails: Afficher les propriétés de l'objet voiture sous la forme d'une liste HTML
 On peut représenter n'importe quelle date en JavaScript en donnant une
 chaîne de caractères à la création d'une instance de la classe Date :
