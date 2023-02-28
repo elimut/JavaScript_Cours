@@ -780,29 +780,45 @@ L'on peut enchaîner les if:
         console.log();
     }
 
-###Conditions multiples
+###Conditions multiples et opérateurs logiques
 
 Les conditions dans les structure de contrôle peuvent être multiples.
-C'est là qu'interviennent les **ET et OU**/.
+C'est là qu'interviennent les **ET, OU et CONTRAIRE ou NON**.
+Cela permet d' effectuer plusieurs comparaisons.
 
-####&&  et
+#### &&  AND
+
+Permet d' avoir un intervalle de comparaisopn pour une variable.
+
 Exemple:
 
     let prenom = "paul";
     if(age >= 100 && prenom === "paul"){
         console.log("Bonjour paul");
-    }
+    };
 **&& = et**: Il faut que les deux conditions retournent true pour que les instructions puissent être exécutées.
 
-####|| ou
+#### || OR
 
     let prenom = "paul";
     if(age >= 100 || prenom === "paul"){
         ;
-    }
+    };
 **|| = ou**: Il faut que l'une des deux conditions retourne true pour l'exécution.
 
-###Switch
+#### Contraire, NON
+
+Permet de lier le résultat des comparaisons, ainsi les comparaisons évaluées de base à false, vont être évaluée à true et inversement. 
+
+Exemple :
+
+    let heure = 18;
+    if(!(heure <= 16) == true ){
+        alert("il est plus de 16h");
+    };
+    ->on lie le résultat envoyé par Js, qui est: false car 18>16, on lie donc, le résultat renvoyé devient true => true = true
+
+### Switch
 
 Permet de comparer la valeur d'une variable avec une multitude de valeurs possibles et d'agir en fonction.
 Pratique lors de la comparaison d'une variable à plusieurs valeurs.
