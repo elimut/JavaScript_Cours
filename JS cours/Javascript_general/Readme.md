@@ -2,14 +2,8 @@
 
 ##Introduction au JS
 
-JavaScript est un langage de programmation du Web. Il a été créé en 1995. Avec les comportements dynamiques qu’il introduit, comme les boîtes de dialogue qui s’affichent à
-l’écran, les formulaires interactifs ou encore les changements d’image au survol de la souris, le
-succès de JavaScript est immédiat. Depuis, le JavaScript fait l’objet de nombreuses évolutions et
-la dernière version a été officialisée en 2016 et constitue la septième édition du standard ECMA (ECMAScript est un ensemble de normes concernant les langages de programmation de type script et standardisées par Ecma International dans le cadre de la spécification ECMA-262).
-Son objectif est de dynamiser les pages Web et de les rendre interactives. Exemple un
-slider, grâce à JavaScript, nous pouvons réaliser un défilement automatique des images. Avec JS,
-toute la page (ou le **DOM**) est manipulable et suite à des évènements créés par l’utilisateur, il est
-possible de modifier le code HTML et CSS.
+JavaScript est un langage de programmation du Web. Il a été créé en 1995. Avec les comportements dynamiques qu’il introduit, comme les boîtes de dialogue qui s’affichent à l’écran, les formulaires interactifs ou encore les changements d’image au survol de la souris, lesuccès de JavaScript est immédiat. Depuis, le JavaScript fait l’objet de nombreuses évolutions et la dernière version a été officialisée en 2016 et constitue la septième édition du standard ECMA (ECMAScript est un ensemble de normes concernant les langages de programmation de type script et standardisées par Ecma International dans le cadre de la spécification ECMA-262).
+Son objectif est de dynamiser les pages Web et de les rendre interactives. Exemple un slider, grâce à JavaScript, nous pouvons réaliser un défilement automatique des images. Avec JS,toute la page (ou le **DOM**) est manipulable et suite à des évènements créés par l’utilisateur, il est possible de modifier le code HTML et CSS.
 >Le DOM (Document Object Model) est une API 5Une API (Application Programming Interface) est un ensemble de fonctionnalités et de règles existant dans un logiciel permettant d'intéragir avec celui-ci de manière automatisée (plutôt que de passer par une interface utilisateur). L'API peut être vue comme un contrat simple passé entre le logiciel qui la propose et d'autres entités, telles que des logiciels ou matériels tiers. qui représente et interagit avec tous types de documents HTML ou XML. Le DOM est un modèle de document chargé dans le navigateur. La représentation du document est un arbre nodal. Chaque nœud représente une partie du document (par exemple, un élément, une chaîne de caractères ou un commentaire).Voir chapitre DOM.
 
 >Le terme DOM est, au contraire du BOM, un terme standardisé et donc défini de manière officielle. Le DOM est une interface de programmation pour des documents HTML ou XML qui représente le document (la page web actuelle) sous une forme qui permet aux langages de script comme le JavaScript d’y accéder et d’en manipuler le contenu et les styles.
@@ -151,10 +145,9 @@ Stocke différentes valeurs dans le temps, en écrasant les précédentes.
 Doit être déclarée une et une seule fois dans un programme.
 Il existe deux types de variables:
 - **Globales**: utilisées dans tout le programme, déclarées à la base du code, en dehors de toute fonction.
-- **Locales**:
-qui ne servent que pour un programme ou fonction particuliers, déclarées au sein de ce programme ou cette fonction.
+- **Locales**: qui ne servent que pour un programme ou fonction particuliers, déclarées au sein de ce programme ou cette fonction.
 
-####Déclaration
+####Déclaration: 
 
 Pour déclarer une variable, on utilise la syntaxe : **var ou let**.
 - var ancienne syntaxe,
@@ -162,13 +155,13 @@ Pour déclarer une variable, on utilise la syntaxe : **var ou let**.
 
 Règle de nommage (valable pour les fonctions)= **CamelCase** :
 
-- Nom unique,
-- Aucune ponctuation, 
-- mise en capitale de la première lettre des mots, sauf le premier
-- doit commencer par une lettre
-- doit contenir uniquement des lettres, _,chiffres
-- aucun espace
-- est sensible à la casse (Se dit de tout programme qui fait une distinction entre les lettres majuscules et les lettres minuscules, et qui ne traite donc pas de la même façon les données ou les commandes selon qu'elles sont entrées en majuscules ou en minuscules).
+- Nom unique = **identifier**,
+- Aucune ponctuation,accents,espace, 
+- Mise en capitale de la première lettre des mots, sauf le premier,
+- Doit commencer par une lettre,
+- Doit contenir uniquement des lettres, _,chiffres,
+- Aucun espace
+- Est sensible à la casse (Se dit de tout programme qui fait une distinction entre les lettres majuscules et les lettres minuscules, et qui ne traite donc pas de la même façon les données ou les commandes selon qu'elles sont entrées en majuscules ou en minuscules).
 
 Exemple: la variable prénom est déclarée ainsi: 
 
@@ -180,10 +173,10 @@ Exemple :
     console.log(maPremiereVariable);
     
 
-####Initialisation
+####Initialisation:
 
 Initialiser = assigner une valeur pour la première fois.
-On utilise le signe **=**.
+On utilise le signe **=**. = est un **opérateur d' affectation** et non d' égalité, assigne voire affecte une valeur à une variable.Permet de stocker une valeur dans une variable.
 
 Elle peut se faire:
 - en même temps que la déclaration
@@ -193,109 +186,208 @@ Elle peut se faire:
 Exemples:
 
     let prenom = "paul;
-Initialisation en même temps que déclaration.
+->Initialisation en même temps que déclaration.
 
     let nom;
     nom = "paul;
-Déclaration puis initialisation.
+->Déclaration puis initialisation.
 
     let titre = "chat", production = "universal", annee = 2013;
-Déclaration de plusieurs variables sur une même ligne.
+->Déclaration de plusieurs variables sur une même ligne.
 
-####Remontée ou hoisting des variables
+####Remontée ou hoisting des variables/ 
 
 Une variable déclarée avec var peut-être manipulée en haut de code et être déclarée en fin de code car le JS va traiter les déclarations avant le reste du code JS.Ce comportement est appelé **remontée ou hoisting**, il est dorénavant jugé inadapté.
 Avec let, il faut déclarer la variable avant de l'utiliser.
 
-exemples:
+Exemples:
 
     prenom = "paul";
     var = prenom;
-Initialisation suivi de déclaration avec var, ok.
+->Initialisation suivi de déclaration avec var, ok.
 Avec let ne fontionne pas!
 
-####La redéclaration de variable
+    var x = 25;
+    var x = 100;
+->déclaration et initialisation 
+
+var prenom = "pierre", nom = "gireaud", dpt = 83;
+->déclaration plusieurs variables sur une même ligne
+
+    var nom;
+    nom = 25;
+    ->déclaration sans valeur, puis initialisation (à éviter): var nom = ""; préférable affection valeur nulle à une variable.
+
+####La redéclaration de variable:
 
 Avec var, il est possible de redéclarer, plusieurs fois, la même variable pour modifier sa valeur.
-Avec let, on ne déclare qu'une seule fois.Pour changer sa valeur, il faut lui affecter une autre valeur.
+Avec let, on ne déclare qu'une seule fois.Pour changer sa valeur, il faut lui affecter une autre valeur (La nouvelle valeur écrase la précédente).
+**Il est possible de réaffecter une valeur de type différent dans une variable.**
 
 Exemples:
 
-    var prenom= "paul";
-    var prenom= "julien";
+    var prenom = "paul";
+    var prenom = "julien";
 
-    let prenom= "david";
-    prenom= "nicolas";
+    let prenom = "david";
+    prenom = "nicolas";
 
-###Constante
+    let x = 5;
+    x = x + 5;
+    ->On stocke dans x la valeur 5, puis dans x l'ancienne valeur de x + 5.Donc x stocke 10.
+
+    let x = 4;
+    x = "quatre";
+
+###Constante:
 
 Pour créer ou déclarer une cosntante en JS, il faut utiliser le mot clef : **const**.
 On la déclare de la même façon que let.
 **Il faut obligatoirement l' initialiser lors de sa déclaration sinon une erreur sera retournée.**
 **Valeur inchangeable**.
 
-ex:
+Exemple:
 
     const x = 5;
 
-##Les types
+##Les types:
 
 ###Quelles valeurs peuvent prendre mes variables?
 
-- **String** : chaîne de caractères, texte mis entre "" ou '' ou quotes.
-- **Number** :entiers, réels, float (attention au point).
-- **Booléen**: contient deux valeurs true ou false.
-- **Tableau** : = **array** en JS, il contient plusieurs valeurs classées dans un tableau.
+Les types de valeurs contenues dans les variables en JS.Elles peuvent stocker différents types de valeur.
+On ne stocke pas de la même façon un nombre ou une chaîne de caractères dans une variable, on effectue également pas les mêmes opérations en fonction des valeurs.
+
+- **String** : chaîne de caractères, texte mis entre "" ou '' ou quotes:
+
+        let prenom = "Pierre";
+        let hello = "Bonjour, nous sommes...";
+  Si l'on utilise les '', dans le cas où la chaîne de caractère contient des ', il faudra échapper avec \:
+
+        let dpt = "Je vis dans le \"83"\";
+  Un nombre entouré de "" est considéré comme un string (cela influence les opérations effectuées):
+
+        var d = "65";
+- **Number**: entiers, réels, float (attention au point):
+
+        let x = 2.5;
+        let y = -75;
+        let z = 23;
+- **Booléen**: contient deux valeurs true ou false (valeurs de type booléenne).Un booléen est une valeur binaire.
+Surtout utilisée pour testes, vérification de condition,...
+Pour qu'une variable stocke un booléen, elle doit stocker true ou false, sans "", et sans '':
+
+        let a = true;
+- **Tableau**: **array** en JS, il contient plusieurs valeurs classées dans un tableau.
 - **Objet**: contient des propriétés et des méthodes.
+- **Null**: non connaissance de la valeur.
+
+        let n = null;
+- **Undefined**: ne pas avoir défini de valeur pour la variable.
+- 
+        let u = undefined;
+- **NaN**: not a number.
+
+        var nn = NaN;
+  
 ![objet schéma](img/objets_schéma.png)
 
->JavaScript est conçu autour d'un paradigme simple, basé sur les objets. Un objet est un ensemble de propriétés et une propriété est une association entre un nom (aussi appelé clé) et une valeur. La valeur d'une propriété peut être une fonction, auquel cas la propriété peut être appelée « méthode ». En plus des objets natifs fournis par l'environnement, il est possible de construire ses propres objets. Ce chapitre aborde la manipulation d'objets, l'utilisation des propriétés, fonctions et méthodes, il explique également comment créer ses objets.
+>**-> JavaScript est conçu autour d'un paradigme simple, basé sur les objets. Un objet est un ensemble de propriétés et une propriété est une association entre un nom (aussi appelé clé) et une valeur. La valeur d'une propriété peut être une fonction, auquel cas la propriété peut être appelée « méthode ». En plus des objets natifs fournis par l'environnement, il est possible de construire ses propres objets. Ce chapitre aborde la manipulation d'objets, l'utilisation des propriétés, fonctions et méthodes, il explique également comment créer ses objets**.
 
-##Concaténation
+###Tester type de valeur:
 
-Consiste en l' assemblage de textes et de variables.
-On utilise le signe "+", utilisé également pour additionner, JS fait la différence en focntion du type de valeurs qui entourent le +.
-S'il s' agit de nombres: addition, s'il s'agit de textes : concatène.
+On utilise généralement fonction **typeof**.
+Attention, renvoie parfois des valeurs contestables.
 
-exemple:
+Exemple:
+
+    alert("Variable x : " + typeof(x) +
+    "\nVariable y : " + typeof(y) +
+    "\nVariable a : " + typeof(a));
+    ->voir main.js détails fonctions et usage.
+
+##Concaténation 
+
+Consiste en l' assemblage de texte et de variable (addition de chaîne de caractères).
+On utilise le signe "**+**", utilisé également pour additionner, JS fait la différence en fonction du type de valeurs qui entourent le +.
+**S'il s' agit de nombres: addition, s'il s'agit de textes : concatène**.
+
+Exemples:
 
     let nom = "chat";
     let prenom = "bahamut";
-    console.log(nom+prenom);
-affichage : chatbahamut
-**Attention aux espaces**
+    console.log(nom + prenom);
+    ->affichage : chatbahamut
+               
+                   Attention aux espaces!
 
     let nom = "chat ";
-**espace après le nom**
+    ->espace après le nom => affichage : chat bahamut
+
+    let prenom = "anne-so", espace = "", nom = "vand";
+    let moi = prenom + espace + nom;
+    ->concaténation de variable
+
+    let moi = "anneso" + " " + "paul";
+    ->concaténation de valeur
+
+    let sport = "courir";
+    let hobby = "j' aime le" + " " + sport;
+
+    alert("Bonjour" + \nsport);
+
+    let x = 4 + 2 + "1"; => 4 et 2 s'additionne puis concaténation avec 1: 61.
+    let y = "1" + 2 + 4; => 124.
+    let z = 2 + "un" + 4; => 2un4.
+    ->distinction + addition et + concaténation.Addition nombre et chaîne de caractère, tout ce qui sera après la chaîne de caractère sera considéré commme une chapine de caractère = > pas d'addition mais concaténation!
+    
+    alert("variable x :" + typeof(x)); => string.
+
+
 
 ##Calculs sur variables
 
-Il est possible de faire des claculs sur des variables de type number :
+Il est possible de faire des calculs sur des variables de type number:
 
 |Opération|Symbole|
 |:-------|:------|
-|addition|+|
-soustraction|-|
-multiplication|*|
-|division|/|
-|modulo (reste division euclidienne|%|
-|incrémenter var de 1|++|
-|décrementer var de 1|--|
-|incrémenter une var de la valeur d'une seconde var|+=|
-|décrémenter une var de la valeur d'une seconde var|-=|
+|Addition|+|
+|Soustraction|-|
+|Multiplication|*|
+|Division|/|
+|Modulo (entier reste division euclidienne)|%|
+|Incrémenter var de 1|++|
+|Décrementer var de 1|--|
+|Incrémenter une var de la valeur d'une seconde var|+=|
+|Décrémenter une var de la valeur d'une seconde var|-=|
+|Multiplier l'ancienne valeur de la variable| *=|
+|Diviser l'ancienne valeur de la variable| /=|
+|Modulo l'ancienne valeur de la variable| %=|
 
-exemple:
+Exemples:
 
     let x = 6;
     let y = 7;
     let addition = x + y;
+
+    let x = 5;
+    x = x + 5; (10)
+    x = x + 3; (13)
+
+    var mod = 13 % 3;
+
+    var x =2;
+    x += 2; => x = x+2;
+    x -= 3; => x = x-3;
+
+    y *= x; => y = y*x;
+**Attention à bien respecter les priorités de calcul comme en mathématiques!**
 
 ##Prompt
 
 **Fonction** qui permet de demander à l' utilisateur une information.
 Va ouvrir une boîte de dialogue qui contiendra une question et un champ vide de réponse.
 
-exemple:
+Exemple:
 
     let age = window.prompt("Quel âge avez-vous?");
 Pour stocker la valeur saisie par l'User dans une variable, il faut attribuer ce prompt à une variable.
@@ -590,23 +682,30 @@ Exemple:
 ##Les conditions
 
 ![if](img/if.png)
+
 ![if else](img/else_if.png)
+
 ![switch](img/switch.png)
 
 Structures de contrôle, qui permettent de contrôler les instructions en fonction de l'évolution du programme.
+Permet d' effectuer des actions en fonction de paramètres, afin de dynamiser le site et ajouter des intéractions.
 
-Il en existe deux sortes : conditions et boucles.
+Il en existe deux sortes : **conditions et boucles**.
 
-Une conditon est un test que va effectuer le programme, et nous allons lui indiquer ce qu'il doit faire si cette condition est vraie,ou faire si fausse.
+Une condition est un test que va effectuer le programme, et nous allons lui indiquer ce qu'il doit faire si cette condition est vraie,ou faire si fausse.
 
-Exemple:
+###Comment JavaScript compare différentes valeurs?
+
+Le JS saît comparer différentes valeurs entre elles. A chaque fois que l'on compare différentes valeurs, le JS renvoie un booléen:  soit valeur true ou soit false.
+
+Exemples:
 Si l'user a plus de 18 ans, on va lui dire qu'il est majeur, sinon, on lui dira qu'il est mineur.
 
     let age = window.prompt("Quel âge avez-vous?");
     console.log(age);
 
     age = parseInt(age);
-->on parse l' age pour le considérer comme un nombre.
+    ->on parse l' age pour le considérer comme un nombre.
 
     if(age === 18){
         console.log("vous êtes majeur);
@@ -614,7 +713,16 @@ Si l'user a plus de 18 ans, on va lui dire qu'il est majeur, sinon, on lui dira 
     else{
         console.log("vous êtes mineur");
     }
-->dans ca cas, si age=19, le programme nous dira que nous sommes mineur,il faut utiliser un autre opérateur.
+    ->dans ce cas, si age=19, le programme nous dira que nous sommes mineur,il faut utiliser un autre opérateur(=== sécurité pour nombre, pas de parse si == mais risque de NaN).
+
+    var x = 7, y = 14;
+    var vrai = x < y;
+    var faux = 14 <= 7;
+    var egalVal = 4 == "4"; => true
+    var egalVaType = 4 === "4"; => false
+    var difValType = 4 !== "4"; => true
+
+Pour effectuer un test à l' intérieur d'une condition, nous aurons besoin d' **opérateurs de comparaison**.
 
 ###Les opérateurs
 
@@ -622,26 +730,41 @@ Voici les différents opérateurs possibles pour effectuer une comparaison entre
 
 |Opérateurs|Signification|
 |:------|:------|
-|==|égal à|
-|!=|différent de|
-|===|strictement égal à|
-|!==|strictement différent|
+|==|égal à (en valeur)|
+|!=|différent de (en valeur)|
+|===|strictement égal à (en valeur ou en type)|
+|!==|strictement différent (en valeur ou en type)|
 |>|supérieur|
 |>=|supérieur ou égal|
 |<|inférieur|
 |<=|inférieur ou égal|
 
+Exemples:
+
+    4 == "4" => true car même valeur.
+    4 === "4" => false, valeur ok mais type différents.
+
 ###If Else
 
-Structure conditionnelle qui va permettre de tester une condition et de rélaiser des instructions différentes selon qu'elle est vraie ou fausse.
+Structure conditionnelle qui va permettre de tester une condition et de réaliser des instructions différentes selon qu'elle est vraie ou fausse.
 
     if(condition){
         instruction si vraie;
     }
     else{
-        instruciton si fausse;
-    }
-Le programme effectuera les instrucitons présentes entre les accolades du if si la condition entre parenthèse retourne true,inon du else si retourne false.
+        instruction si fausse;
+    };
+
+    var heure = 18;
+    if(heure <= 20 == true){
+        alert("Bonjour");
+    };
+    ->comparaison 18 à 20=>envoie valeur true ou false puis si JS renvoie bien true ( == true)=> exécution alert
+
+    if(typeof(heure) == "number" == true){
+        alert("c'est le matin");
+    } => true
+Le programme effectuera les instructions présentes entre les accolades du if si la condition entre parenthèse retourne true,inon du else si retourne false.
 
 Else non obligatoire.
 
@@ -662,15 +785,14 @@ L'on peut enchaîner les if:
 Les conditions dans les structure de contrôle peuvent être multiples.
 C'est là qu'interviennent les **ET et OU**/.
 
-####&&, et
+####&&  et
 Exemple:
 
     let prenom = "paul";
     if(age >= 100 && prenom === "paul"){
         console.log("Bonjour paul");
     }
-**&& = et**
-Il faut que les deux conditions retournent true pour que les instructions puissent être exécutées.
+**&& = et**: Il faut que les deux conditions retournent true pour que les instructions puissent être exécutées.
 
 ####|| ou
 
@@ -678,8 +800,7 @@ Il faut que les deux conditions retournent true pour que les instructions puisse
     if(age >= 100 || prenom === "paul"){
         ;
     }
-**|| = ou**
-Il faut que l'une des deux conditions retourne true pour l'exécution.
+**|| = ou**: Il faut que l'une des deux conditions retourne true pour l'exécution.
 
 ###Switch
 
@@ -1067,7 +1188,7 @@ Il y a plusieurs façons d’écrire une requête Ajax, la syntaxe en JavaScript
 
 [OpenClassroom code](https://openclassrooms.com/fr/courses/245710-ajax-et-lechange-de-donnees-en-javascript/244798-lobjet-xmlhttprequest)
 
-##Exercices (voir dossiers exercicesMM) :
+##Exercices (voir dossier exercicesMM) :
 
 - Afficher "Hello World" dans la console du navigateur.
 - Déclarer une variable avec le mot-clé let ayant comme nom « color ».Puis, sur la ligne suivante, lui assigner la valeur « rouge ».
@@ -1125,7 +1246,13 @@ La console affiche le résultat 60 ;
 
 stop : chifoumi , exo3
 
+##Main.js:
 
+- alert
+- window.prompt
+- elementToString
+- objet date
+- typeof
 
 
  
