@@ -1,10 +1,15 @@
-#JavaScript
+# JavaScript
 
-##Introduction au JS
+## Introduction au JS
 
 JavaScript est un langage de programmation du Web. Il a été créé en 1995. Avec les comportements dynamiques qu’il introduit, comme les boîtes de dialogue qui s’affichent à l’écran, les formulaires interactifs ou encore les changements d’image au survol de la souris, lesuccès de JavaScript est immédiat. Depuis, le JavaScript fait l’objet de nombreuses évolutions et la dernière version a été officialisée en 2016 et constitue la septième édition du standard ECMA (ECMAScript est un ensemble de normes concernant les langages de programmation de type script et standardisées par Ecma International dans le cadre de la spécification ECMA-262).
+On dit que le HTML, le CSS et le JavaScript sont des standards du web car les principaux
+navigateurs web (Google Chrome, Safari, Firefox, etc.) savent tous « lire » (ou «
+comprendre » ou « interpréter ») ces langages et les interprètent généralement de la
+même façon ce qui signifie qu’un même code va généralement produire le même résultat
+dans chaque navigateur.
 Son objectif est de dynamiser les pages Web et de les rendre interactives. Exemple un slider, grâce à JavaScript, nous pouvons réaliser un défilement automatique des images. Avec JS,toute la page (ou le **DOM**) est manipulable et suite à des évènements créés par l’utilisateur, il est possible de modifier le code HTML et CSS.
->Le DOM (Document Object Model) est une API 5Une API (Application Programming Interface) est un ensemble de fonctionnalités et de règles existant dans un logiciel permettant d'intéragir avec celui-ci de manière automatisée (plutôt que de passer par une interface utilisateur). L'API peut être vue comme un contrat simple passé entre le logiciel qui la propose et d'autres entités, telles que des logiciels ou matériels tiers. qui représente et interagit avec tous types de documents HTML ou XML. Le DOM est un modèle de document chargé dans le navigateur. La représentation du document est un arbre nodal. Chaque nœud représente une partie du document (par exemple, un élément, une chaîne de caractères ou un commentaire).Voir chapitre DOM.
+>Le DOM (Document Object Model) est une API.(Une API (Application Programming Interface) est un ensemble de fonctionnalités et de règles existant dans un logiciel permettant d'intéragir avec celui-ci de manière automatisée (plutôt que de passer par une interface utilisateur). L'API peut être vue comme un contrat simple passé entre le logiciel qui la propose et d'autres entités, telles que des logiciels ou matériels tiers. qui représente et interagit avec tous types de documents HTML ou XML. Le DOM est un modèle de document chargé dans le navigateur. La représentation du document est un arbre nodal. Chaque nœud représente une partie du document (par exemple, un élément, une chaîne de caractères ou un commentaire).Voir chapitre DOM.
 
 >Le terme DOM est, au contraire du BOM, un terme standardisé et donc défini de manière officielle. Le DOM est une interface de programmation pour des documents HTML ou XML qui représente le document (la page web actuelle) sous une forme qui permet aux langages de script comme le JavaScript d’y accéder et d’en manipuler le contenu et les styles.
 Le DOM est ainsi une représentation structurée du document sous forme « d’arbre » crée automatiquement par le navigateur. Chaque branche de cet arbre se termine par ce qu’on appelle un nœud qui va contenir des objets. On va finalement pouvoir utiliser ces objets, leurs propriétés et leurs méthodes en JavaScript.
@@ -28,40 +33,162 @@ Ces ordres vont constituer un programme qui est en fait une liste d’instructio
 être lues et interprétées par un navigateur = **scripts**.
 Script = suite d'instructions qui vont être interprétées par un programme.
 Pour lire le JS il faut un **interpréteur**, tous les nav en possèdent.
+On peut encore séparer les langages selon qu’ils puissent être exécutés directement (on
+parlera alors de langages interprétés) ou qu’il faille les transformer en une autre forme
+pour pouvoir les exécuter (on parlera alors le langages compilés).
+Le JavaScript est un langage interprété. Cela signifie qu’il va pouvoir être exécuté
+directement sous réserve qu’on possède le logiciel interpréteur. Pas de panique ici : tous
+les navigateurs connus possèdent leur interpréteur JavaScript.
 >JavaScript est un langage de programmation de script largement utilisé pour animer les sites web.
 Un langage de script est un langage interprété.
 Sa syntaxe est dite de haut niveau, plus proche du langage naturel que du langage machine : par conséquent, il est relativement simple à apprendre et est indépendant de l'aspect matériel de la machine sur lequel il est lancé.
-Langage interprété
+Langage interprété:
 Un langage interprété est un langage qui est exécuté par un autre programme : l'interpréteur.
 Celui-ci lit une ligne de code, l'analyse, l'exécute si elle est correcte et passe à la suivante ; il répète ce processus pour chaque instruction du programme. Un programme en langage interprété est donc exécuté au fur et à mesure de sa lecture.
 ![interpréteur](img/interpretation.png)
 
 Langage de programation majoritairement **client-side**
->client side: exécuté du côté de l'ordi de la personne qui demande la page (server-side=exécuté côté serveur(ordi puissant qui stocke les pages et l'envoie quand elles sont demandés par le client).
-Client intéragit très rarement avec le server-side(php par exemple, traitement des données en arrière plan).
-Client demande page stockée sur serveur,le serveur reçoit demande, le langage server-side est exécuté côté serveur, des calculs sont fait..., une fois exécutation terminée serveur envoie la page qui ne contient que du langage client-side dont JS.Exécution client-side se fait lorsque l'on reçoit la page.
-(node.JS projet pour avoir JS côté serveur?)
+La catégorisation langages statiques / langage dynamique est une première façon de
+classer les différents langages de programmation.
+On peut également classer les différents langages selon l’endroit où ils vont s’exécuter :
+soit côté client, soit côté serveur.
+Pour comprendre ce que sont les langages « côté client » et « côté serveur », il convient
+avant tout de comprendre ce qu’est un client et ce qu’est un serveur et pour cela il faut
+savoir ce qu’est un site.
+Un site est un ensemble de ressources et de fichiers liés entre eux. Pour que notre site
+soit accessible sur le web pour tous, on va l’héberger sur un serveur, c’est-à-dire envoyer
+l’ensemble de nos fichiers sur le serveur et on va également acheter un nom de domaine
+qui va servir à identifier notre site.
+Un « serveur » est une sorte de super ordinateur, constamment accessible et connectés
+aux autres serveurs (formant ainsi un réseau qu’on appelle le web) et qui va héberger les
+fichiers constituant un (ou plusieurs) site(s) web et le(s) « servir » sur demande du client.
+Lorsqu’on demande à accéder à une page web en tapant une URL dans notre navigateur,
+nous sommes le client ou plus exactement notre navigateur est le logiciel client qui
+effectue une demande ou « requête » au serveur qui est la suivante : « sers-moi le fichier
+correspondant à l’adresse que je t’ai envoyée ».
+Les fichiers ou pages d’un site web vont pouvoir être constituées de deux types de codes
+différents : du code côté serveur et du code côté client. Lorsqu’on demande à un serveur
+de nous servir une page, celui-ci se charge d’exécuter le code côté client s’il y en a et ne
+va renvoyer que du code côté client en résultat.
+Un langage « côté client » ou « client side » est un langage qui va être exécuté dans le
+navigateur des utilisateurs qui demandent la page. On peut également appeler ces
+langages des langages « web » puisqu’ils sont principalement utilisés dans un contexte
+web.
+Il existe aujourd’hui 3 langages côté client incontournables qui sont le HTML, le CSS et le
+JavaScript.
+Les langages côté serveur sont des langages qui vont s’exécuter sur le serveur. Les
+navigateurs ne sont dans la grande majorité des cas pas capables de comprendre les
+langages serveur.
+Ces langages permettent notamment d’effectuer de manipuler les données pour renvoyer
+des résultats. Les résultats renvoyés le sont sous forme de code compréhensible par le
+navigateur (c’est-à-dire du HTML principalement) pour que le navigateur puisse afficher le
+résultat final.
+La chose importante à retenir ici est que le JavaScript est un langage principalement utilisé
+côté client, mais qui va également pouvoir s’utiliser côté serveur à condition qu’on mette
+en place un environnement favorable (en utilisant Node.js par exemple).
+
 
 **Langage orienté objet à prototype**= JS va utiliser des objets dans son fonctionnement global et ces objets sont prototypés.
 Objet= bloc cohérent de code qui sert à effectuer telle ou telle opération.
 
 Js utilisé pour manipuler dynamiquement le code HTML d'un page.
 >Attention différence JAVA et JS, concepts totalement différents, tâches différentes.
+Retenez ici que ces deux langages, bien que syntaxiquement assez proches à la base,
+reposent sur des concepts fondamentaux complètement différents et servent à effectuer
+des tâches totalement différentes.
+Pourquoi des noms aussi proches ? Java est une technologie créée originellement par
+Sun Microsystems tandis que JavaScript est un langage créé par la société Netscape.
+Avant sa sortie officielle, le nom original du JavaScript était « LiveScript ». Quelques jours
+avant la sortie du LiveScript, le langage est renommé JavaScript.
+A l’époque, Sun et Netscape étaient partenaires et le Java était de plus en plus populaire.
+Il est donc communément admis que le nom « JavaScript » a été choisi pour des raisons
+marketing et pour créer une association dans la tête des gens avec le Java afin que les
+deux langages se servent mutuellement.
+Le créateur du JavaScript a également expliqué que l’idée de base derrière le
+développement du JavaScript était d’en faire un langage complémentaire au Java.
 
-##L'environnement de travail
+On oppose généralement les langages « dynamiques » aux langages « statiques » comme
+le HTML et le CSS. Illustrons les différences d’utilisation entre ces types de langage en
+discutant des possibilités du HTML, du CSS et du JavaScript.
+Pour rappel, le HTML est un langage de balisage (langage qui utilise des balises) qui est
+utilisé pour structurer et donner du sens aux différents contenus d’une page. Le HTML
+nous permet de communiquer avec un navigateur en lui indiquant que tel contenu est un
+titre, tel contenu est un simple paragraphe, tel autre est une liste, une image, etc.
+Le navigateur comprend les différentes balises HTML et va alors afficher notre page à nos
+visiteurs en tenant compte de celles-ci.
+
+### JavaScript, API, librairies et framework
+
+Le JavaScript en tant que langage correspond à un ensemble de structures de codes ou
+un ensemble d’éléments qu’on va pouvoir utiliser pour implémenter des fonctionnalités sur
+nos pages web.
+Les API et les librairies JavaScript sont construites à partir de ces éléments de base du
+JavaScript et vont nous permettre d’utiliser des structures plus complexes déjà prêtes à
+l’emploi qui vont in-fine nous permettre de réaliser simplement des opérations qu’il aurait
+été très difficile de réaliser si on avait dû les coder entièrement à la main.
+Une API (« Application Programming Interface » ou « Interface de Programmation ») est
+une interface qui nous permet d’utiliser facilement une application. Une application est un
+programme, c’est-à-dire un ensemble cohérent de code qui permet de réaliser certaines
+actions.
+On utilise les API pour demander au programme d’effectuer certaines actions pour nous,
+comme par exemple afficher une carte d’une certaine ville à une certaine échelle (Google
+Maps API) ou pour afficher la liste de nos derniers Tweets (Twitter API) ou encore pour
+manipuler le contenu HTML d’une page web (DOM API).
+Pour utiliser une API et donc l’application correspondante, il faudra généralement
+demander au propriétaire de l’application une clef qui va nous permettre de nous identifier.
+Une librairie ou « bibliothèque » JavaScript est un ensemble de fichiers de code JavaScript
+homogènes (= qui se concentrent sur un aspect particulier du langage) qu’on va devoir
+télécharger pour les utiliser. Ces fichiers de code contiennent des structures de code
+prêtes à l’emploi qu’on va pouvoir utiliser immédiatement pour gagner du temps en
+développement. Parmi les librairies les plus célèbres, on peut notamment citer jQuery.
+Il convient donc de ne pas confondre API et librairies : une librairie est un ensemble de
+fichiers qu’on va télécharger et contient un ensemble de structures de codes prêtes à
+l’emploi. Nous allons pouvoir choisir celles qui nous intéressent pour les intégrer dans nos
+propres scripts et ainsi gagner du temps de développement. Une API, de l’autre côté, va
+nous permettre d’utiliser une application qu’on n’a pas le droit de manipuler directement.
+Finalement, un framework ou « cadre de travail » est relativement similaire dans son but
+à une « super librairie ». Les framework vont également nous fournir un ensemble de
+codes tout prêts pour nous faire gagner du temps en développement. La grande différence
+entre un framework et une librairie réside dans la notion d’inversion du contrôle : lorsqu’on
+télécharge une librairie, on peut l’utiliser comme on le souhaite en intégrant ses éléments
+à nos scripts tandis que pour utiliser un framework il faut respecter son cadre (ses règles).
+Les framework JavaScript les plus connus aujourd’hui sont Angular.js et React.js.
+Dans le début de ce cours, nous n’utiliserons bien évidemment pas d’API ni de librairie et
+encore moins de framework. Cependant, il reste intéressant de déjà définir ces différents
+termes pour vous donner une première « vue d’ensemble » des outils JavaScript.
+
+## L'environnement de travail
 
 Pour coder en JS:
 
 - Editeur de texte(VS,Komodo?,notepad++...)
-- Sites pour tester
+- Sites pour tester.
+  
+### Les librairies JavaScript à télécharger
 
-##Ou écrire le code JS
+Pour coder en JavaScript, un simple éditeur de texte suffit en théorie. Cependant, pour
+exploiter toute la puissance du JavaScript et pour gagner du temps de développement,
+nous utiliserons régulièrement des librairies JavaScript en plus du JavaScript « vanilla »
+(JavaScript « pur »).
+Pour qu’une librairie JavaScript fonctionne, il va falloir que le navigateur des personnes
+qui affichent la page la connaisse. Pour cela, on « forcera » le navigateur de nos visiteurs
+à télécharger les librairies qu’on utilise dans nos pages.
+Pour le début de ce cours, cependant, nous n’utiliserons pas de librairie car je veux que
+vous compreniez bien comment fonctionne le JavaScript et que vous appreniez à résoudre
+différents problèmes avec du **JavaScript vanilla**. Je pense que c’est en effet une grosse
+erreur d’essayer de contourner certaines difficultés en JavaScript en utilisant des librairies
+lorsqu’on ne maitrise pas suffisamment le JavaScript classique. 
 
-- Dans élément head d'une page HTML
-- Dans élément body ""
-- Dans un fichier séparé, portant extension .js (surtout gros projet)
+## Ou écrire le code JS
 
-###Dans head:
+- Dans élément head d'une page HTML,
+- Dans élément body "",
+- Dans un fichier séparé, portant extension .js (surtout gros projet),
+- Directement dans la balise ouvrante d’un élément HTML,
+- Dans un élément script, au sein d’une page HTML.
+
+
+### Dans head:
 
 Placer un élément script à la fin de head.
 
@@ -76,7 +203,9 @@ Placer un élément script à la fin de head.
     <title>JavaScript</title>
     </head>
 
-##Dans body:
+## Dans body:
+
+Dans une balise script:
 
     <body>
     <script>
@@ -85,28 +214,83 @@ Placer un élément script à la fin de head.
     </script>
     </body>
 
+Dans une balise ouvrante:
 
+    <button onclick="alert("Bonjour!")>
+    ->Ici, on crée deux boutons en HTML et on place nos codes JavaScript à l’intérieur
+    d’attributs onclick. Le code placé en valeur des attributs va s’exécuter dès qu’on va cliquer
+sur le bouton correspondant.
 >**Quand écrit dans fichier Html,on peut utiliser autant de script que nécessaire dans head,body, ou les deux, mais par souci de clarté et performance, on le place dans un même élément.
 Ceci seront lu linéairement (ordre d'écriture)**.
 
-###Dans fichier séparé:
+### Dans fichier séparé:
 
 Avec **extension.js**
 Meilleure maintenabilité du code grâce à la séparation des langages, réutilisation du code dans plusieurs fichiers Html.
 
 Il faudra lier les fichiers html et js:
-**on utilise la balise script avec son attribut "src" (chemin relatif du fichier js par rapport au fichier html)**.(:/si dossier parent)
+**on utilise la balise script avec son attribut "src" (chemin relatif du fichier js par rapport au fichier html)**(:/si dossier parent).Cette balise sera vide.
 
     <script src=""></script>
 Placé en fin de l'élément body de préférence (permet de charger la page html avant lancement du script).
 
 Méthode de préférence.
 
-##Syntaxes générales et commentaires
+## La place du code et l’ordre d’exécution de celui-ci
 
-###Généralités:
+Il y a un factuer très important lorsque l'on ajoute du JS dans les pages HTML: l'ordre d' exécution du code par le navigateur.
+**Un navigateur va lire
+et exécuter le code dans l’ordre de son écriture**.
+Plus précisément, lorsque le navigateur arrive à un élément script, il va stopper le
+traitement du reste du HTML jusqu’à ce que le code JavaScript soit chargé dans la page
+et exécuté.
+Nos codes JavaScript ci-dessus ont besoin des éléments button de notre page HTML pour
+fonctionner. En effet, les codes getElementById('b1') et getElementById('b2') vont
+récupérer les éléments dont les id sont « b1 » et « b2 » pour les manipuler.
+Cela risque de poser problème dans le cas présent car si notre code JavaScript est
+exécuté avant que le code HTML de nos boutons ne soit traité par le navigateur, il ne
+fonctionnera puisqu’il cherchera à utiliser des éléments qui n’existent pas encore.
+C’est la raison pour laquelle, lorsque j’ai choisi d’insérer le code JavaScript directement
+dans la page HTML au sein d’éléments script, j’ai été obligé d’entourer le code JavaScript
+qui affiche la boite d’alerte déclaré dans l’élément head par le
+code document.addEventListener('DOMContentLoaded', function(){}) ;. Ce code indique
+en effet au navigateur qu’il doit d’abord charger tout le contenu HTML avant d’exécuter le
+JavaScript à l’intérieur de celui-ci.
+Dans ce même exemple, mon deuxième élément script était lui placé en fin de body et est
+donc par défaut exécuté après le reste du code. Il n’y avait donc pas de problème dans ce
+cas.
+Notez que le même problème va avoir lieu dans le cas où on fait appel à un fichier
+JavaScript externe par défaut : selon l’endroit dans le code où le fichier est demandé, il
+pourra ne pas fonctionner s’il utilise du code HTML pas encore défini.
+**Ce souci est la raison pour laquelle il a longtemps été recommandé de placer ses
+éléments script juste avant la balise fermante de l’élément body, après tout code HTML.
+Cette façon de faire semble en effet résoudre le problème à priori mais n’est pas toujours
+optimale en termes de performances.**
+En effet résumons ce qu’il se passe dans ce cas :
+1. Le navigateur commence à analyser (ou à traiter) le code HTML ;
+2. L’analyseur du navigateur rencontre un élément script ;
+3. Le contenu JavaScript est demandé et téléchargé (dans le cas où il se situe dans
+un fichier externe) puis exécuté. Durant tout ce temps, l’analyseur bloque l’affichage du HTML, ce qui peut dans le cas où le script est long ralentir significativement le temps d’affichage de la page ;
+4. Dès que le JavaScript a été exécuté, le contenu HTML finit d’être analysé et est
+affiché.
+Ce problème précis de temps d’attente de chargement des fichiers JavaScript va pouvoir
+être résolu en grande partie grâce au téléchargement asynchrone des données qui va
+pouvoir être ordonné en précisant un attribut **async ou defer** dans nos éléments script.
+Le téléchargement asynchrone est une notion complexe et nous l’étudierons donc
+beaucoup plus tard dans ce cours. Pour le moment, retenez simplement que nous n’allons
+pouvoir utiliser les attributs async et defer que dans le cas où on fait appel à des fichiers
+JavaScript externes (c’est-à-dire à du code JavaScript stocké dans des fichiers séparés).
+C’est une raison supplémentaire qui nous fera préférer l’enregistrement du code
+JavaScript dans des fichiers séparés.
 
-####Afficher des informations:
+    <script src=".js" async ou defer></script> 
+    -> dans head.
+
+## Commentaires, indentation et syntaxe de base
+
+### Généralités:
+
+#### Afficher des informations:
 - alert("Une deuxième instruction js"); boîte de dialogue (pop-up).
 - document.write("hello"); Affiche une information directement sur notre page, dans le navigateur à l’endroit où le lien vers
 le fichier script est fait.
