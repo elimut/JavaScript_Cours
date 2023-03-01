@@ -53,3 +53,14 @@ if (typeof(heure) == "number" == true) {
     alert("c'est le matin");
 }
 */
+
+
+/*
+document.getElementById(id):
+
+Une note pour les plus curieux d’entre vous : vous pouvez retenir
+que document.getElementById(id) nous permet d’accéder à l’élément HTML qui possède
+l’id précisé. Ensuite, innerHTML nous permet d’injecter du texte dans l’élément.
+par typeof.
+*/
+

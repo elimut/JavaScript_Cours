@@ -9,20 +9,17 @@ comprendre » ou « interpréter ») ces langages et les interprètent général
 même façon ce qui signifie qu’un même code va généralement produire le même résultat
 dans chaque navigateur.
 Son objectif est de dynamiser les pages Web et de les rendre interactives. Exemple un slider, grâce à JavaScript, nous pouvons réaliser un défilement automatique des images. Avec JS,toute la page (ou le **DOM**) est manipulable et suite à des évènements créés par l’utilisateur, il est possible de modifier le code HTML et CSS.
->Le DOM (Document Object Model) est une API.(Une API (Application Programming Interface) est un ensemble de fonctionnalités et de règles existant dans un logiciel permettant d'intéragir avec celui-ci de manière automatisée (plutôt que de passer par une interface utilisateur). L'API peut être vue comme un contrat simple passé entre le logiciel qui la propose et d'autres entités, telles que des logiciels ou matériels tiers. qui représente et interagit avec tous types de documents HTML ou XML. Le DOM est un modèle de document chargé dans le navigateur. La représentation du document est un arbre nodal. Chaque nœud représente une partie du document (par exemple, un élément, une chaîne de caractères ou un commentaire).Voir chapitre DOM.
 
->Le terme DOM est, au contraire du BOM, un terme standardisé et donc défini de manière officielle. Le DOM est une interface de programmation pour des documents HTML ou XML qui représente le document (la page web actuelle) sous une forme qui permet aux langages de script comme le JavaScript d’y accéder et d’en manipuler le contenu et les styles.
+
 Le DOM est ainsi une représentation structurée du document sous forme « d’arbre » crée automatiquement par le navigateur. Chaque branche de cet arbre se termine par ce qu’on appelle un nœud qui va contenir des objets. On va finalement pouvoir utiliser ces objets, leurs propriétés et leurs méthodes en JavaScript.
 Le DOM contient ou correspond à un ensemble d’APIs qui font partie du BOM comme l’interface Document par exemple qui représente une page et sert de point d’entrée dans l’arborescence du DOM.
-Pour utiliser les propriétés et méthodes de l’interface.Le terme interface est généralement utilisé en informatique pour désigner un programme permettant un échange de données : Il peut s'agir d'un échange entre deux logiciels : l'interface est, par exemple, un programme qui reformate les données pour assurer la compatibilité entre ces deux logiciels.) Document, nous allons tout simplement utiliser la propriété document de Window. Nous avons déjà utilisée cette propriété de nombreuses fois dans ce cours, notamment lorsqu’on souhaitait injecter du texte dans un paragraphe avec le code document.                       getElementById('#').innerHTML.
+Pour utiliser les propriétés et méthodes de l’interface.Le terme interface est généralement utilisé en informatique pour désigner un programme permettant un échange de données : il peut s'agir d'un échange entre deux logiciels : l'interface est, par exemple, un programme qui reformate les données pour assurer la compatibilité entre ces deux logiciels.) Document, nous allons tout simplement utiliser la propriété document de Window. Nous avons déjà utilisée cette propriété de nombreuses fois dans ce cours, notamment lorsqu’on souhaitait injecter du texte dans un paragraphe avec le code document: getElementById('#').innerHTML.
 Lorsqu’on demande à un navigateur d’afficher une page Web, celui-ci va automatiquement créer un modèle objet de la page ou du document. Ce modèle objet correspond à une autre représentation de la page sous forme d’arborescence contenant des objets qui sont de type Node (nœuds).
 ![DOM](img/interpretation.png)
 
-Tous les navigateurs sur le marché sont capables d’exécuter JavaScript mais attention, ils
-n’ont pas tous le même moteur. C’est pourquoi il est important de tester son programme sur les
+Tous les navigateurs sur le marché sont capables d’exécuter JavaScript mais attention, ils n’ont pas tous le même moteur. C’est pourquoi il est important de tester son programme sur les
 principaux navigateurs.
-Pour le moment, vous avez appris à taper des lignes de HTML et de CSS, ce sont des
-langages de description, c'est-à-dire que vous décrivez, par le biais de ces langages, ce que vous
+Pour le moment, vous avez appris à taper des lignes de HTML et de CSS, ce sont des langages de description, c'est-à-dire que vous décrivez, par le biais de ces langages, ce que vous
 voulez voir apparaître dans le navigateur… et le navigateur vous suit…
 Le JavaScript est quand à lui un **langage de programmation impératif**, c'est-à-dire qu’il
 donne des ordres au navigateur :
@@ -33,13 +30,9 @@ Ces ordres vont constituer un programme qui est en fait une liste d’instructio
 être lues et interprétées par un navigateur = **scripts**.
 Script = suite d'instructions qui vont être interprétées par un programme.
 Pour lire le JS il faut un **interpréteur**, tous les nav en possèdent.
-On peut encore séparer les langages selon qu’ils puissent être exécutés directement (on
-parlera alors de langages interprétés) ou qu’il faille les transformer en une autre forme
-pour pouvoir les exécuter (on parlera alors le langages compilés).
-Le JavaScript est un langage interprété. Cela signifie qu’il va pouvoir être exécuté
-directement sous réserve qu’on possède le logiciel interpréteur. Pas de panique ici : tous
-les navigateurs connus possèdent leur interpréteur JavaScript.
->JavaScript est un langage de programmation de script largement utilisé pour animer les sites web.
+On peut encore séparer les langages selon qu’ils puissent être exécutés directement (on parlera alors de langages interprétés) ou qu’il faille les transformer en une autre forme pour pouvoir les exécuter (on parlera alors le langages compilés).
+Le JavaScript est un langage interprété. Cela signifie qu’il va pouvoir être exécuté directement sous réserve qu’on possède le logiciel interpréteur. Pas de panique ici : tous les navigateurs connus possèdent leur interpréteur JavaScript.
+
 Un langage de script est un langage interprété.
 Sa syntaxe est dite de haut niveau, plus proche du langage naturel que du langage machine : par conséquent, il est relativement simple à apprendre et est indépendant de l'aspect matériel de la machine sur lequel il est lancé.
 Langage interprété:
@@ -104,18 +97,12 @@ A l’époque, Sun et Netscape étaient partenaires et le Java était de plus en
 Il est donc communément admis que le nom « JavaScript » a été choisi pour des raisons
 marketing et pour créer une association dans la tête des gens avec le Java afin que les
 deux langages se servent mutuellement.
-Le créateur du JavaScript a également expliqué que l’idée de base derrière le
-développement du JavaScript était d’en faire un langage complémentaire au Java.
+Le créateur du JavaScript a également expliqué que l’idée de base derrière le développement du JavaScript était d’en faire un langage complémentaire au Java.
 
-On oppose généralement les langages « dynamiques » aux langages « statiques » comme
-le HTML et le CSS. Illustrons les différences d’utilisation entre ces types de langage en
-discutant des possibilités du HTML, du CSS et du JavaScript.
-Pour rappel, le HTML est un langage de balisage (langage qui utilise des balises) qui est
-utilisé pour structurer et donner du sens aux différents contenus d’une page. Le HTML
-nous permet de communiquer avec un navigateur en lui indiquant que tel contenu est un
+On oppose généralement les langages « dynamiques » aux langages « statiques » comme le HTML et le CSS. Illustrons les différences d’utilisation entre ces types de langage en discutant des possibilités du HTML, du CSS et du JavaScript.
+Pour rappel, le HTML est un langage de balisage (langage qui utilise des balises) qui est utilisé pour structurer et donner du sens aux différents contenus d’une page. Le HTML nous permet de communiquer avec un navigateur en lui indiquant que tel contenu est un
 titre, tel contenu est un simple paragraphe, tel autre est une liste, une image, etc.
-Le navigateur comprend les différentes balises HTML et va alors afficher notre page à nos
-visiteurs en tenant compte de celles-ci.
+Le navigateur comprend les différentes balises HTML et va alors afficher notre page à nos visiteurs en tenant compte de celles-ci.
 
 ### JavaScript, API, librairies et framework
 
@@ -166,18 +153,11 @@ Pour coder en JS:
   
 ### Les librairies JavaScript à télécharger
 
-Pour coder en JavaScript, un simple éditeur de texte suffit en théorie. Cependant, pour
-exploiter toute la puissance du JavaScript et pour gagner du temps de développement,
-nous utiliserons régulièrement des librairies JavaScript en plus du JavaScript « vanilla »
-(JavaScript « pur »).
-Pour qu’une librairie JavaScript fonctionne, il va falloir que le navigateur des personnes
-qui affichent la page la connaisse. Pour cela, on « forcera » le navigateur de nos visiteurs
+Pour coder en JavaScript, un simple éditeur de texte suffit en théorie. Cependant, pour exploiter toute la puissance du JavaScript et pour gagner du temps de développement,
+nous utiliserons régulièrement des librairies JavaScript en plus du JavaScript « vanilla » (JavaScript « pur »).
+Pour qu’une librairie JavaScript fonctionne, il va falloir que le navigateur des personnes qui affichent la page la connaisse. Pour cela, on « forcera » le navigateur de nos visiteurs
 à télécharger les librairies qu’on utilise dans nos pages.
-Pour le début de ce cours, cependant, nous n’utiliserons pas de librairie car je veux que
-vous compreniez bien comment fonctionne le JavaScript et que vous appreniez à résoudre
-différents problèmes avec du **JavaScript vanilla**. Je pense que c’est en effet une grosse
-erreur d’essayer de contourner certaines difficultés en JavaScript en utilisant des librairies
-lorsqu’on ne maitrise pas suffisamment le JavaScript classique. 
+Pour le début de ce cours, cependant, nous n’utiliserons pas de librairie car je veux que vous compreniez bien comment fonctionne le JavaScript et que vous appreniez à résoudre différents problèmes avec du **JavaScript vanilla**. Je pense que c’est en effet une grosse erreur d’essayer de contourner certaines difficultés en JavaScript en utilisant des librairies lorsqu’on ne maitrise pas suffisamment le JavaScript classique. 
 
 ## Ou écrire le code JS
 
@@ -203,7 +183,7 @@ Placer un élément script à la fin de head.
     <title>JavaScript</title>
     </head>
 
-## Dans body:
+### Dans body:
 
 Dans une balise script:
 
@@ -220,7 +200,7 @@ Dans une balise ouvrante:
     ->Ici, on crée deux boutons en HTML et on place nos codes JavaScript à l’intérieur
     d’attributs onclick. Le code placé en valeur des attributs va s’exécuter dès qu’on va cliquer
 sur le bouton correspondant.
->**Quand écrit dans fichier Html,on peut utiliser autant de script que nécessaire dans head,body, ou les deux, mais par souci de clarté et performance, on le place dans un même élément.
+>**Quand on écrit dans fichier Html,on peut utiliser autant de script que nécessaire dans head,body, ou les deux, mais par souci de clarté et performance, on le place dans un même élément.
 Ceci seront lu linéairement (ordre d'écriture)**.
 
 ### Dans fichier séparé:
@@ -236,7 +216,7 @@ Placé en fin de l'élément body de préférence (permet de charger la page htm
 
 Méthode de préférence.
 
-## La place du code et l’ordre d’exécution de celui-ci
+### La place du code et l’ordre d’exécution de celui-ci
 
 Il y a un factuer très important lorsque l'on ajoute du JS dans les pages HTML: l'ordre d' exécution du code par le navigateur.
 **Un navigateur va lire
@@ -271,55 +251,57 @@ En effet résumons ce qu’il se passe dans ce cas :
 2. L’analyseur du navigateur rencontre un élément script ;
 3. Le contenu JavaScript est demandé et téléchargé (dans le cas où il se situe dans
 un fichier externe) puis exécuté. Durant tout ce temps, l’analyseur bloque l’affichage du HTML, ce qui peut dans le cas où le script est long ralentir significativement le temps d’affichage de la page ;
-4. Dès que le JavaScript a été exécuté, le contenu HTML finit d’être analysé et est
-affiché.
-Ce problème précis de temps d’attente de chargement des fichiers JavaScript va pouvoir
-être résolu en grande partie grâce au téléchargement asynchrone des données qui va
-pouvoir être ordonné en précisant un attribut **async ou defer** dans nos éléments script.
-Le téléchargement asynchrone est une notion complexe et nous l’étudierons donc
-beaucoup plus tard dans ce cours. Pour le moment, retenez simplement que nous n’allons
-pouvoir utiliser les attributs async et defer que dans le cas où on fait appel à des fichiers
-JavaScript externes (c’est-à-dire à du code JavaScript stocké dans des fichiers séparés).
-C’est une raison supplémentaire qui nous fera préférer l’enregistrement du code
-JavaScript dans des fichiers séparés.
+4. Dès que le JavaScript a été exécuté, le contenu HTML finit d’être analysé et est affiché.
+Ce problème précis de temps d’attente de chargement des fichiers JavaScript va pouvoir être résolu en grande partie grâce au téléchargement asynchrone des données qui va pouvoir être ordonné en précisant un attribut **async ou defer** dans nos éléments script.
+Le téléchargement asynchrone est une notion complexe et nous l’étudierons donc beaucoup plus tard dans ce cours. Pour le moment, retenez simplement que nous n’allons
+pouvoir utiliser les attributs async et defer que dans le cas où on fait appel à des fichiers JavaScript externes (c’est-à-dire à du code JavaScript stocké dans des fichiers séparés).
+C’est une raison supplémentaire qui nous fera préférer l’enregistrement du code JavaScript dans des fichiers séparés.
 
     <script src=".js" async ou defer></script> 
     -> dans head.
 
 ## Commentaires, indentation et syntaxe de base
 
-### Généralités:
+### Afficher des informations
 
-#### Afficher des informations:
 - alert("Une deuxième instruction js"); boîte de dialogue (pop-up).
 - document.write("hello"); Affiche une information directement sur notre page, dans le navigateur à l’endroit où le lien vers
 le fichier script est fait.
 - console.log("hello"); Affiche info dans la console (F12),affiche les erreurs, vérification du contenu d'une variable.
+  
+Exemple:
 
+    alert("Une deuxième instruction js");
+    alert(5);
+
+### Syntaxe de base
+
+Avant tout, vous devez savoir qu’un code JavaScript est composé d’instructions.
 **Chaque instruction doit être terminée par un ";"**.
 
 - Texte entre guillemets: "" ou ''
 - Chiffres: rien
 - Chiffres décimaux: pas de virgule, mais "."(5.40)
 
-ex:
 
-    alert("Une deuxième instruction js");
-    alert(5);
+### Les commentaires en JS
 
-**Indentation** : pour plus de clarté
-Quand : hiérarchie?
-nouvelle indentation à l'intérieure, si instruction en contient sinon même indentation.
-
-####Les commentaires en JS:
 Il existe des commentaires monoligne et des commentaires multilignes.
 On peut utiliser la syntaxe des commentaires multi pour les mono.
 **// -> mono
 / * début et * / fin -> multi (on peut rajouter une étoile sur les lignes du milieu).**
 
-##Gestion des données
+### L' indentation
 
-###Les variables:
+Une bonne pratique est d’effectuer un retrait vers la droite équivalent à une tabulation à chaque fois qu’on écrit une nouvelle ligne de code à l’intérieur d’une instruction JavaScript. 
+**Indentation** : pour plus de clarté
+
+Quand : hiérarchie?
+nouvelle indentation à l'intérieure, si instruction en contient sinon même indentation.
+
+## Gestion des données
+
+### Les variables:
 
 ![schéma](img/variables_schéma.png)
 
@@ -331,7 +313,7 @@ Il existe deux types de variables:
 - **Globales**: utilisées dans tout le programme, déclarées à la base du code, en dehors de toute fonction.
 - **Locales**: qui ne servent que pour un programme ou fonction particuliers, déclarées au sein de ce programme ou cette fonction.
 
-####Déclaration: 
+#### Déclaration: 
 
 Pour déclarer une variable, on utilise la syntaxe : **var ou let**.
 - var ancienne syntaxe,
@@ -346,6 +328,9 @@ Règle de nommage (valable pour les fonctions)= **CamelCase** :
 - Doit contenir uniquement des lettres, _,chiffres,
 - Aucun espace
 - Est sensible à la casse (Se dit de tout programme qui fait une distinction entre les lettres majuscules et les lettres minuscules, et qui ne traite donc pas de la même façon les données ou les commandes selon qu'elles sont entrées en majuscules ou en minuscules).
+  
+Il existe des noms « réservés » en JavaScript. Vous ne pouvez pas
+utiliser ces noms comme noms pour vos variables, tout simplement car le langage JavaScript les utilise déjà pour désigner différents éléments intégrés au langage. 
 
 Exemple: la variable prénom est déclarée ainsi: 
 
@@ -357,10 +342,10 @@ Exemple :
     console.log(maPremiereVariable);
     
 
-####Initialisation:
+#### Initialisation:
 
-Initialiser = assigner une valeur pour la première fois.
-On utilise le signe **=**. = est un **opérateur d' affectation** et non d' égalité, assigne voire affecte une valeur à une variable.Permet de stocker une valeur dans une variable.
+**Initialiser**= **assigner** une valeur pour la première fois.
+On utilise le signe **=**. = est un **opérateur d' affectation** ou **d' assignation** et non d' égalité, assigne voire affecte une valeur à une variable.Permet de stocker une valeur dans une variable.
 
 Elle peut se faire:
 - en même temps que la déclaration
@@ -379,7 +364,18 @@ Exemples:
     let titre = "chat", production = "universal", annee = 2013;
 ->Déclaration de plusieurs variables sur une même ligne.
 
-####Remontée ou hoisting des variables/ 
+#### Différence entre les mots clefs  let et var
+
+Pourquoi possède-t-on deux mots clefs différents pour déclarer des variables en JavaScript ? Cela provient du fait qu’aucun langage n’est parfait ainsi que du fait que les langages informatiques ne sont pas figés mais sont des langages qui évoluent beaucoup et rapidement.
+En même temps qu’un nouveau mot clef a été créé, les créateurs du JavaScript en ont profité pour résoudre quelques problèmes liés à la déclaration de variables en utilisant var, ce qui fait que let ne va pas nous permettre de créer des variables de la même façon
+que var.
+**Il existe 3 grandes différences de comportement entre les variables déclarées avec var et avec let**.
+
+- Hoisting des variables,
+- Redéclaration de variables,
+- La portée des variables.
+  
+##### Remontée ou hoisting des variables/ 
 
 Une variable déclarée avec var peut-être manipulée en haut de code et être déclarée en fin de code car le JS va traiter les déclarations avant le reste du code JS.Ce comportement est appelé **remontée ou hoisting**, il est dorénavant jugé inadapté.
 Avec let, il faut déclarer la variable avant de l'utiliser.
@@ -402,10 +398,11 @@ var prenom = "pierre", nom = "gireaud", dpt = 83;
     nom = 25;
     ->déclaration sans valeur, puis initialisation (à éviter): var nom = ""; préférable affection valeur nulle à une variable.
 
-####La redéclaration de variable:
+##### La redéclaration de variable:
 
-Avec var, il est possible de redéclarer, plusieurs fois, la même variable pour modifier sa valeur.
-Avec let, on ne déclare qu'une seule fois.Pour changer sa valeur, il faut lui affecter une autre valeur (La nouvelle valeur écrase la précédente).
+Avec var, il est possible de redéclarer, plusieurs fois, la même variable pour modifier sa valeur en utilisant var ( ce qui avait pour effet de modifier sa vameur).
+Avec let, on ne déclare qu'une seule fois.Pour changer sa valeur, il faut lui affecter une autre valeur (La nouvelle valeur écrase la précédente), en utilisant le nom de la variable.
+Pour affecter une nouvelle valeur dans une variable déjà initialisée, on va se contenter d’utiliser à nouveau l’opérateur d’affectation =.
 **Il est possible de réaffecter une valeur de type différent dans une variable.**
 
 Exemples:
@@ -423,61 +420,86 @@ Exemples:
     let x = 4;
     x = "quatre";
 
-###Constante:
+##### La portée des variables
 
-Pour créer ou déclarer une cosntante en JS, il faut utiliser le mot clef : **const**.
-On la déclare de la même façon que let.
-**Il faut obligatoirement l' initialiser lors de sa déclaration sinon une erreur sera retournée.**
-**Valeur inchangeable**.
+(voir chapitre fonction)
 
-Exemple:
+La « portée » d’une variable désigne l’endroit où cette variable va pouvoir être utilisée dans un script. Il est un peu tôt pour vous expliquer ce concept puisque pour bien le comprendre il faut déjà savoir ce qu’est une fonction.
+Vous pouvez pour le moment retenir si vous le souhaitez que les variables déclarées avec var et celles avec let au sein d’une fonction ne vont pas avoir la même portée, c’est à-dire qu’on ne va pas pouvoir les utiliser aux mêmes endroits.
 
-    const x = 5;
+#### Quelle utilité pour les variables en pratique?
 
-##Les types:
+Les variables vont être à la base de la plupart de nos scripts JavaScript. En effet, il va être très pratique de stocker différents types d’informations dans les variables pour ensuite manipuler simplement ces informations notamment lorsqu’on n’a pas accès à ces
+informations lorsqu’on crée le script.
 
-###Quelles valeurs peuvent prendre mes variables?
+Par exemple, on va pouvoir demander à des utilisateurs de nous envoyer des données grâce à la fonction (ou la méthode pour être tout à fait précis mais nous verrons cela plus tard) prompt(). Lorsqu’on écrit notre script avec notre fonction prompt(), on ne sait pas encore ce que les utilisateurs vont nous envoyer comme données. Dans ce cas, notre script va être créé de manière à ce que les données envoyées soient stockées lors de leur envoi dans des variables qu’on définit. Cela nous permet déjà de pouvoir manipuler les dites variables et par extension les données qu’elles vont stocker.
+
+
+#### Les types
+
+Les variables JavaScript vont pouvoir stocker différents types de valeurs, comme du texte ou un nombre par exemple. Par abus de langage, nous parlerons souvent de **types de variables** JavaScript.
+En JavaScript, contrairement à d’autres langages de programmation, nous n’avons pas besoin de préciser à priori le type de valeur qu’une variable va pouvoir stocker. Le JavaScript va en effet automatiquement détecter quel est le type de la valeur stockée dans
+telle ou telle variable, et nous allons ensuite pouvoir effectuer différentes opérations selon le type de la variable, ce qui va s’avérer très pratique pour nous !
+Une conséquence directe de cela est qu’on va pouvoir stocker différents types de valeurs dans une variable au fil du temps sans se préoccuper d’une quelconque compatibilité. Par
+exemple, une variable va pouvoir stocker une valeur textuelle à un moment dans un script puis un nombre à un autre moment.
+
+
+##### Quelles valeurs peuvent prendre mes variables?
 
 Les types de valeurs contenues dans les variables en JS.Elles peuvent stocker différents types de valeur.
 On ne stocke pas de la même façon un nombre ou une chaîne de caractères dans une variable, on effectue également pas les mêmes opérations en fonction des valeurs.
 
-- **String** : chaîne de caractères, texte mis entre "" ou '' ou quotes:
+- **String** : ou chaîne de caractères. Une chaine de caractères est une séquence de caractères, ou ce qu’on appelle communément un texte.Texte mis entre "" ou '' ou quotes:
 
         let prenom = "Pierre";
         let hello = "Bonjour, nous sommes...";
-  Si l'on utilise les '', dans le cas où la chaîne de caractère contient des ', il faudra échapper avec \:
+    Si l'on utilise les '', dans le cas où la chaîne de caractère contient des ', il faudra échapper avec '\' (Notez que l’antislash est considéré comme le caractère d’échappement dans de
+    nombreux langages informatique):
 
         let dpt = "Je vis dans le \"83"\";
-  Un nombre entouré de "" est considéré comme un string (cela influence les opérations effectuées):
+    Un nombre entouré de "" est considéré comme un string (cela influence les opérations effectuées):
 
         var d = "65";
+        document.getElementById('p1').innerHTML = "Type de: + typeof nomvar; => string
 - **Number**: entiers, réels, float (attention au point):
 
         let x = 2.5;
         let y = -75;
         let z = 23;
-- **Booléen**: contient deux valeurs true ou false (valeurs de type booléenne).Un booléen est une valeur binaire.
+- **Boolean**: contient deux valeurs true ou false (valeurs de type booléenne).Un booléen est une valeur binaire.
 Surtout utilisée pour testes, vérification de condition,...
 Pour qu'une variable stocke un booléen, elle doit stocker true ou false, sans "", et sans '':
 
         let a = true;
-- **Tableau**: **array** en JS, il contient plusieurs valeurs classées dans un tableau.
-- **Objet**: contient des propriétés et des méthodes.
+
+        let resultat = 8 > 4; => l’affectation se fait en dernier et que la comparaison est faite avant.
+    Lorsqu’on écrit « 8 > 4 », (qui signifie 8 strictement supérieur à 4) on demande au JavaScript d’évaluer cette comparaison. Si la comparaison est vérifiée (si elle est vraie), alors JavaScript renvoie le booléen true. Dans le cas contraire, il renvoie le booléen false. On stocke ensuite le booléen renvoyé dans la variable let resultat.
+- **Tableau**: **array** en JS, il contient plusieurs valeurs classées dans un tableau. **Notez qu’en JavaScript, contrairement à d’autres langages, les tableaux sont avant tout des objets et sont des valeurs de type Object**.
+- **Object**: contient des propriétés et des méthodes. Les objets sont des structures complexes qui vont pouvoir stocker plusieurs valeurs en même temps.
 - **Null**: non connaissance de la valeur.
 
         let n = null;
 - **Undefined**: ne pas avoir défini de valeur pour la variable.
-- 
+
         let u = undefined;
+
+
+->Les types de valeurs Null et Undefined sont des types un peu particuliers car ils ne contiennent qu’une valeur chacun : les valeurs null et undefined.
+La valeur null correspond à l’absence de valeur ou du moins à l’absence de valeur connue. Pour qu’une variable contienne null, il va falloir stocker cette valeur qui représente donc l’absence de valeur de manière explicite.
+La valeur null va être utile dans certains cas où on souhaite explicitement indiquer une absence de valeur connue. Il va cependant falloir qu’on ait un peu plus d’expérience avec le JavaScript pour montrer de manière pratique l’intérêt de cette valeur.
+La valeur undefined correspond à une variable « non définie », c’est-à-dire une variable à laquelle on n’a pas affecté de valeur.
+Cette définition peut vous paraitre similaire à celle de null et pourtant ces deux valeurs ont une signification différente.
+**Si on déclare une variable sans lui attribuer de valeur, alors son type sera Undefined. Si on déclare une variable et qu’on lui passe null, alors son type sera Object**.
 - **NaN**: not a number.
 
         var nn = NaN;
-  
+- **Symbol**: 
+
 ![objet schéma](img/objets_schéma.png)
 
 >**-> JavaScript est conçu autour d'un paradigme simple, basé sur les objets. Un objet est un ensemble de propriétés et une propriété est une association entre un nom (aussi appelé clé) et une valeur. La valeur d'une propriété peut être une fonction, auquel cas la propriété peut être appelée « méthode ». En plus des objets natifs fournis par l'environnement, il est possible de construire ses propres objets. Ce chapitre aborde la manipulation d'objets, l'utilisation des propriétés, fonctions et méthodes, il explique également comment créer ses objets**.
 
-###Tester type de valeur:
+##### Tester type de valeur:
 
 On utilise généralement fonction **typeof**.
 Attention, renvoie parfois des valeurs contestables.
@@ -489,11 +511,119 @@ Exemple:
     "\nVariable a : " + typeof(a));
     ->voir main.js détails fonctions et usage.
 
-##Concaténation 
+### Présentation des opérateurs arithmétiques et d’affectation
 
+#### Qu’est-ce qu’un opérateur ?
+
+Un opérateur est un symbole qui va être utilisé pour effectuer certaines actions notamment sur les variables et leurs valeurs.
+Il existe différents types d’opérateurs qui vont nous servir à réaliser des opérations de types différents. 
+Les plus fréquemment utilisés sont :
+• Les opérateurs arithmétiques ;
+• Les opérateurs d’affectation / d’assignation ;
+• Les opérateurs de comparaison ;
+• Les opérateurs d’incrémentation et décrémentation ;
+• Les opérateurs logiques ;
+• L’opérateur de concaténation ;
+• L’opérateur ternaire ;
+• l’opérateur virgule.
+#### Les opérateurs arithmétiques : Calculs sur variables
+
+Il est possible de faire des calculs sur des variables de type number contenues dans différentes variables:
+
+|Opération|Symbole|
+|:-------|:------|
+|Addition|+|
+|Soustraction|-|
+|Multiplication|*|
+|Division|/|
+|Modulo (entier reste division euclidienne)|%|
+|Exponentielle (élévation à la puissance d’un nombre par un autre)| **|
+|Incrémenter var de 1, puis affecte le résultat|++|
+|Décrementer var de 1, puis affecte le résultat|--|
+
+Exemples:
+
+    let x = 6;
+    let y = 7;
+    let addition = x + y;
+
+    let x = 5;
+    x = x + 5; (10)
+    x = x + 3; (13)
+
+    var mod = 13 % 3;
+
+    let g = x ** 3; => g stocke 2^3 = 2*2*2 = 8
+**Attention à bien respecter les priorités de calcul comme en mathématiques!**
+
+#### Les opérateurs d’affectation
+
+Les opérateurs d’affectation vont nous permettre, comme leur nom l’indique, d’affecter une certaine valeur à une variable.
+Nous connaissons déjà bien l’opérateur d’affectation le plus utilisé qui est le signe =.
+Cependant, vous devez également savoir qu’il existe également des opérateurs «
+combinés » qui vont effectuer une opération d’un certain type (comme une opération arithmétique par exemple) et affecter en même temps.
+
+|Définition|Opérateur|
+|:----------|:--------|
+|Incrémenter une var de la valeur d'une seconde var, puis affecte le résultat|+=|
+|Décrémenter une var de la valeur d'une seconde var, puis affecte le résultat|-=|
+|Multiplier l'ancienne valeur de la variable, puis affecte le résultat| *=|
+|Diviser l'ancienne valeur de la variable, puis affecte le résultat| /=|
+|Modulo l'ancienne valeur de la variable, puis affecte le résultat| %=|
+
+Exemples:
+
+   var x =2;
+    x += 2; => x = x+2;
+    x -= 3; => x = x-3;
+
+    y *= x; => y = y*x;
+Ici, vous devez bien comprendre que les opérateurs d’affectation combinés nous
+permettent d’effectuer deux types d’opérations à la suite. Dans l’exemple ci-dessus, on réalise des opérations arithmétiques puis d’affectation.
+
+#### Les opérateurs d' incrémentation et de décrémentation 
+
+Incrémenter une valeur signifie ajouter 1 à cette valeur tandis que décrémenter signifie enlever 1.
+
+**A retenir**: il y a deux façons d’incrémenter ou de décrémenter une variable : 
+on peut soit incrémenter / décrémenter la valeur de la variable puis retourner la valeur de la variable incrémentée ou décrémentée (on parle alors de pré-incrémentation et de prédécrémentation), soit retourner la valeur de la variable avant incrémentation ou
+décrémentation puis ensuite l’incrémenter ou la décrémenter (on parle alors de postincrémentation et de post-décrémentation).
+
+>Cette différence d’ordre de traitement des opérations va influer sur le résultat de nombreux codes et notamment lorsqu’on voudra en même temps incrémenter ou décrémenter la valeur d’une variable et l’afficher ou la manipuler d’une quelconque façon. Tenez-en donc
+bien compte à chaque fois que vous utilisez les opérateurs d’incrémentation ou de décrémentation.
+
+|Exemple (opérateur variable| Résultat|
+|:----------------|:-----------------|
+| ++x |Pré-incrémentation : incrémente la valeur contenue dans la variable x, puis retourne la valeur incrémentée|
+| x++|Post-incrémentation : retourne la valeur contenue dans x avant incrémentation, puis incrémente la valeur de $x|
+| --x|Pré-décrémentation : décrémente la valeur contenue dans lavariable x, puis retourne la valeur décrémentée|
+| x--|Post-décrémentation : retourne la valeur contenue dans x avant décrémentation, puis décrémente la valeur de $x|
+
+Exemples:
+
+    let a = 10, b= 10, c = 20, d = 20;
+
+    document.getElementById("p1").innerHTML = "a stocke la valeur " + a++; =>
+    document.getElementById("p2").innerHTML = "b stocke la valeur " + ++b;
+    document.getElementById("p3").innerHTML = "c stocke la valeur " + c--;
+    document.getElementById("p4").innerHTML = "d stocke la valeur " + --d;
+
+    Réaffichage du contenu des variables:
+    document.getElementById('p5').innerHTML = 'a = ' + a +...
+    => a stocke la valeur de 10, b stocke la valeur 11, c stocke la valeur de 20, d stocke la valeur de 19
+    =>a= 11, b = 11,c = 19, d = 19
+
+
+
+
+
+#### Concaténation et littéraux de gabarits (template literals ou template strings)
+
+##### Concaténation
 Consiste en l' assemblage de texte et de variable (addition de chaîne de caractères).
 On utilise le signe "**+**", utilisé également pour additionner, JS fait la différence en fonction du type de valeurs qui entourent le +.
 **S'il s' agit de nombres: addition, s'il s'agit de textes : concatène**.
+Notez une chose intéressante relative à la concaténation en JavaScript ici : **si on utilise l’opérateur + pour concaténer une chaine de caractères puis un nombre, alors le JavaScript va considérer le nombre comme une chaine de caractères**.
 
 Exemples:
 
@@ -519,82 +649,48 @@ Exemples:
 
     alert("Bonjour" + \nsport);
 
-    let x = 4 + 2 + "1"; => 4 et 2 s'additionne puis concaténation avec 1: 61.
+    let x = 4 + 2 + "1"; => 4 et 2 s'additionne (les deux **opérandes**, éléments à gauche et droite de l' opérateur) puis concaténation avec 1: 61.
     let y = "1" + 2 + 4; => 124.
     let z = 2 + "un" + 4; => 2un4.
     ->distinction + addition et + concaténation.Addition nombre et chaîne de caractère, tout ce qui sera après la chaîne de caractère sera considéré commme une chapine de caractère = > pas d'addition mais concaténation!
     
     alert("variable x :" + typeof(x)); => string.
 
+##### Littéraux de gabarits 
 
-
-##Calculs sur variables
-
-Il est possible de faire des calculs sur des variables de type number:
-
-|Opération|Symbole|
-|:-------|:------|
-|Addition|+|
-|Soustraction|-|
-|Multiplication|*|
-|Division|/|
-|Modulo (entier reste division euclidienne)|%|
-|Incrémenter var de 1|++|
-|Décrementer var de 1|--|
-|Incrémenter une var de la valeur d'une seconde var|+=|
-|Décrémenter une var de la valeur d'une seconde var|-=|
-|Multiplier l'ancienne valeur de la variable| *=|
-|Diviser l'ancienne valeur de la variable| /=|
-|Modulo l'ancienne valeur de la variable| %=|
+On a vu plus tôt dans ce cours qu’il fallait en JavaScript toujours entourer nos chaines de caractères (nos textes) avec des apostrophes ou des guillemets droits.
+Il existe en fait une troisième manière introduite récemment d’entourer des chaines de caractères en JavaScript qui va utiliser **des accents graves `**.
+**La grande différence entre l’utilisation d’accents graves ou l’utilisation d’apostrophes ou de guillemets est que toute expression placée entre les accents graves va être interprétée en JavaScript. Pour le dire simplement : tout ce qui renvoie une valeur va être remplacé par sa valeur.**
+**Cela signifie notamment qu’on va pouvoir placer du texte et des variables ensemble sans avoir besoin d’utiliser d’opérateur de concaténation puisque les variables vont être interprétées, c’est-à-dire remplacées par leur valeur**.
+**Pour que cela fonctionne bien, il va cependant falloir respecter une certaine syntaxe : il va falloir placer les expressions entre ${ et }**.
 
 Exemples:
 
-    let x = 6;
-    let y = 7;
-    let addition = x + y;
+    let x= 5;
+    let y = 50;
+    alert("x contient " + x + "\ny contient " + y + \nLeur valeur somme vaut " + (x +y));
+    =>
+    alert(`x contient ${x} 
+        y contient ${y} 
+        Leur valeur somme vaut ${x +y}`);
+**Notez également que l’utilisation des littéraux de gabarits conserve les retours à la ligne et les décalages dans le résultat final**.
 
-    let x = 5;
-    x = x + 5; (10)
-    x = x + 3; (13)
+### Constante
 
-    var mod = 13 % 3;
-
-    var x =2;
-    x += 2; => x = x+2;
-    x -= 3; => x = x-3;
-
-    y *= x; => y = y*x;
-**Attention à bien respecter les priorités de calcul comme en mathématiques!**
-
-##Prompt
-
-**Fonction** qui permet de demander à l' utilisateur une information.
-Va ouvrir une boîte de dialogue qui contiendra une question et un champ vide de réponse.
+Pour créer ou déclarer une cosntante en JS, il faut utiliser le mot clef : **const**.
+On la déclare de la même façon que let.
+**Il faut obligatoirement l' initialiser lors de sa déclaration sinon une erreur sera retournée**.
+**Valeur inchangeable**.
 
 Exemple:
 
-    let age = window.prompt("Quel âge avez-vous?");
-Pour stocker la valeur saisie par l'User dans une variable, il faut attribuer ce prompt à une variable.
-La valeur saisie sera enregistrée dans la variable age.
+    const x = 5;
 
-**Attention, le prompt, renvoie toujours une chaîne de caractères.Ce qui signifie que pour faire des calculs avec cette variable, il va falloir modifier le type de la variable obtenue avec le prompt**.
-
-
-##Conversion
-
-Les fonctions **parentInt** et **parseFloat** servent à convertir une chaîne de caractères en nombre entier pour le premier, et à virgule pour le second.
-
-exemple :
-
-    age = parseInt(age);
-    age ++;
-conversion de la var age en type number, et incrémentation possible.
-
-##Les tableaux : l'objet array
+### Les tableaux : l'objet array
 
 ![tableaux](img/tableaux.png)
 
-###Les propriétés
+#### Les propriétés
 
 |Propriété|Description|
 |:--------|:----------|
@@ -602,7 +698,7 @@ conversion de la var age en type number, et incrémentation possible.
 |input|permet de faire une recherche dans le tableau à l'aide d'un expression régulière|
 |prototype|permet d' ajouter des propriétés personnalisées à l'objet|
 
-###Les méthodes standards
+#### Les méthodes standards
 
 |Méthode|Description|
 |:--------|:----------|
@@ -745,67 +841,42 @@ par ordre croissant
 par ordre décroissant
 (7) [74, 28, 17, 12, 8, 4, 1]
 
-##Les objets
+## Structures de contrôle, conditions et opérateurs de comparaison JavaScript
 
-![objet](img/objets.png)
+On appelle « structure de contrôle » un ensemble d’instructions qui permet de contrôler l’exécution du code.
+Il existe deux grands types de structure de contrôle de base qu’on retrouve dans la plupart des langages informatiques et notamment en JavaScript : **les structures de contrôle conditionnelles (ou plus simplement les « conditions ») et les structures de contrôle de boucles (ou plus simplement les « boucles »)**.
+- Les conditions vont nous permettre d’exécuter un certain nombre d’instructions si et seulement si une certaine condition est vérifiée.
+- Les boucles vont nous permettre d’exécuter un bloc de code en boucle tant qu’une condition donnée est vérifiée.
 
-Tout comme les tableaux, les objets permettent de stocker beaucoup d'informations dans une seule et même variable.
-Mais contrairement aux tableaux, on ne va pas utiliser un index.
-
-###Création d'un objet
-
-Prenons un tableau qui contient les informations concernant une personne:
-
-    const client = ["jean","pierre","0687440005,"vandingenenannesophie@gmail.com"];
-
-Toutes les informations sont enregistrées dans une seule et même variable,mais ça n'est pas clair.
-
-Pour pouvoir donner une étiquette aux données présentes dans une variable, nous allons utiliser un objet:
-
-    const client= {
-        prenom : "jean",
-        nom : "pierre",
-        telephone : "0687440005",
-        mail : "vandingenenannesophie@gmail.com
-    };
-**Un objet s'ouvre avec des accolades, le nom des propriétés sera suivi de  :puis d'une valeur.**
-
-####Ajout d'une propriété à un objet existant:
-
-Ajoutons la ville ->
-
-    const client = {
-        prenom:"",
-        nom : "",
-        telephone : "",
-        mail :""
-    };
-    cleint.ville = "Lille";
-**Pour ajouter un champ, une nouvelle instruction, le nom de la variable qui contient l'objet, un "." est égal à une valeur.**
-
-####Modification d'une valeur d'une propriété existante:
-
-**On appelle la clé dont nous souhaitons changer la valeur, puis nous lui affectons une nouvelle valeur.**
-
-    client.telephone = "nvl val";
-
-###Lire un objet
-
-Pour accèder à la valeur d'une des étiquettes, il suffit de faire ceci :
-
-    console.log(client.nom);
-nomvar.propriété de la valeur souhaitée.
->console.log() est une méthode de l’objet console en JavaScript qui est utilisée pour afficher tout type de variables ou bien des messages devant être affichés à l’utilisateur dans la console d’un navigateur ou dans le terminal.Pour afficher le contenu des variables en JavaScript, on utilise la méthode console.log en passant autant de variables qu’on veut en paramètres : console.log(permiere_variable, deuxieme_variable, ...).
-
-##Les boucles
+### Les boucles
 
 Faire répèter à l'ordinateur une série d'instructions tant qu'une condition est respectée.
+Les boucles vont nous permettre d’exécuter plusieurs fois un bloc de code, c’est-à-dire d’exécuter un code « en boucle » tant qu’une condition donnée est vérifiée et donc ainsi nous faire gagner beaucoup de temps dans l’écriture de nos scripts.
+Lorsqu’on code, on va en effet souvent devoir exécuter plusieurs fois un même code.
+Utiliser une boucle nous permet de n’écrire le code qu’on doit exécuter plusieurs fois qu’une seule fois.
 
-- while
-- for
-- ...
-  
-###While
+Nous disposons de six boucles différentes en JavaScript :
+
+• La boucle while (« tant que ») ;
+• La boucle do… while (« faire… tant que ») ;
+• La boucle for (« pour ») ;
+• La boucle for… in (« pour… dans») ;
+• La boucle for… of (« pour… parmi ») ;
+• La boucle for await… of (« pour -en attente-… parmi »).
+
+Le fonctionnement général des boucles est toujours le même : on pose une condition qui sera généralement liée à la valeur d’une variable et on exécute le code de la boucle « en boucle » tant que la condition est vérifiée.
+Pour éviter de rester bloqué à l’infini dans une boucle, vous pouvez donc déjà noter qu’il faudra que la condition donnée soit fausse à un moment donné (pour pouvoir sortir de la boucle).
+**Pour que notre condition devienne fausse à un moment, on pourra par exemple incrémenter ou décrémenter la valeur de notre variable à chaque nouveau passage dans la boucle (ou modifier la valeur de notre variable selon un certain schéma)**.
+
+Les boucles vont donc être essentiellement composées de trois choses:
+
+• Une valeur de départ qui va nous servir à initialiser notre boucle et nous servir de compteur ;
+• Un test ou une condition de sortie qui précise le critère de sortie de la boucle ;
+• Un itérateur qui va modifier la valeur de départ de la boucle à chaque nouveau passage jusqu’au moment où la condition de sortie est vérifiée. Bien souvent, on incrémentera la valeur de départ
+
+#### While
+
+La boucle while (« tant que » en français) va nous permettre de répéter une série d’instructions tant qu’une condition donnée est vraie c’est-à-dire tant que la condition de sortie n’est pas vérifiée.
 
 Exemple:
 Demander à l'user de saisir son âge
@@ -817,9 +888,9 @@ Demander à l'user de saisir son âge
     }
 
     console.log("vous avez " + age + " ans.");
-Age demandé, puis :
-"tant que l' âge n'est pas un nombre (is NaN),alors on demande l'âge de nouveau.
-La boucle ne s'arrêtera qu'une fois que la condition, dans parenthèse du while, n'est plus respectée : âge sera un nombre.
+    ->Age demandé, puis :
+    "tant que l' âge n'est pas un nombre (is NaN),alors on demande l'âge de nouveau.
+    La boucle ne s'arrêtera qu'une fois que la condition, dans parenthèse du while, n'est plus respectée : âge sera un nombre.
 
 Exemple :
 Exécuter la boucle un nombre défini de fois.
@@ -830,26 +901,76 @@ Exécuter la boucle un nombre défini de fois.
         cpt++;
         console.log(cpt);
     }
-La boucle s' exécute tant que le compteur est plus petit que 20.On incrémente le compteur de 1 à chaque tour.
+    ->La boucle s' exécute tant que le compteur est plus petit que 20.On incrémente le compteur de 1 à chaque tour.
 
 **Attention à bien penser à incrémenter,sion boucle infinie!**.
 
-###For
+#### do… while
+
+La boucle do… while (« faire… tant que ») est relativement semblable à la boucle while dans sa syntaxe.
+La grande différence entre les boucles while et do… while va résider dans l’ordre dans lequel vont se faire les opérations.
+**En effet, lorsqu’on utilise une boucle do… while, le code de la boucle va être exécuté avant l’évaluation de la condition de sortie**. Cela signifie qu’à la différence de la boucle while, on effectuera toujours un passage dans une boucle do… while même si la condition de sortie n’est jamais vérifiée et donc le code de la boucle sera toujours exécuté au moins une fois.
+
+Exemple:
+
+    do{
+        docuement.getElementById("p2").innerHTML +=
+        "a stocke la valeur" + a + "lor du passage n°" + (a + 1) + "dans la boucle<br>";
+        a++;
+    }
+    while(a<10);
+
+**Il va donc être intéressant d’utiliser une boucle do… while plutôt qu’on boucle while lorsque notre script a besoin que le code dans notre boucle s’exécute au moins une fois pour fonctionner**.
+
+#### For
 
 ![for](img/for.png)
 
+La boucle for (« pour » en français) est structurellement différente des boucles while et do… while puisqu’on va cette fois-ci initialiser notre variable à l’intérieur de la boucle.
+La boucle for utilise une syntaxe relativement condensée et est relativement puissante ce qui en fait la condition la plus utilisée en JavaScript.
+
 Cette boucle est un peu particulière, elle a dans ses paramètres un **index, une condition,et une incrémentation**.
 C'est la boucle utilisée pour parcourir un tableau bien souvent.
+Une boucle for contient trois « phases » à l’intérieur du couple de parenthèses : une phase d’initialisation, une phase de test (condition de sortie) et une phase d’itération (généralement une incrémentation). Chaque phase est séparée des autres par un pointvirgule.
+
+Exemple:
 
     for(let i=0; i<liste.lenght ; i++){
         console.log(liste[i]);
     }
-->initialisation : let i=0 = initialisation de l'index qui va être incrémenté.
-->condition : i<liste.lenght = condition qui doit être respectée pour que la boucle continue.
-->incrémentation : i++ = incrémentaiton de l'index.
-Cette boucle passe par chaque case du tableau liste et afficher ce qu'il contient en console.
+    ->initialisation : let i=0 = initialisation de l'index qui va être incrémenté.
+    ->condition : i<liste.lenght = condition qui doit être respectée pour que la boucle continue.
+    ->incrémentation : i++ = incrémentaiton de l'index.
+    Cette boucle passe par chaque case du tableau liste et afficher ce qu'il contient en console.
 
-####Portée de la variable ou scope:
+>Notez qu’on utilise généralement la lettre **« i »** (pour « iterator ») dans les boucles en  général et particulièrement au sein des boucles for pour les reconnaitre plus rapidement  dans un script. Cependant, ce n’est pas obligatoire et vous pouvez utiliser n’importe quel  autre nom de variable.
+#### Utiliser une instruction continue pour passer directement à l’itération suivante d’une boucle
+
+Pour sauter une itération de boucle et passer directement à la suivante, on peut utiliser une **instruction continue**. Cette nstruction va nous permettre de sauter l’itération actuelle
+et de passer directement à l’itération suivante.
+
+Cette instruction peut s’avérer très utile pour optimiser les performances d’une boucle et économiser les ressources lorsqu’on utilise une boucle pour rechercher spécifiquement certaines valeurs qui répondent à des critères précis.
+
+Exemple:
+On pourrait imaginer qu’on ne souhaite afficher de message que pour les valeurs paires de let i. On va donc utiliser une
+instruction continue pour passer directement à l’itération suivante si let i contient une valeur impaire.
+
+    for(let = 0; i < 10; i++){
+        if(i % 2 != 0){
+            continue;
+        }
+        document.getElementById("p1").innerHTML += txt;
+    }
+    ->le += permet de rajouter au p1 le txt
+
+Cette instruction continue va indiquer au JavaScript qu’il doit sauter l’itération de boucle actuelle et passer immédiatement à la suivante.
+
+#### Utiliser une instruction break pour sortir prématurément d’une boucle
+
+On va également pouvoir complètement stopper l’exécution d’une boucle et sortir à un moment donné en utilisant une instruction break au sein de la boucle.
+Utiliser cette instruction peut à nouveau s’avérer très intéressant pour optimiser les performances de notre script lorsqu’on utilise une boucle pour chercher une valeur en particulier en itérant parmi un grand nombre de valeurs.
+
+#### Portée de la variable ou scope:
 
 Dans l'exemple précédent nous déclarons la variable i dans la boucle for.Les variables déclarées avec let ne sont utilisables que dans la structure dans laquelle elles sont déclarées.
 
@@ -863,7 +984,12 @@ Exemple:
 **Elle ne connaît pas i car déclarée dans for donc non utilisable en dehors.**
 **Valable pour tous les blocs, if, while,...**
 
-##Les conditions
+#### Les boucles for… in, for… of et for await…of
+
+Les boucles for… in, for… of et for await…of vont être utilisées pour parcourir des objets. 
+
+
+### Les conditions
 
 ![if](img/if.png)
 
@@ -874,15 +1000,20 @@ Exemple:
 Structures de contrôle, qui permettent de contrôler les instructions en fonction de l'évolution du programme.
 Permet d' effectuer des actions en fonction de paramètres, afin de dynamiser le site et ajouter des intéractions.
 
-Il en existe deux sortes : **conditions et boucles**.
-
 Une condition est un test que va effectuer le programme, et nous allons lui indiquer ce qu'il doit faire si cette condition est vraie,ou faire si fausse.
+• La condition if (si) ;
+• La condition if… else (si… sinon) ;
+• La condition if… elseif… else (si… sinon si… sinon).
 
-###Comment JavaScript compare différentes valeurs?
+#### Comment JavaScript compare différentes valeurs?
 
 Le JS saît comparer différentes valeurs entre elles. A chaque fois que l'on compare différentes valeurs, le JS renvoie un booléen:  soit valeur true ou soit false.
+**Pour bien utiliser les opérateurs de comparaison et comprendre tout leur intérêt, vous devez bien vous rappeler que lorsqu’on utilise un opérateur de comparaison, le JavaScript va automatiquement comparer la valeur à gauche de l’opérateur à celle à droite selon l’opérateur de comparaison fourni et renvoyer le booléen true si la comparaison est validée ou false si elle ne l’est pas.
+Il est essentiel de bien comprendre cela car nos conditions vont s’appuyer sur cette valeur booléenne pour décider si un code doit être exécuté ou pas**.
+
 
 Exemples:
+
 Si l'user a plus de 18 ans, on va lui dire qu'il est majeur, sinon, on lui dira qu'il est mineur.
 
     let age = window.prompt("Quel âge avez-vous?");
@@ -908,7 +1039,7 @@ Si l'user a plus de 18 ans, on va lui dire qu'il est majeur, sinon, on lui dira 
 
 Pour effectuer un test à l' intérieur d'une condition, nous aurons besoin d' **opérateurs de comparaison**.
 
-###Les opérateurs
+#### Les opérateurs de comparaison
 
 Voici les différents opérateurs possibles pour effectuer une comparaison entre deux variables :
 
@@ -918,19 +1049,40 @@ Voici les différents opérateurs possibles pour effectuer une comparaison entre
 |!=|différent de (en valeur)|
 |===|strictement égal à (en valeur ou en type)|
 |!==|strictement différent (en valeur ou en type)|
-|>|supérieur|
+|>|valeur strictement supérieur|
 |>=|supérieur ou égal|
-|<|inférieur|
+|<|valeur strictement inférieur|
 |<=|inférieur ou égal|
+|<>|permet également de tester la différence en valeurs|
+
+La première chose à bien comprendre ici est que les opérateurs de comparaison ne nous servent pas à indiquer au JavaScript que tel opérande est supérieur, égal, ou inférieure à tel autre opérande.
+>Note : les opérandes sont les valeurs de chaque côté d’un opérateur.
+
+Au contraire, lorsqu’on utilise un opérateur de comparaison on demande au JavaScript de  comparer les deux opérandes selon l’opérateur choisi (on parle également « d’évaluer » la comparaison) et de nous dire si cette comparaison est vérifiée (c’est-à-dire si elle est vraie d’un point de vue mathématique) ou pas.
+**Dans le cas où la comparaison est vérifiée, le JavaScript renvoie le booléen true. Dans le cas contraire, le booléen false est renvoyé**.
+**Revenons à nos opérateurs. Tout d’abord, notez que notre « égal » mathématique
+(l’égalité en termes de valeurs) se traduit en JavaScript par le double signe égal ==**.
+Ensuite, certains d’entre vous doivent certainement se demander ce que signifie le triple égal. Lorsqu’on utilise **un triple égal ===, on cherche à effectuer une comparaison non seulement sur la valeur mais également sur le type des deux opérandes**.
 
 Exemples:
 
     4 == "4" => true car même valeur.
     4 === "4" => false, valeur ok mais type différents.
 
-###If Else
+#### Les conditions : If Else
 
 Structure conditionnelle qui va permettre de tester une condition et de réaliser des instructions différentes selon qu'elle est vraie ou fausse.
+La condition if est l’une des conditions les plus utilisées et est également la plus simple à appréhender puisqu’elle va juste nous permettre d’exécuter un bloc de code si et seulement si le résultat d’un test vaut true.
+>Comparaison = test
+
+La condition if est une structure conditionnelle limitée par définition puisqu’elle ne nous permet d’exécuter un bloc de code que dans le cas où le résultat d’un test est évalué à true mais elle ne nous offre aucun support dans le cas contraire.
+La structure conditionnelle if…else (« si… sinon » en français) va être plus complète que la condition if puisqu’elle va nous permettre d’exécuter un premier bloc de code si un test renvoie true ou un autre bloc de code dans le cas contraire.
+Notez la syntaxe de la condition if…else : on place notre comparaison et on effectue notre test dans le if mais dans aucun cas on ne mentionne de test dans le else.
+Si le test de notre condition est validé, le code dans le if va s’exécuter et le code dans le else va alors être ignoré.
+
+La condition if…else if…else (« si…sinon si…sinon ») est une structure conditionnelle encore plus complète que la condition if…else puisqu’elle va nous permettre cette fois-ci de générer et de prendre en charge autant de cas que l’on souhaite.
+En effet, nous allons pouvoir écrire autant de else if que l’on veut dans notre
+condition if…else if…else et chaque else if va posséder son propre test.
 
     if(condition){
         instruction si vraie;
@@ -943,7 +1095,7 @@ Structure conditionnelle qui va permettre de tester une condition et de réalise
     if(heure <= 20 == true){
         alert("Bonjour");
     };
-    ->comparaison 18 à 20=>envoie valeur true ou false puis si JS renvoie bien true ( == true)=> exécution alert
+    ->comparaison (ou le « test ») 18 à 20=>envoie valeur true ou false puis si JS renvoie bien true ( == true)=> exécution alert
 
     if(typeof(heure) == "number" == true){
         alert("c'est le matin");
@@ -963,16 +1115,52 @@ L'on peut enchaîner les if:
     else{
         console.log();
     }
+**vous devez savoir que toute valeur évaluée par le JavaScript dans un contexte booléen va être évaluée à true à l’exception des valeurs suivantes qui vont être évaluées à false**:
 
-###Conditions multiples et opérateurs logiques
+• Le booléen false ;
+• La valeur 0 ;
+• Une chaine de caractères vide ;
+• La valeur null ;
+• La valeur undefined ;
+• La valeur NaN (« Not a Number » = « n’est pas un nombre »).
+
+#### Inverser la valeur logique d’un test
+
+Dans les exemples ci-dessus, le code placé dans notre condition n’est exécuté que si le résultat de la comparaison est true.
+Dans certaines situations, nous préférerons créer nos conditions de telle sorte à ce que le code dans la condition soit exécuté si le résultat de la comparaison est false.
+Nous allons pouvoir faire cela de deux manières : soit en utilisant l’opérateur logique inverse ! que nous étudierons dans la leçon suivante, soit en comparant explicitement le résultat de notre comparaison à false.
+Pour inverser la valeur logique d’un test, c’est-à-dire pour exécuter le code de la condition uniquement lorsque notre première comparaison est évaluée à false, il suffit donc de comparer le résultat de cette première comparaison à la valeur false.
+Si notre première comparaison n’est pas vérifiée et est évaluée à false, alors le test de notre condition va devenir if(false == false) ce qui va être finalement évalué à true et donc le code de notre condition va bien être exécuté !
+Ici, je vous conseille d’utiliser les parenthèses pour être certain de l’ordre dans lequel les différentes opérations vont se faire. Cela évite d’avoir à se soucier de l’ordre de traitement des différents opérateurs. En effet, en utilisant les parenthèses, on peut « forcer » l’ordre des opérations afin que la comparaison de base se fasse bien en premier pour ensuite pouvoir comparer son résultat à false.
+
+Exemple:
+
+    let x = 4;
+    let y = 0;
+
+    if((x > 1) == false){
+        instruction;
+    };
+    ->Dans ces exemples, le JavaScript commence par évaluer les comparaisons entre parenthèses et renvoie true ou false. Ensuite, on compare le résultat renvoyé par JavaScript à false. Dans le cas où JavaScript a évalué la comparaison de base à false, on a donc false == false ce qui est évalué à true puisque c’est bien le cas et on exécute le code de la condition.
+
+### Conditions multiples, opérateurs logiques, précédence et règles d’associativité des opérateurs en JavaScript
 
 Les conditions dans les structure de contrôle peuvent être multiples.
 C'est là qu'interviennent les **ET, OU et CONTRAIRE ou NON**.
 Cela permet d' effectuer plusieurs comparaisons.
+**Ce type d’opérateurs va nous permettre d’effectuer plusieurs comparaisons dans nos conditions ou d’inverser la valeur logique du résultat d’un test.
+Nous parlerons également de précédence et d’associativité des opérateurs, c’est-à-dire de l’ordre et de la façon selon lesquels le JavaScript va traiter les opérateurs**.
+
+->Les opérateurs logiques sont des opérateurs qui vont principalement être utilisés avec des valeurs booléennes et au sein de conditions.
+
+Le JavaScript supporte trois opérateurs logiques : l’opérateur logique « ET », l’opérateur logique « OU » et l’opérateur logique « NON ».
+Les opérateurs logiques « ET » et « OU » vont nous permettre d’effectuer plusieurs comparaisons dans une condition. Si on utilise l’opérateur « ET », toutes les comparaisons devront être évaluées à true pour que le test global de la condition retourne true. Dans le cas où n utilise l’opérateur logique « OU », il suffira qu’une seule des comparaisons soit évaluée à true pour exécuter le code dans la condition.
+Finalement, l’opérateur logique « NON » va nous permettre d’inverser le résultat logique d’un test dans une condition, ce qui signifie que ce qui a été évalué à true renverra false avec l’opérateur logique « NON » et inversement pour ce qui a été évalué à false.
 
 #### &&  AND
 
-Permet d' avoir un intervalle de comparaisopn pour une variable.
+Permet d' avoir un intervalle de comparaison pour une variable.
+Lorsqu’il est utilisé avec des valeurs booléennes, renvoie true si toutes les comparaisons sont évaluées à true ou false sinon.
 
 Exemple:
 
@@ -984,6 +1172,8 @@ Exemple:
 
 #### || OR
 
+Lorsqu’il est utilisé avec des valeurs booléennes, renvoie true si au moins l’une des comparaisons est évaluée à true ou false sinon.
+
     let prenom = "paul";
     if(age >= 100 || prenom === "paul"){
         ;
@@ -992,7 +1182,8 @@ Exemple:
 
 #### Contraire, NON
 
-Permet de lier le résultat des comparaisons, ainsi les comparaisons évaluées de base à false, vont être évaluée à true et inversement. 
+Permet de lier le résultat des comparaisons, ainsi les comparaisons évaluées de base à false, vont être évaluée à true et inversement.
+Renvoie false si une comparaison est évaluée à true ou renvoie true dans le cas contraire.
 
 Exemple :
 
@@ -1002,11 +1193,92 @@ Exemple :
     };
     ->on lie le résultat envoyé par Js, qui est: false car 18>16, on lie donc, le résultat renvoyé devient true => true = true
 
+#### Précédence et règles d’associativité des opérateurs
+
+Vous pouvez noter que j’ai dans ma troisième condition utilisé un deuxième couple de parenthèses pour être sûr que l’opérateur ! porte bien sur le résultat de la comparaison x <= 2 et non pas seulement sur x, ce qui produirait un résultat différent.
+**Pour comprendre cela, il faut savoir que les différents opérateurs de chaque type ont une priorité de traitement différente. Cela signifie que le JavaScript va d’abord traiter tel opérateur, puis tel autre et etc**
+Cet ordre de priorité est appelé **« précédence »**. En plus de cela, vous devez également savoir que les opérateurs vont avoir différents **sens d’associativité**.
+
+L’associativité détermine l’ordre dans lequel des opérateurs de même précédence sont évalués et va pouvoir se faire par la droite ou par la gauche. Une associativité par la gauche signifie qu’on va commencer réaliser les opérations en partant de la gauche et vers la droite tandis qu’une associativité par la droite signifie qu’on va commencer par la droite.
+
+Voici un tableau classant les
+différents opérateurs vus jusqu’à présent (et quelques autres que nous allons voir très vite) de la plus haute (0) à la plus basse précédence (10), c’est-à-dire selon leur ordre de traitement par le JavaScript.
+Les opérateurs ayant le même chiffre de précédence vont être traités selon la même priorité par le JavaScript et il faudra alors regarder leur associativité qui est également précisée. Lorsque l’associativité est « gauche » dans la tableau ci-dessous, cela signifie de gauche vers la droite et inversement pour « droite ».
+
+|Précédence |Opérateur (nom)|Opérateur (symbole) |Associativité |
+|:---------|:---------|:---------|:---------|
+|0|Groupement|(...)|non applicable|
+|1|Post-incrémentaion|...++|non applicable|
+|1|Post-décrementation|...-|non applicable|
+|2|NON (logique)|!...|droite|
+|2|Pré-incrémentation|++...|droite|
+|2|Pré-décrémentation|--...|droite|
+|3|Exponentiel|...**...|droite|
+|3|Multiplication|...*...|gauche|
+|3|Division|.../...|gauche|
+|3|Modulo|...%...|gauche|
+|4|Addition|...+...|gauche|
+|4|Soustraction|...-...|gauche|
+|5|Inférieur strict|...<...|gauche|
+|5|Inférieur ou égal|...<=...|gauche|
+|5|Supérieur strict|...>...|gauche|
+|5|Supérieur ou égal|...>=...|gauche|
+|6|Egalité en valeur|...==...|gauche|
+|6|Inégalité en valeur|...!=...|gauche|
+|6|Egalité (valeur et type)|...===...|gauche|
+|6|Inégalité (valeur ou type)|...!==...|gauche|
+|7|ET (logique) |&&|gauche|
+|8|OU (logique) | '||' |gauche|
+|9|Ternaire|...?...:...|droite|
+|10|Affectation (simple ou
+combiné)|...=...,...+=...,...-=..., etc|droite|
+
+### Conditions condensées avec l' opérateur ternaire
+
+Etudions le fonctionnement d' un opérateur de comparaison: **l' opérateur ternaire: ?**.
+
+#### L’opérateur ternaire et les structures conditionnelles ternaires
+
+Les structures conditionnelles ternaires (souvent simplement abrégées “ternaires”) correspondent à une autre façon d’écrire nos conditions en utilisant une syntaxe basée sur l’opérateur ternaire ?: qui est un opérateur de comparaison.
+Les ternaires vont utiliser une syntaxe très condensée et nous allons ainsi pouvoir écrire toute une condition sur une ligne et accélérer la vitesse d’exécution de notre code.
+
+**Les structures ternaires vont se présenter sous la forme suivante : test ? code à exécuter si true : code à exécuter si false**.
+
+Exemple:
+
+    let x = 15;
+    let y = -20;
+
+    document.getElementById("p1").innerHTML = 
+    x >= 10 ? "x supérieur à 10" : "y stric. inférieur à 10"; => x supérieur à 10
+
+    ->Les codes document.getElementById('p1').innerHTML
+    = et document.getElementById('p2').innerHTML = vont nous permettre d’afficher le résultat de nos ternaires directement dans les deux paragraphes de notre fichier HTML portant les id='p1' et id='p2'. Une nouvelle fois, nous n’allons pas nous préoccuper de ces lignes ici qui ne sont pas celles qui nous intéressent.Notre première structure ternaire est la suivante : x >= 10 ? 'x supérieur à 10' : 'x stric.
+    inférieur à 10'. Littéralement, cette ligne demande au JavaScript « compare la valeur de let     x au chiffre 10 en utilisant l’opérateur supérieur ou égal. Dans le cas où le test est validé,     renvoie le texte situé après le signe ?. Dans le cas contraire, renvoie le texte situé après     le signe : ».
+    Notre variable let x stocke ici le nombre 15 qui est bien supérieur à 10. Le test va donc     être validé et le message « x supérieur à 10 » va être affiché au sein du paragraphe portant
+    l’id='p1'.
+    Dans notre deuxième ternaire, on réutilise le même test mais on teste cette fois-ci la valeur de la variable let y. Cette variable contient la valeur -20 qui n’est pas supérieure ou égale
+    à 10. C’est donc le message situé après les deux points qui sera affiché dans notre paragraphe portant l’id='p2' à savoir « y stric. inférieur à 10 ».
+    Equivaut à :
+
+    if(x >= 10){
+        document.getElementById("p1").innerHTML = "x supérieur à 10;
+    }
+    else{
+        document.getElementById("p1).innerHTML = "y stric. inférieur à 10";
+    };
 ### Switch
 
+Nous allons nous intéresser à une autre structure de contrôle de base du JavaScript : l’instruction switch qu’on va pouvoir utiliser dans certaines situations précises à la place d’une condition if…else if…else.
 Permet de comparer la valeur d'une variable avec une multitude de valeurs possibles et d'agir en fonction.
 Pratique lors de la comparaison d'une variable à plusieurs valeurs.
 **Elle ne teste que l'égalité**.
+**Dans certaines (rares) situations, il va pouvoir être intéressant d’utiliser un switch plutôt qu’un if…else if…else car cette nstruction peut rendre le code plus clair et légèrement plus
+rapide dans son exécution**.
+
+La première chose à noter ici est qu’on doit fournir une variable sur laquelle on va «switcher ».
+Ensuite, l’instruction switch va s’articuler autour de case qui sont des « cas » ou des «issues» possibles. Si la valeur de notre variable est égale à celle du case, alors on exécute le code qui est à l’intérieur.
+
 
 Exemple:
 
@@ -1027,6 +1299,7 @@ Exemple:
 ->Chaque valeur possible se trouve avec un case, ici comparaison var nombre à des chiffres donc pas de "", si chaîne de caractères ne pas les oublier.
 
 **Default permet de définir une action si aucune des valeurs des case ne correspond au contenu de la variable.Il est optionnel**.
+**Sans break, le JavaScript continuerait à tester les différents autres case du switch même si un case égal à la valeur de la ariable a été trouvé, ce qui ralentirait inutilement le code et pourrait produire des comportements non voulus**.
 
 L'on peut définir une même action pour plusieurs valeurs différentes :
 
@@ -1036,40 +1309,232 @@ L'on peut définir une même action pour plusieurs valeurs différentes :
         break;
     }
 
-##Les fonctions
+## Les fonctions
+
+Une fonction correspond à un bloc de code nommé et réutilisable et dont le but est d’effectuer une tâche précise. En JavaScript, comme dans la plupart des langages les supportant, nous allons très souvent utiliser des **fonctions** car celles-ci possèdent de nombreux atouts que l’on va énumérer par la suite.Utiles, quand le code devient long et répétitif.
 
 ![fonctions](img/fonctions.png)
-
-Lorsque le code devient trop long et répétitif, il est possible de l'organiser en petites unités appelées **fonctions**, qui vont s'occuper d'une tâche précise.
 
 Leurs avantages:
 - Raccourcir le code en évitant de répéter des lignes de code identiques
 - Appeler une fonction suite à une action de l'user
 - ...
-  
+
+Le langage JavaScript dispose de nombreuses fonctions que nous pouvons utiliser pour effectuer différentes tâches. Les fonctions définies dans le langage sont appelées fonctions prédéfinies ou fonctions prêtes à l’emploi car il nous suffit de les appeler pour
+nous en servir.
+**Pour être tout à fait précis, les fonctions prédéfinies en JavaScript sont des méthodes**.
+Une méthode est tout simplement le nom donné à une fonction définie au sein d’un objet.
+Pour le moment, nous allons considérer que ce sont simplement des fonctions.
+L’intérêt principal des fonction prédéfinies est de nous permettre de réaliser des opérations complexes de manière très simple : **en les appelant*. En effet, vous devez bien comprendre que derrière ces noms de fonctions se cachent des codes parfois longs et complexes qui vont être exécutés lorsqu’on appelle la fonction et qui vont permettre de réaliser une opération précise (générer un nombre aléatoire, etc.).
+
+**Pour exécuter le code caché derrière la fonction, il suffit de l’appeler ou de « l’invoquer ».Pour faire cela, on n’a qu’à écrire le nom de la fonction suivi d’un couple de parenthèses et éventuellement préciser des arguments entre les parenthèses**.
+
 Exemple:
 
     function sayHello(nom,prenom){
         const hello = "bonjour ${prenom} ${nom};
         returnhello;
     }
-->cette fonction retourne une chaîne de caractère
-**function**: création de fonction
-sayHello: nom de la fonction
-(nom,prenom): **arguments**,permettent de spécifier que pour utiliser notre fonction,il faudra lui apporter ces deux arguments, ces deux données
-**return**hello: la fonction va répondre quelque chose
+ ->cette fonction retourne une chaîne de caractère
+ **function**: création de fonction
+ sayHello: nom de la fonction
+ (nom,prenom): **arguments**,permettent de spécifier que pour utiliser notre fonction,il faudra lui apporter ces deux arguments, ces deux données
+ **return**hello: la fonction va répondre quelque chose
 
-###Les arguments
+### Les arguments
 
-Optionnels,une fonction peut ne pas avoir besoin de données d'entrée.La parenthèse sera vide.
-Il peut y avoir autant que nécessaire.
+Les arguments d’une fonction sont des valeurs qu’on va passer à notre fonction afin qu’elle fonctionne normalement ou pour préciser le comportement qu’elle doit adopter. Certaines fonctions ne vont pas nécessiter d’arguments, d’autres vont avoir besoin d’un argument,
+d’autres de deux, etc. De plus, certains arguments vont être obligatoires tandis que d’autres vont être facultatifs.
 
-###Le retour
+### Les fonctions personnalisées
 
-**Return** optionnel.
-Permet aussi de stopper une fonction,si un bout de code est écrit après il ne sera pas exécuté.
+En plus des nombreuses fonctions JavaScript prédéfinies et immédiatement utilisables, nous allons pouvoir créer nos propres fonctions en JavaScript lorsque nous voudrons effectuer une tâche très précise.
+Lorsqu’on crée une fonction en JavaScript, celle-ci n’est utilisable que par les scripts qui ont accès à sa définition. Une fonction n’est pas « magiquement incluse » dans le langage. Créer nos propres fonctions va nous permettre de gagner du temps de développement et
+de créer des scripts plus facilement maintenables et plus sécurisés.
 
-###Réutiliser la fonction
+Pour pouvoir utiliser une fonction personnalisée, en pratique, il faut déjà la définir. **Pour définir une fonction, on va utiliser le mot clef function suivi du nom que l’on souhaite donner à notre fonction puis d’un couple de parenthèses dans lesquelles on peut
+éventuellement définir des paramètreset finalement d’un couple d’accolades dans lesquelles on va placer le code de notre fonction**.
+Une fois notre fonction définie, on n’aura plus qu’à l’appeler pour l’utiliser.
+
+Exemple:
+
+    function aleatoire(){
+        return Math.random() * 100;
+    };
+    function multiplication(nombre1, nombre2){
+        return nombre1 + " * " + nombre2 + " * " + " = " + (nombre1 * nombre2);
+    };
+
+    document.getElementById("p1").innerHTML = aleatoire();
+    document.getElementById("p2").innerHTML = multiplication(5, 10);
+    ->on les appelle, exécute, ou invoque. On fournit ici deux arguments à multiplication. Ces arguements prennent la place des paramètres.
+    ->Ici, nous créons deux fonctions qu’on appelle aleatoire() et multiplication(). Entre les  accolades, on définit le code qui devra être exécuté lorsqu’on appelle nos fonctions. Le but de notre fonction aleatoire() va être de renvoyer un nombre aléatoire entre 0 et 100. Pour cela, on commence par utiliser random() qui retourne un nombre aléatoire compris     entre 0 et 1 et on multiplie la valeur retournée par 100 pour avoir un nombre entre 0 et 100 tout simplement.
+    ->Le but de notre deuxième fonction multiplication() est de renvoyer le résultat de la multiplication de deux nombres non connus lors de la définition de la fonction.Ici, il va donc falloir passer ces deux nombres à notre fonction lorsqu’on l’appelle afin qu’elle puisse les multiplier et renvoyer le résultat. Lors de l’appel, nous allons donc passer ces nombres en arguments de notre fonction, entre les parenthèses.
+Cependant, on est ici face à un problème : comment expliciter le fait que notre fonction doit multiplier deux nombres entre eux lorsqu’on ne les connait pas à l’avance ?
+Nous allons pour cela utiliser ce qu’on appelle des **paramètres**. **Les paramètres des fonctions sont des « prête-noms » qui seront remplacés par les valeurs effectives passées en argument lorsqu’on appelle notre fonction**. L’idée ici est qu’on va pouvoir donner n’importe quel nom à nos paramètres : je les appelle ici « nombre1 » et « nombre2 » mais je pourrais aussi bien les appeler « Pierre » et « Math» ou « x » et « y ». L’important va être de conserver les mêmes noms entre les parenthèses et dans le code de la fonction.
+Une nouvelle fois, lorsqu’on appelle ensuite notre fonction, les arguments passés (c’està-dire les valeurs effectives) vont venir se substituer aux paramètres.
+
+Notez qu’on utilise également ici pour nos deux fonctions une instruction **return**. Cette instruction va permettre à nos fonctions de retourner une valeur qu’on va ensuite pouvoir manipuler.
+
+Les noms des fonctions suivent les mêmes règles que ceux des variables. Vous pouvez donc donner le nom que vous voulez à votre fonction du moment que celui-ci commence par une lettre, ne contient pas d’espace ni de caractères spéciaux et n’est pas déjà pris nativement par le JavaScript.
+
+### Portée des variables et valeurs de retour des fonctions
+
+#### La notion de portée des variables : définition
+
+La **portée** d’une variable désigne l’espace du script dans laquelle elle va être accessible. En effet, toutes nos variables ne sont pas automatiquement disponibles à n’importe quel endroit dans un script et on ne va donc pas toujours pouvoir les utiliser.
+En JavaScript, il n’existe que deux espaces de portée différents : **l’espace global et l’espace local**. Pour rester très simple, l’espace global désigne l’entièreté d’un script à l’exception de l’intérieur de nos fonctions. L’espace local désigne, à l’inverse, l’espace dans une fonction.
+>une variable définie dans l’espace global d’un script va être accessible à travers tout le script, même depuis une fonction. En revanche, une variable définie dans une fonction n’est accessible que dans cette même fonction et ne peut pas être manipulée depuis l’espace global du script.
+
+Exemples:
+
+    let x = 5;
+    var y = 10;
+    function portee1(){
+        document.getElementById("p1").innerHTML = 'Depuis portée1(): <br>x = ' + x + " <br>y = " + y;
+    };
+    function portee2(){
+        let a = 1;
+        var b = 2;
+        document.getElementById("p2").innerHTML = 'Depuis portée2(): <br>a = ' + a + " <br>b = " + b;
+    };
+    ->exécution =>
+    portee1();
+    portee2();
+    ->Notre fonction portee1() utilise par exemple nos variables let
+    x et var y. Comme ces variables ont été déclarées dans l’espace global, elles sont doncaccessibles et utilisables dans la totalité du script et notamment dans des fonctions.
+    Notre deuxième fonction portee2() déclare ses propres variables let a et var b. Ces variables sont donc des variables locales à cette fonction et ne vont pouvoir être utilisées que depuis cette fonction.
+
+Dans le cas où une fonction utilise des variables locales, et globales, celle-ci va utiliser **les variables définies localement plutôt que globalement.
+**Si une variable locale porte le même nom qu'une variable gloable, elles n'influent pas entre elles.Ce sont deux entités différentes!**
+
+#### Les différences de portée entre les variables var et let en JavaScript
+
+Dans l’exemple précédent, on n’a pu observer aucune différence de comportement entre une variable déclarée avec la syntaxe let et une variable déclarée avec var en JavaScript.
+Il existe pourtant une différence de portée qu’on va pouvoir observer lors de la définition de variables locales. 
+En effet, **lorsqu’on utilise la syntaxe let pour définir une variable à l’intérieur d’une fonction en JavaScript, la variable va avoir une portée dite « de bloc» : la variable sera accessible dans le bloc dans lequel elle a été définie et dans les blocs que le bloc contient.
+En revanche, en définissant une variable avec le mot clef var dans une fonction, la variable aura une portée élargie puisque cette variable sera alors accessible dans tous les blocs de la fonction**. Prenons immédiatement un exemple pour bien comprendre cela:
+
+Exemple: 
+
+    function portee1(){
+        let x = 1;
+        var y = 2;
+        if(true){
+            let x = 5; => variable différente
+            var y = 10; => même que précédente
+            document.getElementById("p1").innerHTML = "x (dans if) = " + x;
+            document.getElementById("p2").innerHTML = "y (dans if) = " + y;
+        }
+        document.getElementById("p3").innerHTML = "x (hors if) = " + x;
+        document.getElementById("p4").innerHTML = "y (hors if) = " + y;
+    };
+    portee();
+    =>x (dans if) = 5
+    =>y (dans if) = 10
+    =>x (hors if) = 1
+    =>x (hors if) = 1
+
+#### La valeur de retour des fonctions
+
+Une valeur de retour est une valeur renvoyée par une fonction une fois que celle-ci a terminé son exécution. Une valeur de retour ne doit pas être confondu avec une instruction d’affichage durant l’exécution d’une fonction, comme dans le cas d’une fonction qui possède à un moment donné dans son code un alert() par exemple.
+Une valeur de retour est une valeur unique qui va être renvoyée par la fonction après son exécution et qu’on va pouvoir récupérer pour la manipuler dans notre script.
+Certaines fonctions prédéfinies vont renvoyer une valeur de retour tandis que d’autres ne vont pas en renvoyer.
+Il est toujours très utile de savoir si une fonction prédéfinie en JavaScript va renvoyer une valeur ou pas et quel type de valeur la fonction va renvoyer puisque cela va nous permettre de savoir quoi faire après l’exécution de la fonction et d’éventuellement recueillir la valeur de retour pour effectuer différentes opérations.
+Par exemple, certaines fonctions JavaScript renvoient le booléen true si elles ont réussi à effectuer leur tâche ou false en cas d’échec. Dans ce cas, on va pouvoir utiliser une condition autour de ces fonctions pour prendre en charge et donner des instructions en cas d’échec de notre fonction.
+D’autres fonctions vont renvoyer directement le résultat de leur action, comme la fonction replace() par exemple qui va renvoyer une nouvelle chaine de caractères avec les remplacements effectués. Dans le cas de fonctions personnalisées, nous allons devoir décider si notre fonction va renvoyer une valeur ou pas.
+Pour que nos fonctions renvoient une valeur, il va falloir utiliser une instruction **return**.
+Cette instruction va nous permettre de retourner le résultat de la fonction ou une valeur de notre choix qu’on va ensuite pouvoir soit manipuler immédiatement soit stocker dans une variable pour effectuer différentes opérations avec cette valeur.
+**Attention cependant : l’instruction return met fin à l’exécution d’une fonction, ce qui signifie que toutes les autres opérations qui suivent une instruction return dans une fonction seront ignorées**.
+Pour cette raison, on fera toujours bien attention à placer l’instruction return en fin de fonction, après que toutes les opérations aient été réalisées.
+
+### Fonctions anonymes, auto-invoquées et récursives
+
+#### Qu’est-ce qu’une fonction anonyme et quels sont les cas d’usage ?
+
+Les fonctions anonymes sont, comme leur nom l’indique, des fonctions qui ne vont pas posséder de nom. En effet, lorsqu’on crée une fonction, nous ne sommes pas obligés de lui donner un nom à proprement parler.
+Généralement, on utilisera les fonctions anonymes lorsqu’on n’a pas besoin d’appeler notre fonction par son nom c’est-à-dire lorsque le code de notre fonction n’est appelé qu’à un endroit dans notre script et n’est pas réutilisé.
+En d’autres termes, les fonctions anonymes vont très souvent simplement nous permettre de gagner un peu de temps dans l’écriture de notre code et (bien que cela porte à débat) à le rendre plus clair en ne le polluant pas avec des noms inutiles.
+
+#### Création et exécution ou appel d’une fonction anonyme
+
+On va pouvoir créer une fonction anonyme de la même façon qu’une fonction classique, en utilisant le mot clef function mais en omettant le nom de la fonction après.
+
+Exemple:
+
+    function(){
+        alert("txt");
+    }; => Nous avons ici déclaré une fonction anonyme donc le rôle est d’exécuter une fonction alert() qui va elle-même renvoyer un message dans une boîte d' alerte.
+
+Ici, nous faisons pourtant face à un problème : comment appeler une fonction qui n’a pas de nom ?
+
+On va avoir plusieurs façons de faire en JavaScript. Pour exécuter une fonction anonyme, on va notamment pouvoir :
+• Enfermer le code de notre fonction dans une variable et utiliser la variable comme une fonction,
+• Auto-invoquer notre fonction anonyme,
+• Utiliser un évènement pour déclencher l’exécution de notre fonction.
+
+##### Exécuter une fonction anonyme en utilisant une variable
+
+Enfermer la fonction dans une variable et utiliser la variable comme une fonction.
+
+    let alert = function(){
+        alert("txt");
+    };
+    alert();
+    ->Ici, on affecte notre fonction anonyme à une variable nommée let alerte.
+Notre variable contient ici une valeur complexe qui est une fonction et on va désormais pouvoir l’utiliser comme si c’était une fonction elle-même.
+Pour « appeler notre variable » et pour exécuter le code de la fonction anonyme qu’elle contient, il va falloir écrire le nom de la variable suivi d’un couple de parenthèses.**Ces parenthèses sont des parenthèses dites « appelantes » car elles servent à exécuter la fonction qui les précède**.
+
+##### Auto-invoquer une fonction anonyme
+
+La deuxième façon d’exécuter une fonction anonyme va être de créer une fonction anonyme qui va s’auto-invoquer c’est-à-dire qui va s’invoquer (ou s’appeler ou encore s’exécuter) elle-même dès sa création.
+**Pour créer une fonction auto-invoquée à partir d’une fonction, il va tout simplement falloir rajouter un couple de parenthèses autour de la fonction et un second après le code de la fonction**.
+
+Nous avons vu précédemment que le couple de parenthèses suivant le nom de notre
+variable stockant notre fonction anonyme servait à lancer l’exécution de la fonction, de la même manière, le couple de parenthèses après la fonction va faire en sorte que la fonction s’appelle elle-même.
+
+Exemples:
+
+    (function(){alert("txt");})();
+    ->fonction anonyme auto-invoquée
+    (functionbonjour(){alert("txt");})();
+    ->fonction nommée auto-invoquée
+Vous pouvez noter deux choses à propos des fonction auto-invoquées. Tout d’abord, vous devez savoir que la notion d’auto-invocation n’est pas réservée qu’aux fonctions anonymes : on va tout à fait pouvoir auto-invoquer une fonction qui possède un nom. Cependant, en pratique, cela n’aura souvent pas beaucoup d’intérêt (puisque si une fonction possède un nom, on peut tout simplement l’appeler en utilisant ce nom).
+
+##### Exécuter une fonction anonyme lors du déclenchement d’un évènement
+
+On va enfin également pouvoir rattacher nos fonctions anonymes à ce qu’on appelle des « gestionnaires d’évènements » en JavaScript.
+Pour indiquer comment on veut répondre à tel évènement, on utilise des gestionnaires d’évènements qui sont des fonctions qui vont exécuter tel code lorsque tel évènement survient.
+
+On va pouvoir passer une fonction anonyme à un gestionnaire d‘évènement qui va l’exécuter dès le déclenchement de l’évènement que le gestionnaire prend en charge.
+
+Exemple:
+
+    let para1 = getElementById("p1");
+    let para2 = getElementById("p2");
+    para1.addEventListener("click", function(){alert("clic sur p id=p1");});
+    para1.addEventListener("click", function(){alert("clic sur p id=p2");});
+    ->on utilise la fonction addEventListener() qui sert de gestionnaire d' événement. Ici on demande à exécuter la fonction anonyme passée en deuxième argument lors du clic sur élément p.
+
+#### Les fonctions récursives
+
+Une fonction récursive est une fonction qui va s’appeler elle-même au sein de son code.
+Tout comme pour les boucles, les fonctions récursives vont nous permettre d’exécuter une action en boucle et jusqu’à ce qu’une certaine condition de sortie soit vérifiée.
+
+Exemple:
+
+    function decompte(t) {
+        if (t > 0) {
+            document.getElementById("p1").innerHTML += t + "<br>";
+            return decompte(t - 1);
+        }
+        else {
+            return t;
+        }
+    };
+    decompte(7);
+
+### Réutiliser la fonction
 
 Exemple:
 
@@ -1079,45 +1544,234 @@ Exemple:
     }
     console.log(sayHello("vilport","cecile"));
 
-###Valeurs par défaut
+### Valeurs par défaut
 
-Il est possible de spécifier des valeurs par défaut pour nos arguments, aisni si un user oublie  ou ne connaît pas un des arguments demandés,une valeur par défaut lui sera attribuée.
+Il est possible de spécifier des valeurs par défaut pour nos arguments, ainsi si un user oublie  ou ne connaît pas un des arguments demandés,une valeur par défaut lui sera attribuée.
 De ce fait, ceci permet également, de rendre cet argument optionnel:
 
-      function sayHello(nom,prenom = "M/Me"){
+    function sayHello(nom,prenom = "M/Me"){
         const hello = "bonjour ${prenom} ${nom};
         returnhello;
     }
     console.log sayHello("vilport");
--> M/Me vilport
+    -> M/Me vilport
 
-##Le DOM
+## Introduction à la programmation orientée objet en JavaScript
 
-###Window
+### Les paradigmes de programmation
+
+Un « paradigme » de programmation est une façon d’approcher la programmation
+informatique, c’est-à-dire une façon de voir (ou de construire) son code et ses différents éléments. 
+
+Il existe trois paradigmes de programmation particulièrement populaires, c’est-à-dire trois grandes façons de penser son code :
+
+• **La programmation procédurale,
+• La programmation fonctionnelle,
+• La programmation orientée objet**.
+
+La programmation procédurale est le type de programmation le plus commun et le plus populaire. C’est une façon d’envisager son code sous la forme d’un enchainement de procédures ou d’étapes qui vont résoudre les problèmes un par un. Cela correspond à une approche verticale du code où celui-ci va s’exécuter de haut en bas, ligne par ligne.
+Jusqu’à présent, nous avons utilisé cette approche dans nos codes JavaScript.
+
+La programmation fonctionnelle est une façon de programmer qui considère le calcul en tant qu’évaluation de fonctions mathématiques et interdit le changement d’état et la mutation des données. La programmation fonctionnelle est une façon de concevoir un code en utilisant un enchainement de fonctions « pures », c’est-à-dire des fonctions qui vont toujours retourner le même résultat si on leur passe les mêmes arguments et qui ne vont retourner qu’une valeur sans modification au-delà de leur contexte.
+
+La programmation orientée objet est une façon de concevoir un code autour du concept d’objets. Un objet est une entité qui peut être vue comme indépendante et qui va contenir un ensemble de variables (qu’on va appeler propriétés) et de fonctions (qu’on appellera méthodes). Ces objets vont pouvoir interagir entre eux.
+
+Les choses importantes à retenir pour le moment sont les suivantes :
+1. Il existe différentes façons de penser / voir / concevoir son code qu’on appelle «paradigmes » ;
+2. La plupart des langages supportent aujourd’hui plusieurs paradigmes et le
+JavaScript, en particulier, supporte chacun des trois paradigmes principaux cités ci-dessus ce qui signifie qu’on va pouvoir coder en procédural, en fonctionnel et en orienté objet en JavaScript ;
+3. Un paradigme n’est qu’une façon de coder il est important de comprendre qu’un paradigme n’exclut pas les autres. Au contraire, on va souvent utiliser plusieurs paradigmes dans un même script en fonction de ce qu’on souhaite réaliser.
+
+### Première définition de l’orienté objet et des objets en JavaScript
+
+Le JavaScript est un langage qui possède un fort potentiel pour la programmation orientée objet (abrégée en POO).
+En effet, vous devez savoir que le JavaScript est un langage qui intègre l’orienté objet dans sa définition même ce qui fait que tous les éléments du JavaScript vont soit être des objets, soit pouvoir être convertis et traités comme des objets.
+
+**Un objet, en informatique, est un ensemble cohérent de données et de fonctionnalités qui vont fonctionner ensemble. Pour le dire très simplement, un objet en JavaScript est un conteneur qui va pouvoir stocker plusieurs variables qu’on va appeler ici des propriétés.
+Lorsqu’une propriété contient une fonction en valeur, on appelle alors la propriété une méthode. Un objet est donc un conteneur qui va posséder un ensemble de propriétés et de méthodes qu’il est cohérent de regrouper**.
+
+Exemple:
+
+    let user = {
+        nom : ["pierre", "rigot"],
+        age : 29,
+        mail : "rigotpierre@gmail.com",
+        bonjour : function(){
+            alert("Bonjour, je suis " + this.nom[0] + " ,j'ai " + this.age + " ans");
+        }
+    };
+    alert(typeof user);
+    ->la variable user est une variable objet ou un objet.
+    nom, age, mail sont des propriétés de l' objet user. La valeur de la propriété nom est un tableau.
+    bonjour est une méthode de l' objet user.
+    On a créé notre premier objet.
+
+->Pour créer un objet, on commence par définir et initialiser une variable.
+Dans le cas présent, notre variable let user stocke notre objet. Par simplification, on dira que cette variable « est » un objet mais pour être tout à fait exact il faudrait plutôt dire qu’elle stocke une valeur de type objet.
+Comme vous pouvez le voir, on utilise ici une syntaxe différente de celle dont on a l’habitude pour déclarer notre objet. Tout d’abord, vous pouvez remarquer qu’on utilise **dans le cas de la création d’un objet littéral une paire d’accolades qui indiquent au JavaScript qu’on souhaite créer un objet**.
+Ce qui nous intéresse particulièrement ici sont les **membres de notre objet**. Un « membre » est un couple « nom : valeur », et peut être une propriété ou une méthode. Comme vous pouvez le voir, notre objet est ici composé de différents membres : 3 propriétés et 1 méthode:
+
+- La première propriété nom de notre objet est particulière puisque sa valeur associée est un tableau. 
+- Le membre nommé bonjour de notre objet est une méthode puisqu’une fonction anonyme lui est associée en valeur. Vous pouvez également remarquer l’usage du mot clef this et de l’opérateur "." dans notre méthode.
+
+**Chaque membre d’un objet est toujours composé d’un nom et d’une valeur qui sont séparés par :. Les différents membres d’un objet sont quant-à-eux séparés les uns des autres par des virgules (et non pas des points-virgules, attention !)**.
+
+>Quels avantages et intérêts de coder en orienté objet en JavaScript ?
+Le développement orienté objet correspond à une autre façon d’envisager et d’organiser son code en groupant des éléments cohérents au sein d’objets.
+Les intérêts supposés principaux de développer en orienté objet plutôt qu’en procédural par exemple sont de permettre une plus grande modularité ou flexibilité du code ainsi qu’une meilleure lisibilité et une meilleure maintenabilité de celui-ci.
+
+## Création d’un objet littéral
+
+![objet](img/objets.png)
+
+Un objet est un ensemble cohérent de propriétés et de méthodes. Le JavaScript dispose **d’objets natifs** (objets prédéfinis) qui possèdent des propriétés et des méthodes qu’on va pouvoir directement utiliser et nous permet également de définir nos propres objets.
+
+Nous pouvons créer des objets de 4 manières différentes en JavaScript. On va pouvoir :
+
+• Créer un objet littéral,
+• Utiliser le constructeur Object(),
+• Utiliser une fonction constructeur personnalisée,
+• Utiliser la méthode create().
+
+Ces différents moyens de procéder vont être utilisés dans des contextes différents, selon
+ce que l’on souhaite réaliser.
+
+### Création d’un objet littéral
+
+Précedemment, nous avons créé un premier objet nommé utilisateur. Pour être tout à fait précis, nous avons créé un **objet littéral** (on parle ici d’objet « littéral » car nous avons défini chacune de ses propriétés et de ses méthodes lors de la création, c’est-à-dire littéralement).
+
+Pour créer un objet littéral, **on utilise une syntaxe utilisant une paire d’accolades { … } qui indique au JavaScript que nous créons un objet**.
+
+Nos objets vont généralement être stockés dans des variables. Par abus de langage, on confondra alors souvent la variable et l’objet et on parlera donc « d’objet » pour faire référence à notre variable stockant une valeur de type objet. Dans l’exemple ci-dessus, on dira donc qu’on a créé un objet nommé « utilisateur ».
+
+Un objet est composé de différents couples de **« nom : valeur »** qu’on appelle **membres**:
+**chaque nom d’un membre doit être séparé de sa valeur par un caractère deux-points : et les différents membres d’un objet doivent être séparés les uns des autres par une virgule**.
+La partie « nom » de chaque membre suit les mêmes règles que le nommage d’une
+variable. La partie valeur d’un membre peut être n’importe quel type de valeur : une chaine de caractère, un nombre, une fonction, un tableau ou même un autre objet littéral.
+
+**Les membres d’un objet qui ne servent qu’à stocker des données sont appelés des propriétés tandis que ceux qui manipulent des données (c’est-à-dire ceux qui contiennent des fonctions en valeur) sont appelés des méthodes**.
+
+### Utiliser le point pour accéder aux membres d’un objet, les modifier ou en définir de nouveaux
+
+**Pour accéder aux propriétés et aux méthodes d’un objet, on utilise le caractère point . qu’on appelle également un accesseur. On va ici commencer par préciser le nom de l’objet puis l’accesseur puis enfin le membre auquel on souhaite accéder**.
+
+Exemples:
+
+    document.getElementById.innerHTML = "nom: " + user.nom;
+    ->accès à la propriété nom de user
+
+    user.age = 30;
+    ->modification valeur de l' âge de user
+
+    user.bonjour();
+    ->accès à la méthode de l' objet user, exécutée comme une fonction anonyme
+Cela nous permet de récupérer les valeurs des propriétés.
+En dessous, on utilise notre accesseur avec l’opérateur d’affectation = pour cette fois-ci modifier la valeur de la propriété age de notre objet user.
+Finalement, on utilise notre accesseur pour exécuter la méthode bonjour() de
+l’objet user. Pour faire cela, on procède de la même façon que pour exécuter une fonction anonyme placée dans une variable.
+Enfin, on va encore pouvoir utiliser notre accesseur pour créer de nouveaux membres pour notre objet. Pour cela, il suffit de définir un nouveau nom de membre et de lui passer une valeur comme cela:
+
+Exemples:
+
+    user.taille = 170;
+
+    user.prez =function(){
+        alert("txt");
+    }
+    ->ici, on ajoute une propriété taille et une méthode prez() à notre objet user. 
+
+### Utiliser les crochets pour accéder aux propriétés d’un objet, les modifier ou en définir de nouvelles
+
+On va également pouvoir utiliser des crochets plutôt que le point pour accéder aux propriétés de nos objets, mettre à jour leur valeur ou en définir de nouvelles. Cela ne va en revanche pas fonctionner pour les méthodes.
+Les crochets vont être particulièrement utiles avec les valeurs de type tableau (qui sont des objets particuliers qu’on étudiera plus tard dans ce cours) puisqu’ils vont nous permettre d’accéder à une valeur en particulier dans notre tableau.
+Dans le code précédent, la valeur de la propriété nom par exemple est un tableau. Notez qu’on utilise également ces mêmes crochets pour définir un tableau.
+
+**En programmation, un tableau correspond à un ensemble de valeurs auxquelles vont être associées des index ou des clefs. On appelle l’ensemble clef + valeur un élément du tableau**.
+La plupart des langages de programmation gèrent deux types de tableaux : **les tableaux numérotés et les tableaux associatifs**. Le principe des tableaux numérotés est que les clefs associées aux valeurs vont être des chiffres. Par défaut, la première valeur va recevoir la clef 0, la deuxième valeur sera associée à la clef 1 et etc. Les tableaux associatifs vont eux avoir des clefs textuelles qui vont être définies manuellement.
+
+->Pour accéder à une valeur en particulier dans un tableau, on utilise la syntaxe **« nom_du_tableau[clef] »**.
+Le JavaScript est un langage qui ne supporte que l’utilisation de tableaux numérotés. Dans le cas présent, notre propriété nom contient un tableau qui possède deux éléments : la valeur du premier élément est « Pierre » et la clef associée par défaut est 0. La valeur du deuxième élément est « girot » est la clef associée par défaut est 1.
+Pour accèder à la valeur pierre de la propriété nom de l' objet user : user.nom[0].
+
+On va pouvoir en JavaScript utiliser cette même syntaxe pour accéder à n’importe quelle propriété d’un objet, pour modifier la valeur d’une propriété ou encore pour définir de nouvelles propriétés:
+pour faire cela, on va faire « comme si » notre objet était un tableau associatif composés d’éléments dont les clefs sont les noms des propriétés et les valeurs sont les valeurs associées.
+->pour accéder à la valeur complète de la propriété nom de l’objet user, on pourra ainsi écrire **user['nom']**. Pour accéder à la valeur de mail, on écrira **user['mail']**. Si on souhaite accéder à la valeur du premier élément de notre tableau nom, on pourra encore écrire **user['nom'][0]**.
+
+### L’utilisation du mot clef this
+
+Il nous reste une dernière partie de notre objet à définir : le mot clef **this** qu’on utilise au sein de notre méthode bonjour().
+
+Le mot clef this est un mot clef qui apparait fréquemment dans les langages orientés objets. Dans le cas présent, il sert à faire référence à l’objet qui est couramment manipulé.
+
+>Pour le dire très simplement, c’est un prête nom qui va être remplacé par le nom de l’objet actuellement utilisé lorsqu’on souhaite accéder à des membres de cet objet.
+
+## Définition et création d’un constructeur
+
+Dans cette leçon, nous allons voir d’autres méthodes de création d’objets et allons notamment apprendre à créer des objets à la chaine et de manière dynamique en utilisant une fonction constructeur personnalisée.
+
+### Les usages de l’orienté objet et l’utilité d’un constructeur d’objets
+
+On va généralement utiliser la programmation orientée objet dans le cadre de gros projets où on doit répéter de nombreuses fois des opérations similaires. Dans la majorité des cas, lorsqu’on utilise l’orienté objet, on voudra pouvoir créer de multiples objets semblables, à la chaine et de manière dynamique.
+
+Imaginons par exemple que l’on souhaite créer un objet à chaque fois qu’un utilisateur enregistré se connecte sur notre site. Chaque objet « utilisateur » va posséder des propriétés (un pseudonyme, une date d’inscription, etc.) et des méthodes similaires (possibilité de mettre à jour ses informations, etc.).
+Dans ces cas-là, plutôt que de créer les objets un à un de manière littérale, il serait pratique de créer une sorte de plan ou de schéma à partir duquel on pourrait créer des objets similaires à la chaine.
+->Nous allons pouvoir faire cela en JavaScript en utilisant ce qu’on appelle un constructeur d’objets qui n’est autre qu’une **fonction constructeur**.
+
+### La fonction construction d’objets : définition et création d’un constructeur
+
+**Une fonction constructeur d’objets est une fonction qui va nous permettre de créer des objets semblables**. En JavaScript, n’importe quelle fonction va pouvoir faire office de constructeur d’objets.
+
+Pour construire des objets à partir d’une fonction constructeur, nous allons devoir suivre deux étapes: 
+- il va déjà falloir définir notre fonction constructeur,
+- ensuite nous allons appeler ce constructeur avec une syntaxe un peu spéciale utilisant le mot clef **new**.
+
+Dans une fonction constructeur, on va pouvoir définir un ensemble de propriétés et de méthodes. Les objets créés à partir de ce constructeur vont automatiquement posséder les (« hériter des ») propriétés et des méthodes définies dans le constructeur.
+
+Comment une fonction peut-elle contenir des propriétés et des méthodes ?
+C’est très simple : **les fonctions sont en fait un type particulier d’objets en JavaScript ! Comme tout autre objet, une fonction peut donc contenir des propriétés et des méthodes**.
+
+Exemple:
+
+    function utilisateur(n, a, m){
+        this.nom = n;
+        this.age = a;
+        this.mail = m;
+        this.bonjour = function(){
+
+        }
+    }
+
+
+## Le DOM
+
+### Window
 
 L'objet window est l'objet global qui représente votre fenêtre.Tout code JS qui est exécuté sur une page à accès à cet objet.
 On peut avoir accès à des informations de l'historique window.history de l'onglet, ainsi que différentes informations comme la largeur window.interface...
 
 test : console.log(window);
 
-###Le DOM
+### Le DOM
 
 ![DOM](img/DOM.png)
 
 Document Object Model, structure du fichier HTML, il nous permet d'atteindre les différents éléments et de pouvoir agir dessus.
 
-###La sélection d'éléments
+### La sélection d'éléments
 
 Il existe plusieurs façon de sélectionner des éléments:
 
-####getElementById
+#### getElementById
 
-Sélection par l'id
+Méthode de sélection sur l'objet DOM par l' id.
 
-Exemple:
+Vous devriez avoir remarqué qu’on utilise également des points pour accéder au contenu HTML de nos paragraphes et y placer les données souhaitées. En fait, c’est tout simplement parce que document est également un objet prédéfini d’une API (interface de programmation) appelée « DOM » (Document Object Model) que nous allons étudier dans la partie suivante.
+Cet objet possède notamment une méthode getElementById() qui nous permet d’accéder à un élément HTML en fonction de son attribut id et une propriété innerHTML qui nous permet d’insérer du contenu entre les balises d’un élément HTML.
+
+Exemples:
 
     let divUne = document.getElementById("id");
-On peut ainsi agir dessus pour lui apporter des modifications:
+    ->On peut ainsi agir dessus pour lui apporter des modifications:
 
     divUne.style.backgroundColor = "color";
     divUne.style.padding = "1em";
@@ -1446,14 +2100,39 @@ La console affiche le résultat 60 ;
 
 stop : chifoumi , exo3
 
-##Main.js:
+## Main.js:
 
 - alert
 - window.prompt
 - elementToString
 - objet date
 - typeof
+- document.getElementById(id)
 
+
+##Prompt
+
+**Fonction** qui permet de demander à l' utilisateur une information.
+Va ouvrir une boîte de dialogue qui contiendra une question et un champ vide de réponse.
+
+Exemple:
+
+    let age = window.prompt("Quel âge avez-vous?");
+Pour stocker la valeur saisie par l'User dans une variable, il faut attribuer ce prompt à une variable.
+La valeur saisie sera enregistrée dans la variable age.
+
+**Attention, le prompt, renvoie toujours une chaîne de caractères.Ce qui signifie que pour faire des calculs avec cette variable, il va falloir modifier le type de la variable obtenue avec le prompt**.
+
+
+### Conversion
+
+Les fonctions **parentInt** et **parseFloat** servent à convertir une chaîne de caractères en nombre entier pour le premier, et à virgule pour le second.
+
+exemple :
+
+    age = parseInt(age);
+    age ++;
+conversion de la var age en type number, et incrémentation possible.
 
  
 
