@@ -115,8 +115,9 @@ tablo.push(14);
 
 Array.splice():
 
-Reprenez tablo qui contient 1, 2 et 3 de l'exercice précédent
-Accédez au 2ème élément du tableau tablo et rangez la valeur dans une variable nommée item
+    *Exercice:
+Reprenez tablo qui contient 1, 2 et 3 de l'exercice précédent,
+Accédez au 2ème élément du tableau tablo et rangez la valeur dans une variable nommée item,
 Remplacez le 2ème élément du tableau par le nombre 5:
 let tablo = [1, 2, 3];
 let item = tablo[1];
@@ -138,13 +139,12 @@ function puissance(x, n){
 /* 
 Objet:
 
-/Exercice :
+    *Exercice :
 création constructeur objet,
 cet objet doit posséder plusieurs propriétés : titre,console, année,
 le jeu mario bros,
 annee de sortie sur chaque console,
 faire instance de l'objet avec mario bross est sorti sur en telle année.
-*/
 
 function Jeux(titre, console, annee) {
     this.titre = titre;
@@ -167,14 +167,37 @@ console.log(superMarioBros);
 console.log(`${superMarioBros.titre} est sorti sur ${superMarioBros.console} en ${superMarioBros.annee}`);
 console.log(superMarioBros.titre + " " + "est sorti sur" + " " + superMarioBros.console + " " + superMarioBros.annee)
 
-
-
-/*création d'objets dans un objet*/
+Puis création d'objets dans un objet
 let maCollection = {...{superMarioBros}, ...{marioBros}, ...{superMarioBros3}, ...{newSuperU}};
-/*spread operator*/
+->spread operator
 console.log(maCollection);
+ne logue qu'un élément donc =>
 
 for (const key in maCollection){
     console.log(maCollection[key]);
 }
-/*key = attribut // maCollection[key]->dynamique on évite maCollection.propriété*/
+key = attribut // maCollection[key]->dynamique on évite maCollection.propriété
+
+Pour chaque objet de l'objet ma collection, vous allez créer une div qui aura h2 le nom de la console, en h3, et en h4 l'année. Cette div doit être affichée en HTML.
+*/
+
+function Jeux(titre, console, annee) {
+    this.titre = titre;
+    this.console = console;
+    this.annee = annee;
+}
+
+let superMarioBros = new Jeux("Super Mario Bros", "Nintendo", 1985);
+let marioBros = new Jeux("Mario Bros", "Nintendo", 1983);
+let superMarioBros3 = new Jeux("Super Mario Bros .3", "Nintendo", 1988);
+let newSuperU = new Jeux("New Super Mario Bros. U", "Wii", 2012);
+let superMario64 = new Jeux("Super Mario 64", "Nintendo 64", 1996);
+let superMarioWorld = new Jeux("Super Mario World", "Super Nintendo", 1990);
+let superMarioBrosTheLost = new Jeux("Super Mario Bros.: The Lost Levels", "Nintendo", 1986);
+let newSuperMarioBrosu = new Jeux("New Super Mario Bros. U Deluxe", "Switch", 2019);
+let newsuperMarioBros = new Jeux("New Super Mario Bros", "Wii", 2009);
+let superMarioBros2 = new Jeux("Super Mario Bros. 2", "Nintendo", 1988);
+
+let maCollection = {...{superMarioBros}, ...{marioBros}, ...{superMarioBros3}, ...{newSuperU}, ...{superMario64}, ...{superMarioWorld}, ...{superMarioBrosTheLost}, ...{newSuperMarioBrosu}, ...{newSuperMarioBrosu}, ...{superMarioBros2}};
+
+maCollection = document.querySelectorAll("div").innerHTML
