@@ -1325,7 +1325,7 @@ nous en servir.
 **Pour être tout à fait précis, les fonctions prédéfinies en JavaScript sont des méthodes**.
 Une méthode est tout simplement le nom donné à une fonction définie au sein d’un objet.
 Pour le moment, nous allons considérer que ce sont simplement des fonctions.
-L’intérêt principal des fonction prédéfinies est de nous permettre de réaliser des opérations complexes de manière très simple : **en les appelant*. En effet, vous devez bien comprendre que derrière ces noms de fonctions se cachent des codes parfois longs et complexes qui vont être exécutés lorsqu’on appelle la fonction et qui vont permettre de réaliser une opération précise (générer un nombre aléatoire, etc.).
+L’intérêt principal des fonction prédéfinies est de nous permettre de réaliser des opérations complexes de manière très simple : **en les appelant**. En effet, vous devez bien comprendre que derrière ces noms de fonctions se cachent des codes parfois longs et complexes qui vont être exécutés lorsqu’on appelle la fonction et qui vont permettre de réaliser une opération précise (générer un nombre aléatoire, etc.).
 
 **Pour exécuter le code caché derrière la fonction, il suffit de l’appeler ou de « l’invoquer ».Pour faire cela, on n’a qu’à écrire le nom de la fonction suivi d’un couple de parenthèses et éventuellement préciser des arguments entre les parenthèses**.
 
@@ -1335,11 +1335,11 @@ Exemple:
         const hello = "bonjour ${prenom} ${nom};
         returnhello;
     }
- ->cette fonction retourne une chaîne de caractère
- **function**: création de fonction
- sayHello: nom de la fonction
- (nom,prenom): **arguments**,permettent de spécifier que pour utiliser notre fonction,il faudra lui apporter ces deux arguments, ces deux données
- **return**hello: la fonction va répondre quelque chose
+    ->cette fonction retourne une chaîne de caractère
+    **function**: création de fonction
+    sayHello: nom de la fonction
+    (nom,prenom): **arguments**,permettent de spécifier que pour utiliser notre fonction,il faudra lui apporter ces deux arguments, ces deux données
+    **return**hello: la fonction va répondre quelque chose
 
 ### Les arguments
 
@@ -1731,15 +1731,82 @@ Comment une fonction peut-elle contenir des propriétés et des méthodes ?
 C’est très simple : **les fonctions sont en fait un type particulier d’objets en JavaScript ! Comme tout autre objet, une fonction peut donc contenir des propriétés et des méthodes**.
 
 Exemple:
+Pour rendre les choses immédiatement concrètes, essayons de créer un constructeur ensemble dont on expliquera ensuite le fonctionnement.
+Pour cela, on va se baser sur l’objet littéral créé dans la leçon précédente. L’objectif ici va être de créer une fonction qui va nous permettre de créer des objets possédant les mêmes propriétés nom, age, mail et méthode bonjour() que notre objet littéral.
 
-    function utilisateur(n, a, m){
+
+    function Utilisateur(n, a, m){
         this.nom = n;
         this.age = a;
         this.mail = m;
         this.bonjour = function(){
-
+            alert("txt");
         }
     }
+    ->On définit ici une fonction Utilisateur() qu’on va utiliser comme constructeur d’objets.Comme vous pouvez le voir, le code de notre fonction est relativement différent des autres fonctions qu’on a pu créer jusqu’ici, avec notamment l’utilisation du mot clef this qui va
+    permettre de définir et d’initialiser les propriétés ainsi que les méthodes de chaque objet créé.
+    Notre constructeur possède trois paramètres qu’on a ici nommé n, a et m qui vont nous permettre de transmettre les valeurs liées aux différentes propriétés pour chaque objet.A chaque création d’objet, c’est-à-dire à chaque appel de notre constructeur en utilisant le
+    mot clef this, on va passer en argument les valeurs de l’objet relatives à ses propriétés nom, age et mail.
+    Dans notre fonction, la ligne this.nom suffit à créer une propriété nom pour chaque objet créé via le constructeur. Écrire this.nom = n permet également d’initialiser cette propriété.
+
+**Notez que lorsqu’on définit un constructeur, on utilise par convention une majuscule au début du nom de la fonction afin de bien discerner nos constructeurs des fonctions classiques dans un script.
+L’idée d’un constructeur en JavaScript est de définir un plan de création d’objets. Comme ce plan va potentiellement nous servir à créer de nombreux objets par la suite, on ne peut pas initialiser les différentes propriétés en leur donnant des valeurs effectives, puisque les valeurs de ces propriétés vont dépendre des différents objets créés**.
+
+#### Créer des objets à partir d’une fonction constructeur
+
+Pour créer ensuite de manière effective des objets à partir de notre constructeur, nous allons simplement appeler le constructeur en utilisant le mot clef **new**. On dit également qu’on crée une nouvelle instance.
+
+Exemple:
+
+    function Utilisateur(n, a, m){
+        this.nom = n;
+        this.age = a;
+        this.mail = m;
+        this.bonjour = function(){
+            alert("txt");
+        }
+    }
+    ->fonction constructeur
+
+    let user = new Utilisateur(["pierre", "giro"], 29, "adressemail.com");
+    ->création objet user en utilisant le constructeur
+
+    user.bonjour("txt");
+    ->on peut ensuite utiliser les membres de l'objet créé et par exemple appeler la méthode bonjour()
+    =>Lorsqu’on écrit let user = new Utilisateur(['txt', 'txt'], 29, 'txt'), on crée un nouvel objet pierre en appelant la fonction constructeur Utilisateur().Ici, on passe le tableau ['txt', 'txt'] en premier argument, le nombre 29 en deuxième  et mail en troisième argument.
+    Lors de l’exécution du constructeur, la ligne this.nom = n va donc être remplacée par user.nom = ['Pierre', 'giro'] ce qui crée une propriété nom pour notre objet user avec la valeur ['Pierre', 'giro'] et etc.
+
+Comme notre constructeur est une fonction, on va pouvoir l’appeler autant de fois qu’on le veut et donc créer autant d’objets que souhaité à partir de celui-ci et c’est d’ailleurs tout l’intérêt d’utiliser un constructeur. Chaque objet créé à partir de ce constructeur partagera
+les propriétés et méthodes de celui-ci.
+
+Exemples:
+
+    let mathilde = new Utilisateur(["math", "soja"], 33, "mail.com");
+    document.getElementById.innerHTML = 'Prénom de user : " + user["nom"][0];
+    document.getElementById.innerHTML = 'age de mathilde : " + mathilde["age"];
+
+#### Constructeur et différenciation des objets
+
+On pourrait à première vue penser qu’il est contraignant d’utiliser un constructeur puisque cela nous « force » à créer des objets avec une structure identique et donc n’offre pas une grande flexibilité.
+En réalité, ce n’est pas du tout le cas en JavaScript puisqu’on va pouvoir, une fois un objet créé et à n’importe quel moment de sa vie, modifier les valeurs de ses propriétés et ses méthodes ou lui en attribuer de nouvelles.
+
+La fonction constructeur doit vraiment être vue en JavaScript comme un plan de base pour la création d’objets similaires et comme un moyen de gagner du temps et de la clarté dans son code. On ne va définir dans cette fonction que les caractéristiques communes de nos objets et on pourra ensuite rajouter à la main les propriétés particulières à un objet.
+
+Exemple:
+On va rajouter une propriété taille à objet user après sa création.
+
+    user.taille = 170;
+    =>Notre objet pierre dispose désormais d’une propriété taille qui lui est exclusive (les autres objets créés ne possèdent pas cette propriété).
+
+### Constructeur Object, prototype et héritage
+
+Nous allons définir ce qu’est un prototype et comprendre comment le JavaScript utilise les prototypes pour permettre à certains d’objets d’avoir accès aux méthodes et propriétés définies dans d’autres objets.
+
+#### L’utilisation d’un constructeur et la performance
+
+Précedemment, nous avons pu créer plusieurs objets semblables en appelant
+plusieurs fois une fonction constructeur personnalisée Utilisateur() et en utilisant le mot clef new.
+
 
 
 ## Le DOM
@@ -2100,7 +2167,7 @@ La console affiche le résultat 60 ;
 
 stop : chifoumi , exo3
 
-## Main.js:
+## Main.js, petits rappels:
 
 - alert
 - window.prompt
@@ -2108,7 +2175,9 @@ stop : chifoumi , exo3
 - objet date
 - typeof
 - document.getElementById(id)
+- function
 
+A ajouter :
 
 ##Prompt
 
@@ -2124,7 +2193,7 @@ La valeur saisie sera enregistrée dans la variable age.
 **Attention, le prompt, renvoie toujours une chaîne de caractères.Ce qui signifie que pour faire des calculs avec cette variable, il va falloir modifier le type de la variable obtenue avec le prompt**.
 
 
-### Conversion
+###Conversion
 
 Les fonctions **parentInt** et **parseFloat** servent à convertir une chaîne de caractères en nombre entier pour le premier, et à virgule pour le second.
 
@@ -2134,10 +2203,92 @@ exemple :
     age ++;
 conversion de la var age en type number, et incrémentation possible.
 
- 
+###Objet:
+Défini entre accolades, type dans lequel on met des attributs
+
+Contexte ne peut être invoqué qu' à l'intérieur de lui même, portée des ttraibuts
+
+Portée des fonctions :
+
+portée des fonctions fléchées
+une fonction avec mot clef fontion est accessible depuis l'extérier de l'objet tandis qu'une flechée est cantonnée dans l'objet(locale)
+
+/*
+Objet:
 
 
+var apprenant = {
+    nom(attribut) : "DOE",
+    prenom : "John",
+};
+objet nom = apprenant qui contient deux attributs nom et prenom de type string
+log nom de l'objet:
+console.log(apprenant.nom);
+=>nomobjet.attribut=>valeur attribut
+log de l'objet:
+console.log(apprenant);
+contexte de l'objet : si je suis dans l'objet classe, avec attributs: outerWidth, écran, bureaux,...apprenant.
+a l'intérieur de l'objet dans les accolades this dans le contexte.A l'extérieur de l'objet
+var apprenant = {
+    nom : "Doe",
+    prenom : "John",
+    age: 30,
+    nom: console.log(this.nom)
+    //comprend qu'on parle du contexte, pour fonctionner il faut lui donner un  nom, c'est un attribut
+};
+var apprenant = {
+    nom : "Doe",
+    prenom : "John",
+    age: 30,
+    clog: function(){
+        console.log(this.nom)
+//function pseudo anonyme pas de nom car a déjà un nom d'attribut : clog
+    }
+};
+console.log(apprenant.clog);
+//console.log de console.log ko =>return
+var apprenant = {
+    nom : "Doe",
+    prenom : "John",
+    age: 30,
+    clog: function(){
+        return (this.nom)
+    }
+};
 
+*/
+
+// var apprenant = {
+//     nom : "Doe",
+//     prenom : "John",
+//     age: 30,
+//     clog:{
+//         ap : this.nom
+//     }
+// };
+// console.log(apprenant);
+
+// var apprenant = {
+//     nom : "Doe",
+//     prenom : "John",
+//     age: 30,
+//     clog : function(){
+//         console.log(this.nom);
+//     }
+// };
+// apprenant.clog();
+// =>appel de la fonction
+
+// var apprenant = {
+//     nom : "Doe",
+//     prenom : "John",
+//     age: 30,
+//     clog : () => {
+//         console.log(this.nom);
+//     }
+// };
+// apprenant.clog();
+//ko portée locale
 
     
 

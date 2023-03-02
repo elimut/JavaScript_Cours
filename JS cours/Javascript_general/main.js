@@ -64,3 +64,39 @@ l’id précisé. Ensuite, innerHTML nous permet d’injecter du texte dans l’
 par typeof.
 */
 
+
+
+
+
+/*
+fonction:
+
+
+function name(param){
+    code exécuté
+}
+
+
+/*Calcul de surface:
+function calculSurface(longueur, largeur){
+    let resultat = longueur * largeur;
+    console.log(resultat);
+}
+calculSurface(10, 3);
+ou:                                   
+function calculSurface(longueur, largeur){
+    return longueur * largeur;
+}
+console.log(calculSurface(10, 3));
+->console log pour afficher
+
+const calculSurface(longueur, largeur) => {
+    console.log(longueur * largeur);
+}
+->retrait mot function: => et const
+*/
+
+
+
+
+
