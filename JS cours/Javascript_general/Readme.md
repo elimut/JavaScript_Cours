@@ -2176,6 +2176,7 @@ stop : chifoumi , exo3
 - typeof
 - document.getElementById(id)
 - function
+- array.splice()
 
 A ajouter :
 
@@ -2204,9 +2205,13 @@ exemple :
 conversion de la var age en type number, et incrémentation possible.
 
 ###Objet:
-Défini entre accolades, type dans lequel on met des attributs
+Défini entre accolades, type dans lequel on met des attributs.
 
-Contexte ne peut être invoqué qu' à l'intérieur de lui même, portée des ttraibuts
+JavaScript est conçu autour d'un paradigme simple, basé sur les objets. Un objet est un ensemble de propriétés et une propriété est une association entre un nom (aussi appelé clé) et une valeur. La valeur d'une propriété peut être une fonction, auquel cas la propriété peut être appelée « méthode ». En plus des objets natifs fournis par l'environnement, il est possible de construire ses propres objets. Ce chapitre aborde la manipulation d'objets, l'utilisation des propriétés, fonctions et méthodes, il explique également comment créer ses objets.
+Contexte ne peut être invoqué qu' à l'intérieur de lui même, portée des attributs
+À l'instar de nombreux autres langages de programmation, on peut comparer les objets JavaScript aux objets du monde réel.
+
+En JavaScript, un objet est une entité à part entière qui possède des propriétés et un type. Si on effectue cette comparaison avec une tasse par exemple, on pourra dire qu'une tasse est un objet avec des propriétés. Ces propriétés pourront être la couleur, la forme, le poids, le matériau qui la constitue, etc. De la même façon, un objet JavaScript possède des propriétés, chacune définissant une caractéristique
 
 Portée des fonctions :
 
@@ -2268,14 +2273,9 @@ var apprenant = {
 // };
 // console.log(apprenant);
 
-// var apprenant = {
-//     nom : "Doe",
-//     prenom : "John",
-//     age: 30,
-//     clog : function(){
-//         console.log(this.nom);
-//     }
-// };
+À l'instar de nombreux autres langages de programmation, on peut comparer les objets JavaScript aux objets du monde réel.
+
+En JavaScript, un objet est une entité à part entière qui possède des propriétés et un type. Si on effectue cette comparaison avec une tasse par exemple, on pourra dire qu'une tasse est un objet avec des propriétés. Ces propriétés pourront être la couleur, la forme, le poids, le matériau qui la constitue, etc. De la même façon, un objet JavaScript possède des propriétés, chacune définissant une caractéristique
 // apprenant.clog();
 // =>appel de la fonction
 
@@ -2290,19 +2290,134 @@ var apprenant = {
 // apprenant.clog();
 //ko portée locale
 
-    
+
+Accesseurs getter
+mutateur seter
+
+accesseur []
+
+maVoiture.fabricant = 'ford';
+maVoiture["fabricant"] = 'ford'; chaine de cara qui est setée, plus facile  à manipuler
+On peut aussi définir ou accéder à des propriétés JavaScript en utilisant une notation avec les crochets (voir la page sur les accesseurs de propriétés pour plus de détails). Les objets sont parfois appelés « tableaux associatifs ». Cela peut se comprendre, car chaque propriété est associée avec une chaîne de caractères qui permet d'y accéder. Ainsi, par exemple, on peut accéder aux propriétés de l'objet maVoiture de la façon suivante.
+Cela rappelle les tableaux associatifs.
+Le nom d'une propriété d'un objet peut être n'importe quelle chaîne JavaScript valide (ou n'importe quelle valeur qui puisse être convertie en une chaîne de caractères), y compris la chaîne vide. Cependant, n'importe quel nom de propriété qui n'est pas un identifiant valide (par exemple si le nom d'une propriété contient un tiret, un espace ou débute par un chiffre) devra être utilisé avec la notation à crochets. 
+
+monObj.type              = "Syntaxe point";
+monObj["date created"]   = "Chaîne avec un espace";
+monObj[str]              = "Une valeur qui est une chaîne";
+monObj[rand]             = "Nombre aléatoire";
+monObj[obj]              = "Objet";
+monObj[""]               = "Une chaîne vide";
+
+regle
+expression
+regex echappement \ 
+regular expression
+
+new = instance
+avec objt natif: obj propre au langage utilisé
+obj globaux propre au syst d' exploitation ex: os(opérateur système)
+
+Cette notation s'avère également utile quand les noms des propriétés sont déterminés de façon dynamique (c'est-à-dire qu'on ne sait pas le nom de la propriété avant l'exécution). 
+
+// on crée quatre variables avec une même instruction
+let monObj = new Object();
+let str = "maChaîne";
+let rand = Math.random();
+let obj = new Object();
+
+monObj.type              = "Syntaxe point";
+monObj["date created"]   = "Chaîne avec un espace";
+monObj[str]              = "Une valeur qui est une chaîne";
+monObj[rand]             = "Nombre aléatoire";
+monObj[obj]              = "Objet";
+monObj[""]               = "Une chaîne vide";
+
+console.log(monObj);
+ex:
+monObjet{
+    a1 : x,
+    a2 : y,
+    a3 : z
+}
+monObjet["a" + random]
+
+
+On notera que les valeurs utilisées entre les crochets sont automatiquement converties en chaînes de caractères grâce à la méthode toString() sauf si ces valeurs sont des symboles (cf. Symbol). 
+
+La notation avec les crochets peut être utilisée dans une boucle for...in afin de parcourir les propriétés énumérables d'un objet. Pour illustrer comment cela fonctionne, on définit la fonction suivante qui affiche les propriétés d'un objet qu'on lui a passé en argument avec le nom associé :
+
+function afficherProps(obj, nomObjet) {
+  let resultat = "";
+  for (let i in obj) {
+    if (obj.hasOwnProperty(i)) {
+        resultat += `${nomObjet}.${i} = ${obj[i]}\n`;
+    }
+  }
+  return resultat;
+}
+
+objet dans objet :
+
+let maHonda = {
+  couleur: "rouge",
+  roue: 4,
+  moteur: {
+    cylindres: 4,
+    taille: 2.2
+  }
+};
+
+constructeur : 
+
+fonctions ne doivent pas commencer par une maj car fonctions qui commencent par maj spnt des constructeurs ou classe
+
+On peut aussi créer des objets d'une autre façon, en suivant deux étapes :
+
+On définit une fonction qui sera un constructeur définissant le type de l'objet. La convention, pour nommer les constructeurs, est d'utiliser une majuscule comme première lettre pour l'identifiant de la fonction.
+On crée une instance de l'objet avec new
+Pour définir le type d'un objet, on crée une fonction qui définit le nom de ce type et les propriétés et méthodes des instances. Ainsi, si on souhaite créer un type d'objet pour représenter des voitures, on pourra nommer ce type voiture, et il pourra avoir des propriétés pour le fabricant, le modèle et l'année. Pour ce faire, on pourra écrire la fonction suivante :
+
+function Voiture(fabricant, modele, annee) {
+  this.fabricant = fabricant;
+  this.modele = modele;
+  this.annee = annee;
+}
+
+On voit ici qu'on utilise le mot-clé this pour affecter des valeurs aux propriétés d'un objet en fonction des valeurs passées en arguments de la fonction.
+
+let maVoiture = new Voiture("Eagle", "Talon TSi", 1993);
 
 
 
+// var apprenant = {
+//     nom : "Doe",
+//     prenom : "John",
+//     age: 30,
+//     clog : () => {
+//         console.log(this.nom);
+//     }
+// };
+// console.log(typeof(apprenant));
+// type object
 
-
-
-
-
-
-
-
-
+var apprenant = {
+    nom : "Doe",
+    prenom : "John",
+    age: 30,
+    clog : () => {
+        console.log(this.nom);
+    }
+};
+console.log(apprenant.age);
+var apprenant = {
+    nom : "Doe",
+    prenom : "John",
+    "age de-lap": 30,
+    clog : () => {
+        console.log(this.nom);
+    }
+};
 
 
 
