@@ -168,7 +168,6 @@ console.log(`${superMarioBros.titre} est sorti sur ${superMarioBros.console} en 
 console.log(superMarioBros.titre + " " + "est sorti sur" + " " + superMarioBros.console + " " + superMarioBros.annee)
 
 
-
 /*création d'objets dans un objet*/
 let maCollection = {...{superMarioBros}, ...{marioBros}, ...{superMarioBros3}, ...{newSuperU}};
 /*spread operator*/
@@ -178,3 +177,40 @@ for (const key in maCollection){
     console.log(maCollection[key]);
 }
 /*key = attribut // maCollection[key]->dynamique on évite maCollection.propriété*/
+
+/*méthode map sur objet : pour chaque objet de l' objet maCollection, créer une div qui aura comme h2: nom du jeu, h3: nom de la console, et h3: année de sortie. Div qui doit appraître sur HTML.
+*/
+
+/*méthiode document.createElement() = créer un nouvel élément
+let exo = document.createElement("h2");
+précise nom balise en paramètre, élément créé
+exo.innerText = "hello";
+ajout de texte, inner text car texte et non balises, innerHTML plutôt quand la div va contenir d'autres balises
+exo.style.color = "red";
+exo.classList.add("maClasse");
+modification style, ajout classe
+document.querySelector("div").appendChild(exo);
+permet d'ajouter la création dans le DOM, méthode qui permet d'ajouter un élément enfant dans un élémnet sélectionné
+le nouvel élément est ajouté à la fin
+
+let exo = document.createElement("h2");
+exo.innerHTML = "hello";
+document.querySelector("div").appendChild(exo);
+*/
+
+// let maCollection1 = maCollection.map("titre");
+// console.log(maCollection1);
+// let affichage = document.createElement("h2");
+// affichage.innerHTML = maCollection1;
+// document.querySelector("div").appendChild(affichage);
+  
+
+
+
+let affichage = new Map();
+affichage.set(maCollection);
+console.log(affichage);
+let affichage1 = document.createElement("h2");
+affichage1.innerHTML = affichage;
+document.querySelector("div").appendChild(affichage1);
+  
