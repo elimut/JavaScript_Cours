@@ -128,12 +128,8 @@ tablo.splice(1, 1, 5);
 
 
 
-function puissance(x, n){
-    for (let i=0; i<n; i++)
-    {
-       return x^n;
-    }
-}
+
+// }
 
 /* 
 Objet:
@@ -146,42 +142,42 @@ annee de sortie sur chaque console,
 faire instance de l'objet avec mario bross est sorti sur en telle année.
 */
 
-function Jeux(titre, console, annee) {
-    this.titre = titre;
-    this.console = console;
-    this.annee = annee;
-}
+// function Jeux(titre, console, annee) {
+//     this.titre = titre;
+//     this.console = console;
+//     this.annee = annee;
+// }
 
-let superMarioBros = new Jeux("Super Mario Bros", "Nintendo", 1985);
-let marioBros = new Jeux("Mario Bros", "Nintendo", 1983);
-let superMarioBros3 = new Jeux("Super Mario Bros .3", "Nintendo", 1988);
-let newSuperU = new Jeux("New Super Mario Bros. U", "Wii", 2012);
-let superMario64 = new Jeux("Super Mario 64", "Nintedo 64", 1996);
-let superMarioWorld = new Jeux("Super Mario World", "Super Nintendo", 1990);
-let superMarioBrosTheLost = new Jeux("Super Mario Bros.: The Lost Levels", "Nintendo", 1986);
-let newSuperMarioBrosu = new Jeux("New Super Mario Bros. U Deluxe", "Switch", 2019);
-let newsuperMarioBros = new Jeux("New Super Mario Bros", "Wii", 2009);
-let superMarioBros2 = new Jeux("Super Mario Bros. 2", "Nintendo", 1988);
+// let superMarioBros = new Jeux("Super Mario Bros", "Nintendo", 1985);
+// let marioBros = new Jeux("Mario Bros", "Nintendo", 1983);
+// let superMarioBros3 = new Jeux("Super Mario Bros .3", "Nintendo", 1988);
+// let newSuperU = new Jeux("New Super Mario Bros. U", "Wii", 2012);
+// let superMario64 = new Jeux("Super Mario 64", "Nintedo 64", 1996);
+// let superMarioWorld = new Jeux("Super Mario World", "Super Nintendo", 1990);
+// let superMarioBrosTheLost = new Jeux("Super Mario Bros.: The Lost Levels", "Nintendo", 1986);
+// let newSuperMarioBrosu = new Jeux("New Super Mario Bros. U Deluxe", "Switch", 2019);
+// let newsuperMarioBros = new Jeux("New Super Mario Bros", "Wii", 2009);
+// let superMarioBros2 = new Jeux("Super Mario Bros. 2", "Nintendo", 1988);
 
-console.log(superMarioBros);
-console.log(`${superMarioBros.titre} est sorti sur ${superMarioBros.console} en ${superMarioBros.annee}`);
-console.log(superMarioBros.titre + " " + "est sorti sur" + " " + superMarioBros.console + " " + superMarioBros.annee)
+// console.log(superMarioBros);
+// console.log(`${superMarioBros.titre} est sorti sur ${superMarioBros.console} en ${superMarioBros.annee}`);
+// console.log(superMarioBros.titre + " " + "est sorti sur" + " " + superMarioBros.console + " " + superMarioBros.annee)
 
 
 /*création d'objets dans un objet*/
-let maCollection = {...{superMarioBros}, ...{marioBros}, ...{superMarioBros3}, ...{newSuperU}};
+// let maCollection = {...{superMarioBros}, ...{marioBros}, ...{superMarioBros3}, ...{newSuperU}};
 /*spread operator*/
-console.log(maCollection);
+// console.log(maCollection);
 
-for (const key in maCollection){
-    console.log(maCollection[key]);
-}
+// for (const key in maCollection){
+//     console.log(maCollection[key]);
+// }
 /*key = attribut // maCollection[key]->dynamique on évite maCollection.propriété*/
 
 /*méthode map sur objet : pour chaque objet de l' objet maCollection, créer une div qui aura comme h2: nom du jeu, h3: nom de la console, et h3: année de sortie. Div qui doit appraître sur HTML.
 */
 
-/*méthiode document.createElement() = créer un nouvel élément
+/*méthode document.createElement() = créer un nouvel élément
 let exo = document.createElement("h2");
 précise nom balise en paramètre, élément créé
 exo.innerText = "hello";
@@ -198,19 +194,86 @@ exo.innerHTML = "hello";
 document.querySelector("div").appendChild(exo);
 */
 
-// let maCollection1 = maCollection.map("titre");
-// console.log(maCollection1);
-// let affichage = document.createElement("h2");
-// affichage.innerHTML = maCollection1;
-// document.querySelector("div").appendChild(affichage);
-  
 
 
+// méthode map compatible avec tableaux,ne peut pas être utilisée comme sur un tableau avec objet.
+// recuperer val objet comme tableu : Object.value 
 
-let affichage = new Map();
-affichage.set(maCollection);
-console.log(affichage);
-let affichage1 = document.createElement("h2");
-affichage1.innerHTML = affichage;
-document.querySelector("div").appendChild(affichage1);
-  
+
+// Object.values(maCollection).map(
+//     (Jeux) => {
+//         console.log(Jeux.console)
+//         console.log(Jeux.name)
+//         console.log(Jeux.year)
+//         let affichage1 = document.createElement("h2");
+//         affichage1.innerHTML = Jeux.titre;
+//         affichage1.style.color = "green";
+//         document.querySelector("div").appendChild(affichage1);
+//         let affichage2 = document.createElement("h3");
+//         affichage2.innerHTML = `Console: ${Jeux.console}`;
+//         affichage2.style.color = "black";
+//         affichage2.style.margin = "10px";
+//         document.querySelector("div").appendChild(affichage2);
+//         let affichage3 = document.createElement("h3");
+//         affichage3.innerHTML = `Année de sortie: ${Jeux.annee}`;
+//         affichage3.style.color = "black";
+//         affichage3.style.margin = "10px";
+//         document.querySelector("div").appendChild(affichage3);
+//     }
+// );
+// La méthode Object.entries() renvoie un tableau des paires de propriétés [key, value] énumérables d'un objet donné . C'est la même chose que l'itération avec une boucle for...in , sauf qu'une boucle for...in énumère également les propriétés de la chaîne de prototypes.
+// L'ordre du tableau renvoyé par Object.entries() est le même que celui fourni par une boucle for...in .Si un ordre différent est nécessaire, le tableau doit être trié en premier, comme Object.entries(obj).sort((a, b) => a[0].localeCompare(b[0])); .
+
+let courses = {
+    "fruits": [
+      { "kiwis": 3,
+        "mangues": 4,
+        "pommes": null
+      },
+      { "panier": true },
+    ],
+    "legumes":
+      { "patates": "amandine",
+        "figues": "de barbarie",
+        "poireaux": false
+      }
+};
+Object.values(courses).map(
+    (legumes) => {
+        let affichage1 = document.createElement("p");
+        affichage1.innerHTML = `${legumes.patates} \n${legumes.figues} \n${legumes.poireaux}`;
+        affichage1.style.color = "green";
+        document.querySelector("div").appendChild(affichage1);
+    }
+).join(": ");
+// Object.entries(courses.legumes).map(
+//     (legumes) => {
+//         let affichage1 = document.createElement("p");
+//         affichage1.innerHTML = legumes.join(": ");
+//         affichage1.style.color = "green";
+//         document.querySelector("div").appendChild(affichage1);
+//         let affichage2 = document.createElement("h3");
+//         affichage2.innerHTML = `Console: ${Jeux.console}`;
+//         affichage2.style.color = "black";
+//         affichage2.style.margin = "10px";
+//         document.querySelector("div").appendChild(affichage2);
+//         let affichage3 = document.createElement("h3");
+//         affichage3.innerHTML = `Année de sortie: ${Jeux.annee}`;
+//         affichage3.style.color = "black";
+//         affichage3.style.margin = "10px";
+//         document.querySelector("div").appendChild(affichage3);
+//     }
+// );
+
+// Condition initiale :
+// var result = 8 % 2 > 0 || !(3 % 2 < 1);
+
+// Condition décomposée en trois parties :
+// var result1 = 8 % 2 > 0,
+// result2 = !(3 % 2 < 1),
+// result3 = result1 || result2;
+// La condition ainsi décomposée est déjà plus facile à cerner :
+
+// Pour result1 on fait le calcul 8 % 2 = 0 et on obtient ainsi la comparaison 0 > 0 qui renvoie donc false.
+// Pour result2 on fait le calcul 3 % 2 = 1 et on obtient ainsi la comparaison 1 > 1 qui renvoie donc false. En revanche là on constate que la condition est entourée de parenthèses et est précédée de l'opérateur NON, il nous faut donc inverser le résultat de la condition, ainsi, false devient true !
+// Et pour terminer, dans result3, nous utilisons l'opérateur logique OU qui renvoie true si l'une des valeurs soumises vaut true elle aussi. Ainsi, false || true = true !

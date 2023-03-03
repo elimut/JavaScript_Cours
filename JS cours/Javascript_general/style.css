@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #47643b65;
+}
+h1{
+    color: #7fff00;
+    text-align: center;
+    font-size: 34px;
+    margin: 5%;
+}
+#exo{
+    color: #48ff00;
+    margin: 5%;
+}
+div{
+    display: flex;
+    flex-direction: column;
+}
