@@ -1565,16 +1565,16 @@ informatique, c’est-à-dire une façon de voir (ou de construire) son code et 
 
 Il existe trois paradigmes de programmation particulièrement populaires, c’est-à-dire trois grandes façons de penser son code :
 
-• **La programmation procédurale,
-• La programmation fonctionnelle,
-• La programmation orientée objet**.
+• **La programmation procédurale**,
+• **La programmation fonctionnelle**,
+• **La programmation orientée objet**.
 
-La programmation procédurale est le type de programmation le plus commun et le plus populaire. C’est une façon d’envisager son code sous la forme d’un enchainement de procédures ou d’étapes qui vont résoudre les problèmes un par un. Cela correspond à une approche verticale du code où celui-ci va s’exécuter de haut en bas, ligne par ligne.
+->La programmation procédurale est le type de programmation le plus commun et le plus populaire. C’est une façon d’envisager son code sous la forme d’un enchainement de procédures ou d’étapes qui vont résoudre les problèmes un par un. Cela correspond à une approche verticale du code où celui-ci va s’exécuter de haut en bas, ligne par ligne.
 Jusqu’à présent, nous avons utilisé cette approche dans nos codes JavaScript.
 
-La programmation fonctionnelle est une façon de programmer qui considère le calcul en tant qu’évaluation de fonctions mathématiques et interdit le changement d’état et la mutation des données. La programmation fonctionnelle est une façon de concevoir un code en utilisant un enchainement de fonctions « pures », c’est-à-dire des fonctions qui vont toujours retourner le même résultat si on leur passe les mêmes arguments et qui ne vont retourner qu’une valeur sans modification au-delà de leur contexte.
+->La programmation fonctionnelle est une façon de programmer qui considère le calcul en tant qu’évaluation de fonctions mathématiques et interdit le changement d’état et la mutation des données. La programmation fonctionnelle est une façon de concevoir un code en utilisant un enchainement de fonctions « pures », c’est-à-dire des fonctions qui vont toujours retourner le même résultat si on leur passe les mêmes arguments et qui ne vont retourner qu’une valeur sans modification au-delà de leur contexte.
 
-La programmation orientée objet est une façon de concevoir un code autour du concept d’objets. Un objet est une entité qui peut être vue comme indépendante et qui va contenir un ensemble de variables (qu’on va appeler propriétés) et de fonctions (qu’on appellera méthodes). Ces objets vont pouvoir interagir entre eux.
+->La programmation orientée objet est une façon de concevoir un code autour du concept d’objets. Un objet est une entité qui peut être vue comme indépendante et qui va contenir un ensemble de variables (qu’on va appeler propriétés) et de fonctions (qu’on appellera méthodes). Ces objets vont pouvoir interagir entre eux.
 
 Les choses importantes à retenir pour le moment sont les suivantes :
 1. Il existe différentes façons de penser / voir / concevoir son code qu’on appelle «paradigmes » ;
@@ -1585,10 +1585,11 @@ JavaScript, en particulier, supporte chacun des trois paradigmes principaux cit�
 ### Première définition de l’orienté objet et des objets en JavaScript
 
 Le JavaScript est un langage qui possède un fort potentiel pour la programmation orientée objet (abrégée en POO).
-En effet, vous devez savoir que le JavaScript est un langage qui intègre l’orienté objet dans sa définition même ce qui fait que tous les éléments du JavaScript vont soit être des objets, soit pouvoir être convertis et traités comme des objets.
+En effet, le JavaScript est un langage qui intègre l’orienté objet dans sa définition même ce qui fait que tous les éléments du JavaScript vont soit être des objets, soit pouvoir être convertis et traités comme des objets.
 
-**Un objet, en informatique, est un ensemble cohérent de données et de fonctionnalités qui vont fonctionner ensemble. Pour le dire très simplement, un objet en JavaScript est un conteneur qui va pouvoir stocker plusieurs variables qu’on va appeler ici des propriétés.
-Lorsqu’une propriété contient une fonction en valeur, on appelle alors la propriété une méthode. Un objet est donc un conteneur qui va posséder un ensemble de propriétés et de méthodes qu’il est cohérent de regrouper**.
+**Un objet, en informatique, est un ensemble cohérent de données et de fonctionnalités qui vont fonctionner ensemble. Pour le dire très simplement, un objet en JavaScript est un conteneur qui va pouvoir stocker plusieurs variables qu’on va appeler ici des propriétés.Lorsqu’une propriété contient une fonction en valeur, on appelle alors la propriété une méthode. Un objet est donc un conteneur qui va posséder un ensemble de propriétés et de méthodes qu’il est cohérent de regrouper**.
+
+> Un objet est un ensemble de propriétés et une propriété est une association entre un nom (aussi appelé **clé**) et une **valeur**. La valeur d'une propriété peut être une fonction, auquel cas la propriété peut être appelée « méthode ». En plus des objets natifs fournis par l'environnement, il est possible de construire ses propres objets.
 
 Exemple:
 
@@ -1605,7 +1606,7 @@ Exemple:
     nom, age, mail sont des propriétés de l' objet user. La valeur de la propriété nom est un tableau.
     bonjour est une méthode de l' objet user.
     On a créé notre premier objet.
-
+    ->Un objet est défini entre accolades, on va y placer des attributs.
 ->Pour créer un objet, on commence par définir et initialiser une variable.
 Dans le cas présent, notre variable let user stocke notre objet. Par simplification, on dira que cette variable « est » un objet mais pour être tout à fait exact il faudrait plutôt dire qu’elle stocke une valeur de type objet.
 Comme vous pouvez le voir, on utilise ici une syntaxe différente de celle dont on a l’habitude pour déclarer notre objet. Tout d’abord, vous pouvez remarquer qu’on utilise **dans le cas de la création d’un objet littéral une paire d’accolades qui indiquent au JavaScript qu’on souhaite créer un objet**.
@@ -1804,9 +1805,72 @@ Nous allons définir ce qu’est un prototype et comprendre comment le JavaScrip
 
 #### L’utilisation d’un constructeur et la performance
 
-Précedemment, nous avons pu créer plusieurs objets semblables en appelant
-plusieurs fois une fonction constructeur personnalisée Utilisateur() et en utilisant le mot clef new.
+Précedemment, nous avons pu créer plusieurs objets semblables en appelant plusieurs fois une fonction constructeur personnalisée Utilisateur() et en utilisant le mot clef new.
 
+Exemple:
+
+    function Utilisateur(n, m, a){
+        this.nom = n;
+        this.age = a;
+        this.mail = m;
+
+        this.bonjour = function(){
+            alert(`Bonjour, je suis ${this.nom[0]} , j' ai ${this.age} ans`);
+        }
+    }
+    let pierre = new Utilisateur([nom1, prenom1], 29, mail1);
+    let mathilde = new Utilisateur([nom2, prenom2], 30, mail2);
+    ->création de deux objets pierre et mathilde grâce au constructeur.
+
+On définit une fonction constructeur, puis on crée deux variables qui vont stocker deux objets créés à partir du constructeur. Chaque objet va disposer de sa propre copie des propriétés et méthode du constructeur, chaque objet va posséder 3 propriétés: nom, age, mail et une méthode bonjour() qui vont lui appartenir.
+
+En littéral: 
+
+    let pierre = {
+        nom : [nom1, prenom1],
+        age : 29;
+        mail : mail1;
+        bonjour : function{
+            alert...
+        }
+    }
+
+Dans ce cas, le code n'est pas optimal car en utilisant le constructeur plusieurs fois, on copie la méthode bonjour() identique à chaque fois.
+Ici, l'idéal erait de définir notre ùéthode une seule fois, et que chauqe objet puisse l'utiliser lorsqu'il le souhaite.
+Pour cela, on va utiliser des **prototypes**.
+
+#### Le prototype en JavaScript orienté objet
+
+Le JS est un langage orienté objet basé sur la notion de prototypes.
+Il existe deux grands types de langages objet:
+- ceux basés sur les classes,
+- ceux basés sur les prototypes.
+  
+Une classe est un plan général qui va servir à créer des objets similaires.
+Une classe va généralement contenir des propriétés, des méthodes et une méthode
+constructeur. Cette méthode constructeur va être appelée automatiquement dès qu’on va créer un objet à partir de notre classe et va nous permettre dans les langages basés sur les classes à initialiser les propriétés spécifiques des objets qu’on crée.
+Dans les langages orientés objet basés sur les classes, tous les objets sont créés à partir
+de classes et vont hériter des propriétés et des méthodes définies dans la classe.
+
+**Dans les langages orientés objet utilisant des prototypes comme le JavaScript, tout est objet et il n’existe pas de classes et l’héritage va se faire au moyen de prototypes**.
+
+Rappelons nous que **les fonctions en JS sont avant tout des objets**.
+Lorsque l'on crée une fonction, le JS va automatiquement lui ajouter une **propriété prototype** qui ne sera utile que lorsque la fonction est utilisée comme constructeur, c'est à dire quand on l' utilise avec la syntaxe new.
+**Cette propriété prototype possède une valeur qui est elle même un objet**.On parlera donc de "prototype objet" ou "d' ojet prototype" pour parler de la propriété prototype.
+Par défaut, elle ne contient que deux propriétés:
+- une **propriété constructor** qui renvoie vers les constructeur contenant le prototype,
+- et une **propriété _proto_** qui contient elle-même de nombreuses propriétés et méthodes.
+Lorsque l'on crée un objet à partir d'un constructeur, le JS va également ajouter une propriété _proto_ à l'objet créé, égale à celle du constrcuteur.
+
+A quoi servent la propriété prototype d’un constructeur et la propriété __proto__ dont
+disposent à la fois le constructeur mais également tous les objets créés à partir de celui-ci ?
+En fait, le contenu de la propriété prototype d’un constructeur va être partagé par tous les objets créés à partir de ce constructeur. Comme cette propriété est un objet, on va pouvoir lui ajouter des propriétés et des méthodes que tous les objets créés à partir du
+constructeur vont partager ->
+**cela permet l’héritage en orienté objet JavaScript. On dit qu’un objet « hérite » des membres d’un autre objet lorsqu’il peut accéder à ces membres définis dans l’autre objet**.
+En l’occurrence, ici, les objets crées à partir du constructeur ne possèdent pas vraiment
+les propriétés et les méthodes définies dans la propriété prototype du constructeur mais
+vont pouvoir y accéder et se « partager » ces membres définis dans l’objet prototype du
+constructeur.
 
 
 ## Le DOM
@@ -2109,7 +2173,7 @@ Il y a plusieurs façons d’écrire une requête Ajax, la syntaxe en JavaScript
 
 [OpenClassroom code](https://openclassrooms.com/fr/courses/245710-ajax-et-lechange-de-donnees-en-javascript/244798-lobjet-xmlhttprequest)
 
-##Exercices (voir dossier exercicesMM) :
+## Exercices dossier exo MM :
 
 - Afficher "Hello World" dans la console du navigateur.
 - Déclarer une variable avec le mot-clé let ayant comme nom « color ».Puis, sur la ligne suivante, lui assigner la valeur « rouge ».
@@ -2167,7 +2231,7 @@ La console affiche le résultat 60 ;
 
 stop : chifoumi , exo3
 
-## Main.js, petits rappels:
+## Main.js, petits rappels et exercices:
 
 - alert
 - window.prompt
@@ -2205,33 +2269,14 @@ exemple :
 conversion de la var age en type number, et incrémentation possible.
 
 ###Objet:
-Défini entre accolades, type dans lequel on met des attributs.
 
-JavaScript est conçu autour d'un paradigme simple, basé sur les objets. Un objet est un ensemble de propriétés et une propriété est une association entre un nom (aussi appelé clé) et une valeur. La valeur d'une propriété peut être une fonction, auquel cas la propriété peut être appelée « méthode ». En plus des objets natifs fournis par l'environnement, il est possible de construire ses propres objets. Ce chapitre aborde la manipulation d'objets, l'utilisation des propriétés, fonctions et méthodes, il explique également comment créer ses objets.
 Contexte ne peut être invoqué qu' à l'intérieur de lui même, portée des attributs
-À l'instar de nombreux autres langages de programmation, on peut comparer les objets JavaScript aux objets du monde réel.
-
-En JavaScript, un objet est une entité à part entière qui possède des propriétés et un type. Si on effectue cette comparaison avec une tasse par exemple, on pourra dire qu'une tasse est un objet avec des propriétés. Ces propriétés pourront être la couleur, la forme, le poids, le matériau qui la constitue, etc. De la même façon, un objet JavaScript possède des propriétés, chacune définissant une caractéristique
 
 Portée des fonctions :
 
 portée des fonctions fléchées
 une fonction avec mot clef fontion est accessible depuis l'extérier de l'objet tandis qu'une flechée est cantonnée dans l'objet(locale)
 
-/*
-Objet:
-
-
-var apprenant = {
-    nom(attribut) : "DOE",
-    prenom : "John",
-};
-objet nom = apprenant qui contient deux attributs nom et prenom de type string
-log nom de l'objet:
-console.log(apprenant.nom);
-=>nomobjet.attribut=>valeur attribut
-log de l'objet:
-console.log(apprenant);
 contexte de l'objet : si je suis dans l'objet classe, avec attributs: outerWidth, écran, bureaux,...apprenant.
 a l'intérieur de l'objet dans les accolades this dans le contexte.A l'extérieur de l'objet
 var apprenant = {
@@ -2273,9 +2318,7 @@ var apprenant = {
 // };
 // console.log(apprenant);
 
-À l'instar de nombreux autres langages de programmation, on peut comparer les objets JavaScript aux objets du monde réel.
 
-En JavaScript, un objet est une entité à part entière qui possède des propriétés et un type. Si on effectue cette comparaison avec une tasse par exemple, on pourra dire qu'une tasse est un objet avec des propriétés. Ces propriétés pourront être la couleur, la forme, le poids, le matériau qui la constitue, etc. De la même façon, un objet JavaScript possède des propriétés, chacune définissant une caractéristique
 // apprenant.clog();
 // =>appel de la fonction
 
