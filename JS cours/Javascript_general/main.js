@@ -110,16 +110,10 @@ tablo.push(14);
 
 
 
-<<<<<<< HEAD
-    *Exercice:
-Reprenez tablo qui contient 1, 2 et 3 de l'exercice précédent,
-Accédez au 2ème élément du tableau tablo et rangez la valeur dans une variable nommée item,
-=======
 *Array.splice():
 *Exercice:
 *Reprenez tablo qui contient 1, 2 et 3 de l'exercice précédent
 Accédez au 2ème élément du tableau tablo et rangez la valeur dans une variable nommée item
->>>>>>> 1df05046ea93a0013ae747821283b766a0911bf9
 Remplacez le 2ème élément du tableau par le nombre 5:
 let tablo = [1, 2, 3];
 let item = tablo[1];
@@ -141,24 +135,14 @@ Objet:
 ->log de l'objet:
     console.log(apprenant);s
 
-<<<<<<< HEAD
-    *Exercice :
-création constructeur objet,
-=======
 
 *Exercice :
 
 *création constructeur objet,
->>>>>>> 1df05046ea93a0013ae747821283b766a0911bf9
 cet objet doit posséder plusieurs propriétés : titre,console, année,
 le jeu mario bros,annee de sortie sur chaque console,
 faire instance de l'objet avec mario bross est sorti sur en telle année.
-<<<<<<< HEAD
-
-function Jeux(titre, console, annee) {
-=======
     function Jeux(titre, console, annee) {
->>>>>>> 1df05046ea93a0013ae747821283b766a0911bf9
     this.titre = titre;
         this.console = console;
         this.annee = annee;
@@ -254,42 +238,6 @@ Object.entries(courses.legumes).map(
     }
 );
 
-<<<<<<< HEAD
-Puis création d'objets dans un objet
-let maCollection = {...{superMarioBros}, ...{marioBros}, ...{superMarioBros3}, ...{newSuperU}};
-->spread operator
-console.log(maCollection);
-ne logue qu'un élément donc =>
-
-for (const key in maCollection){
-    console.log(maCollection[key]);
-}
-key = attribut // maCollection[key]->dynamique on évite maCollection.propriété
-
-Pour chaque objet de l'objet ma collection, vous allez créer une div qui aura h2 le nom de la console, en h3, et en h4 l'année. Cette div doit être affichée en HTML.
-*/
-
-function Jeux(titre, console, annee) {
-    this.titre = titre;
-    this.console = console;
-    this.annee = annee;
-}
-
-let superMarioBros = new Jeux("Super Mario Bros", "Nintendo", 1985);
-let marioBros = new Jeux("Mario Bros", "Nintendo", 1983);
-let superMarioBros3 = new Jeux("Super Mario Bros .3", "Nintendo", 1988);
-let newSuperU = new Jeux("New Super Mario Bros. U", "Wii", 2012);
-let superMario64 = new Jeux("Super Mario 64", "Nintendo 64", 1996);
-let superMarioWorld = new Jeux("Super Mario World", "Super Nintendo", 1990);
-let superMarioBrosTheLost = new Jeux("Super Mario Bros.: The Lost Levels", "Nintendo", 1986);
-let newSuperMarioBrosu = new Jeux("New Super Mario Bros. U Deluxe", "Switch", 2019);
-let newsuperMarioBros = new Jeux("New Super Mario Bros", "Wii", 2009);
-let superMarioBros2 = new Jeux("Super Mario Bros. 2", "Nintendo", 1988);
-
-let maCollection = {...{superMarioBros}, ...{marioBros}, ...{superMarioBros3}, ...{newSuperU}, ...{superMario64}, ...{superMarioWorld}, ...{superMarioBrosTheLost}, ...{newSuperMarioBrosu}, ...{newSuperMarioBrosu}, ...{superMarioBros2}};
-
-maCollection = document.querySelectorAll("div").innerHTML
-=======
 
 
 /*
@@ -306,4 +254,3 @@ Condition initiale :
 ->Pour result1 on fait le calcul 8 % 2 = 0 et on obtient ainsi la comparaison 0 > 0 qui renvoie donc false.
 ->Pour result2 on fait le calcul 3 % 2 = 1 et on obtient ainsi la comparaison 1 > 1 qui renvoie donc false. En revanche là on constate que la condition est entourée de parenthèses et est précédée de l'opérateur NON, il nous faut donc inverser le résultat de la condition, ainsi, false devient true !
 ->Et pour terminer, dans result3, nous utilisons l'opérateur logique OU qui renvoie true si l'une des valeurs soumises vaut true elle aussi. Ainsi, false || true = true !*/
->>>>>>> 1df05046ea93a0013ae747821283b766a0911bf9
