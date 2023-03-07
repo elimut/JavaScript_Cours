@@ -241,7 +241,7 @@ Object.entries(courses.legumes).map(
 
 
 /*
-Condition initiale :
+Condition initiale "ou" :
 
 *Exercice:
 

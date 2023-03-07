@@ -1726,7 +1726,7 @@ Pour construire des objets à partir d’une fonction constructeur, nous allons 
 - il va déjà falloir définir notre fonction constructeur,
 - ensuite nous allons appeler ce constructeur avec une syntaxe un peu spéciale utilisant le mot clef **new**.
 
-Dans une fonction constructeur, on va pouvoir définir un ensemble de propriétés et de méthodes. Les objets créés à partir de ce constructeur vont automatiquement posséder les (« hériter des ») propriétés et des méthodes définies dans le constructeur.
+Dans une fonction constructeur, on va pouvoir définir un ensemble de propriétés et de méthodes. Les objets créés à partir de ce constructeur vont automatiquement posséder les (hériter des) propriétés et des méthodes définies dans le constructeur.
 
 Comment une fonction peut-elle contenir des propriétés et des méthodes ?
 C’est très simple : **les fonctions sont en fait un type particulier d’objets en JavaScript ! Comme tout autre objet, une fonction peut donc contenir des propriétés et des méthodes**.
@@ -1743,7 +1743,7 @@ Pour cela, on va se baser sur l’objet littéral créé dans la leçon précéd
         this.bonjour = function(){
             alert("txt");
         }
-    }
+    };
     ->On définit ici une fonction Utilisateur() qu’on va utiliser comme constructeur d’objets.Comme vous pouvez le voir, le code de notre fonction est relativement différent des autres fonctions qu’on a pu créer jusqu’ici, avec notamment l’utilisation du mot clef this qui va
     permettre de définir et d’initialiser les propriétés ainsi que les méthodes de chaque objet créé.
     Notre constructeur possède trois paramètres qu’on a ici nommé n, a et m qui vont nous permettre de transmettre les valeurs liées aux différentes propriétés pour chaque objet.A chaque création d’objet, c’est-à-dire à chaque appel de notre constructeur en utilisant le
@@ -1766,7 +1766,7 @@ Exemple:
         this.bonjour = function(){
             alert("txt");
         }
-    }
+    };
     ->fonction constructeur
 
     let user = new Utilisateur(["pierre", "giro"], 29, "adressemail.com");
@@ -1817,7 +1817,7 @@ Exemple:
         this.bonjour = function(){
             alert(`Bonjour, je suis ${this.nom[0]} , j' ai ${this.age} ans`);
         }
-    }
+    };
     let pierre = new Utilisateur([nom1, prenom1], 29, mail1);
     let mathilde = new Utilisateur([nom2, prenom2], 30, mail2);
     ->création de deux objets pierre et mathilde grâce au constructeur.
@@ -1871,6 +1871,42 @@ En l’occurrence, ici, les objets crées à partir du constructeur ne possèden
 les propriétés et les méthodes définies dans la propriété prototype du constructeur mais
 vont pouvoir y accéder et se « partager » ces membres définis dans l’objet prototype du
 constructeur.
+Pour faire fonctionner cela, il faut se rappeler que **la propriété prototype est un objet** et qu'on va donc pouvoir lui ajouter des propriétés et des méthodes comme pour tout autre objet.
+
+Exemple:
+
+    function Utilisateur(n, a, m){
+        this.nom = n;
+        this.age = a;
+        lthis.mail = m;
+    }
+    ->Utilisateur() est une fonction constructeur.
+
+    Utilisateur.prototype.taille = 170;
+    Utilisateur.prototype.bonjour = function (){
+        alert(`Bonjour, je suis ${this.nom[0]} , j'ai ${this.age} ans`);
+    };
+    ->On ajoute des propriétés et méthodes au prototype de Ustilisateur comme n' importe quel objet.
+
+    =>On ajoute une propriété taille et une méthode bonjour() à la propriété du prototype constructeur. Chaque objet créé à partir de ce constructeur va av oir accès à cette propriété et cette méthode.
+
+![console prototype](img/prototype.png)
+
+Définir des propriétés et des méthodes dans le prototype d'un constructeur nous permet ainsi de les rendre accessible à tous les objets créés à partir de ce constructeur sans que ces objets aient à les redéfinir.
+**Pour avoir du code plus clair et plus performant, on définira généralement les propriétés des objets (dont les valeurs doivent être spécifique à l'objet) au sein du constructeur et les méthodes (que tous les objets vont pouvoir appeler de la même façon) dans le prototype du constructeur.**
+
+Les différents objets se "partagent" ici la même propriété taille et la même méthode bonjour()définies dans le constructeur.
+
+#### La chaine des prototypes ou chaine de prototypage et l’objet Object
+
+Comment un objet peut-il accéder à une propriété ou à une méthode définie dans un autre objet ?
+
+Pour répondre à cette question, il faut savoir que lorsqu’on essaie d’accéder à un membre
+d’un objet, le navigateur (qui exécute le JavaScript) va d’abord chercher ce membre au sein de l’objet.
+S’il n’est pas trouvé, alors le membre va être cherché au sein de la propriété proto de l’objet dont le contenu est, rappelons-le, égal à celui de la propriété prototype du constructeur qui a servi à créer l’objet.
+
+
+
 
 
 ## Le DOM
