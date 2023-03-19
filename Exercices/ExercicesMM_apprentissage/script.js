@@ -226,10 +226,29 @@ La console affiche le calcul 6 * 10 ;
 La console affiche le résultat 60 ;*/
 
 
-// document.write("<h1>Salut !</h1>");
-// document.write("<p>Ça va ?</p>");
+let nombre1User = window.prompt('Quel nombre entre 1 et 9 souhaitez vous ?');
+console.log(typeof nombre1User);
+/*function verification(x) {
+    if (isNaN(x)) {
+        return x = window.prompt('Quel nombre entre 1 et 10 souhaitez vous ?');;
+    }
+    else{
+        return x;
+    }
+}*/
+function verification(x){
+    while (isNaN(x) == true){
+      return x = window.prompt("Ceci n'est pas un chiffre, veuillez-saisir un chiffre");
+    }
+};
+verification(nombre1User);
+nombre1User = parseInt(nombre1User);
+console.log(typeof nombre1User);
 
-
+let affichage1 = document.createElement("tr");
+affichage1.innerHTML = multiplication;
+affichage1.style.color = "green";
+document.querySelector("div").appendChild(affichage1);
 
 
 
