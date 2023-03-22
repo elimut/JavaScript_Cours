@@ -13,7 +13,7 @@ Son objectif est de dynamiser les pages Web et de les rendre interactives. Exemp
 
 Le DOM est ainsi une représentation structurée du document sous forme « d’arbre » crée automatiquement par le navigateur. Chaque branche de cet arbre se termine par ce qu’on appelle un nœud qui va contenir des objets. On va finalement pouvoir utiliser ces objets, leurs propriétés et leurs méthodes en JavaScript.
 Le DOM contient ou correspond à un ensemble d’APIs qui font partie du BOM comme l’interface Document par exemple qui représente une page et sert de point d’entrée dans l’arborescence du DOM.
-Pour utiliser les propriétés et méthodes de l’interface.Le terme interface est généralement utilisé en informatique pour désigner un programme permettant un échange de données : il peut s'agir d'un échange entre deux logiciels : l'interface est, par exemple, un programme qui reformate les données pour assurer la compatibilité entre ces deux logiciels.) Document, nous allons tout simplement utiliser la propriété document de Window. Nous avons déjà utilisée cette propriété de nombreuses fois dans ce cours, notamment lorsqu’on souhaitait injecter du texte dans un paragraphe avec le code document: getElementById('#').innerHTML.
+Pour utiliser les propriétés et méthodes de l’interface.Le terme interface est généralement utilisé en informatique pour désigner un programme permettant un échange de données : il peut s'agir d'un échange entre deux logiciels : l'interface est, par exemple, un programme qui reformate les données pour assurer la compatibilité entre ces deux logiciels. Document, nous allons tout simplement utiliser la propriété document de Window. Nous avons déjà utilisée cette propriété de nombreuses fois dans ce cours, notamment lorsqu’on souhaitait injecter du texte dans un paragraphe avec le code document: getElementById('#').innerHTML.
 Lorsqu’on demande à un navigateur d’afficher une page Web, celui-ci va automatiquement créer un modèle objet de la page ou du document. Ce modèle objet correspond à une autre représentation de la page sous forme d’arborescence contenant des objets qui sont de type Node (nœuds).
 ![DOM](img/interpretation.png)
 
@@ -1906,7 +1906,270 @@ d’un objet, le navigateur (qui exécute le JavaScript) va d’abord chercher c
 S’il n’est pas trouvé, alors le membre va être cherché au sein de la propriété proto de l’objet dont le contenu est, rappelons-le, égal à celui de la propriété prototype du constructeur qui a servi à créer l’objet.
 
 
+## L ' asynchrone en JS
 
+Par défaut, **le JavaScript est un langage synchrone, bloquant et qui ne s’exécute que sur un seul thread**. 
+Cela signifie que:
+Les différentes opérations vont s’exécuter les unes à la suite des autres (elles sont synchrones) ;
+Chaque nouvelle opération doit attendre que la précédente ait terminé pour démarrer (l’opération précédente est « bloquante ») ;
+Le JavaScript ne peut exécuter qu’une instruction à la fois (il s’exécute sur un thread, c’est-à-dire un « fil » ou une « tâche » ou un « processus » unique).
+
+Cela est problématique, par exemple: temps exécution des boucles, …
+
+Le JavaScript nous fournit des outils pour créer du code asynchrone.
+
+### Les fonctions de rappel: à la base de l’ asynchrone en JS.
+
+En JavaScript, les opérations asynchrones sont placées dans des files d'attente qui vont s’exécuter après que le fil d’exécution principal ou la tâche principale (le « main thread » en anglais) ait terminé ses opérations. Elles ne bloquent donc pas l’exécution du reste du code JavaScript.
+L’idée principale de l’asynchrone est que le reste du script puisse continuer à s’exécuter pendant qu’une certaine opération plus longue ou demandant une réponse / valeur est en cours. Cela permet un affichage plus rapide des pages et en une meilleure expérience utilisateur.
+Le premier outil utilisé en JavaScript pour générer du code asynchrone a été les fonctions de rappel. En effet, une fonction de rappel ou « callback » en anglais est une fonction qui va pouvoir être rappelée (« called back ») à un certain moment et / ou si certaines conditions sont réunies.
+L’idée ici est de passer une fonction de rappel en argument d’une autre fonction. Cette fonction de rappel va être rappelée à un certain moment par la fonction principale et pouvoir s’exécuter, sans forcément bloquer le reste du script tant que ce n’est pas le cas.
+
+Exemple:
+
+Utilisation de la méthode setTimeout() qui permet d’exécuter une fonction de rappel après un certain délai ou encore avec la création de gestionnaires d'événements qui vont exécuter une fonction seulement lorsqu’un événement particulier se déclenche.
+
+    /*setTimeout() est asynchrone : le reste du script va pouvoir s'exécuter sans avoir à attendre la fin de l'exécution de setTimeout()*/
+    setTimeout(alert, 5000, 'Message affiché après 5 secondes');
+    /*Cette alerte sera affichée avant celle définie dans setTimeout()
+    alert('Suite du script');*/
+
+Mais ces fonctions ont des limites: **le callback hell**.
+Utiliser des fonctions de rappel pour générer du code asynchrone fonctionne mais possède certains défauts. Le principal défaut est qu’on ne peut pas prédire quand notre fonction de rappel asynchrone aura terminé son exécution, ce qui fait qu’on ne peut pas prévoir dans quel ordre les différentes fonctions vont s’exécuter.
+Dans le cas où nous n’avons qu’une opération asynchrone définie dans notre script ou si nous avons plusieurs opérations asynchrones totalement indépendantes, cela ne pose pas de problème.
+En revanche, cela va être un vrai souci si la réalisation d’une opération asynchrone dépend de la réalisation d’une autre opération asynchrone. Imaginons par exemple un code JavaScript qui se charge de télécharger une autre ressource relativement lourde. On va vouloir charger cette ressource de manière asynchrone pour ne pas bloquer le reste du script et pour ne pas que le navigateur « freeze ».
+Lorsque cette première ressource est chargée, on va vouloir l’utiliser et charger une deuxième ressource, puis une troisième, puis une quatrième et etc.
+Le seul moyen de réaliser cela en s’assurant que la ressource précédente soit bien disponible avant le chargement de la suivante va être d’imbriquer le deuxième code de chargement dans la fonction de rappel du premier code de chargement, puis le troisième code de chargement dans la fonction de rappel du deuxième code de chargement et etc.
+
+    /*La fonction loadScript() crée un nouvel élément script et ajoute la valeur passée en argument à l'attribut src puis insère l'élément script dans l'élément head de notre fichier HTML*/
+    function loadScript(src, callback) {
+        let script = document.createElement('script');
+        script.src = src;
+        script.onload = () => callback(script);
+        document.head.append(script);
+    }
+    loadScript('boucle.js', function(script){
+        alert('Le fichier ' + script.src + ' a bien été chargé. x vaut : ' + x);
+        loadScript('script2.js', function(script){
+            /*Utilise les éléments du script boucle.js pour effectuer des opérations...*/
+            alert('Le fichier ' + script.src + ' a bien été chargé');
+            loadScript('script3.js', function(script){
+                /*Utilise les éléments des scripts boucle.js et script2.js
+                pour effectuer des opérations...*/
+                alert('Le fichier ' + script.src + ' a bien été chargé');
+            });
+        });
+    });alert('Message d\'alerte du script principal');
+
+Ici, notre code n’est pas complet car on ne traite pas les cas où une ressource n’a pas pu être chargée, c’est-à-dire les cas d’erreurs qui vont impacter le chargement des ressources suivantes. Dans le cas présent, on peut imaginer que seul le script boucle.js est accessible et qu’il ressemble à cela.
+Pour gérer les cas d’erreur, nous allons passer un deuxième argument à nos fonctions de rappel.
+
+        function loadScript(src, callback) {
+        let script = document.createElement('script');
+        script.src = src;
+        script.onload = () => callback(null, script);
+        script.onerror = () => callback(new Error('Erreur de chargement de ' + src));
+        document.head.append(script);
+    }
+    loadScript('boucle.js', function(error, script){
+        if(error){
+            alert(error.message);  
+        }else{
+            alert('Le fichier ' + script.src + ' a bien été chargé. x vaut : ' + x);
+            loadScript('script2.js', function(error, script){
+                if(error){
+                    alert(error.message);
+                }else{
+                    alert('Le fichier ' + script.src + ' a bien été chargé');
+                    loadScript('script3.js', function(error, script){
+                        if(error){
+                            alert(error.message);
+                        }else{
+                            alert('Le fichier ' + script.src + ' a bien été chargé');
+                        }
+                    });
+                }
+            });
+        }
+    });
+    alert('Message d\'alerte du script principal');
+La syntaxe adoptée ici est très classique et est issue de la convention « error-first ». L’idée est de réserver le premier argument d’une fonction de rappel pour la gestion des erreurs si une erreur se produit. Dans ce cas-là, on rentre dans le if. Dans le cas où aucune erreur ne survient, on passe dans le else.
+Cela fonctionne mais je suppose que vous commencez à voir le souci ici : pour chaque nouvelle opération asynchrone qui dépend d’une précédente, nous allons devoir imbriquer une nouvelle structure dans celle déjà existante. Cela rend très rapidement le code complètement illisible et très difficile à gérer et à maintenir. C’est ce phénomène qu’on a appelé le « callback hell » (l’enfer des fonctions de retour), un nom relativement évocateur !
+
+###  Introduction des promesses: gestion spécifique de l’asynchrone 
+
+En 2015, cependant, le JavaScript a intégré un nouvel outil dont l’unique but est la génération et la gestion du code asynchrone : **les promesses avec l’objet constructeur Promise: 
+une « promesse » est donc un objet représentant l’état d’une opération asynchrone**. Comme dans la vie réelle, une promesse peut être soit en cours (on a promis de faire quelque chose mais on ne l’a pas encore fait), soit honorée (on a bien fait la chose qu’on avait promis), soit rompue (on ne fera pas ce qu’on avait promis et on a prévenu qu’on ne le fera pas).
+Plutôt que d’attacher des fonctions de rappel à nos fonctions pour générer des comportements asynchrones, nous allons créer ou utiliser des fonctions qui vont renvoyer des promesses et allons attacher des fonctions de rappel aux promesses.
+
+Les avantages des promesses par rapport à l’utilisation de simples fonctions de rappel pour gérer des opérations asynchrones vont être notamment la possibilité de chainer les opérations asynchrones, la garantie que les opérations vont se dérouler dans l’ordre voulu et une gestion des erreurs simplifiées tout en évitant le « callback hell ».
+
+### Présentation et définition des promesses
+
+Une promesse en JavaScript est un objet qui représente l’état d’une opération asynchrone. Une opération asynchrone peut être dans l’un des états suivants :
+- Opération en cours (non terminée) ;
+- Opération terminée avec succès (promesse résolue) ;
+- Opération terminée ou plus exactement stoppée après un échec (promesse rejetée).
+  
+**L’idée est la suivante : nous allons définir une fonction dont le rôle est d’effectuer une opération asynchrone et cette fonction va, lors de son exécution, créer et renvoyer un objet Promesse**.
+
+Exemple:
+
+    const promesse = new Promise((resolv, rejecte) => {
+        tâche async à réaliser
+        appel de resolve() si la promesse est résolue (tenue)
+        ou
+        appel de reject() si elle est rejeté (rompue)
+    });
+
+En pratique, la majorité des opérations asynchrones qu’on va vouloir réaliser en JavaScript vont déjà être pré-codées et fournies par des API. Ainsi, nous allons rarement créer nos propres promesses mais plutôt utiliser les promesses renvoyées par les fonctions de ces API.
+
+Lorsque nos fonctions asynchrones s’exécutent, elles renvoient une promesse. Cette promesse va partager les informations liées à l’opération qui vient de s’exécuter et on va pouvoir l’utiliser pour définir quoi faire en fonction du résultat qu’elle contient (en cas de succès de l’opération ou en cas d’échec).
+
+Les promesses permettent ainsi de représenter et de manipuler un résultat un évènement futur et nous permettent donc de définir à l’avance quoi faire lorsqu’une opération asynchrone est terminée, que celle-ci ait été terminée avec succès ou qu’on ait rencontré un cas d’échec.
+
+Pour le dire autrement, vous pouvez considérer qu’une valeur classique est définie et disponible dans le présent tandis qu’une valeur « promise » est une valeur qui peut déjà exister ou qui existera dans le futur. Les calculs basés sur les promesses agissent sur ces valeurs encapsulées et sont exécutés de manière asynchrone à mesure que les valeurs deviennent disponibles.
+
+Au final, on fait une « promesse » au navigateur ou au programme exécutant notre code : on l’informe qu’on n’a pas encore le résultat de telle opération car celle-ci ne s’est pas déroulée mais que dès que l’opération sera terminée, son résultat sera disponible dans la promesse et qu’il devra alors exécuter tel ou tel code selon le résultat contenu dans cette promesse.
+
+Le code à exécuter après la consommation d’une promesse va être passé sous la forme de fonction de rappel qu’on va attacher à la promesse en question.
+
+### Créer une promesse avec le constructeur Promise
+
+Pour créer une promesse, on va utiliser la syntaxe **new Promise() qui fait donc appel au constructeur Promise**.
+**Ce constructeur va prendre en argument une fonction qui va elle-même prendre deux autres fonctions en arguments. La première sera appelée si la tâche asynchrone est effectuée avec succès tandis que la seconde sera appelée si l’opération échoue**.
+
+Voir exemple précédent.
+
+Lorsque notre promesse est créée, celle-ci possède deux propriétés internes : une première propriété state (état) dont la valeur va initialement être « pending » (en attente) et qui va pouvoir évoluer « fulfilled » (promesse tenue ou résolue) ou « rejected » (promesse rompue ou rejetée) et une deuxième propriété result qui va contenir la valeur de notre choix.
+
+Si la promesse est tenue, la fonction resolve() sera appelée tandis que si la promesse est rompue la fonction reject() va être appelée. Ces deux fonctions sont des fonctions prédéfinies en JavaScript et nous n’avons donc pas besoin de les déclarer. Nous allons pouvoir passer un résultat en argument pour chacune d’entre elles. Cette valeur servira de valeur pour la propriété result de notre promesse.
+
+En pratique, on va créer des fonctions asynchrones qui vont renvoyer des promesses :
+
+    function loadScript(src){
+        return new Promise((resolve, reject) => {
+            let script = document.createElement('script');
+            script.src = src;
+            document.head.append(script);
+            script.onload = () => resolve('Fichier ' + src + ' bien chargé');
+            script.onerror = () => reject(new Error('Echec de chargement de ' + src));
+        });
+    }
+    const promesse1 = loadScript('boucle.js');
+    const promesse2 = loadScript('script2.js');
+Notez que l’état d’une promesse une fois résolue ou rejetée est final et ne peut pas être changé. On n’aura donc jamais qu’une seule valeur ou une erreur dans le cas d’un échec pour une promesse.
+
+### Exploiter le résultat d' une promesse avec les méthodes then() et catch()
+
+**Pour obtenir et exploiter le résultat d’une promesse, on va généralement utiliser la méthode then() du constructeur Promise**.
+Cette méthode nous permet d’enregistrer deux fonctions de rappel qu’on va passer en arguments : une première qui sera appelée si la promesse est résolue et qui va recevoir le résultat de cette promesse et une seconde qui sera appelée si la promesse est rompue et que va recevoir l’erreur.
+
+Exemple:
+
+    function loadScript(src){
+        return new Promise((resolve, reject) => {
+            let script = document.createElement('script');
+            script.src = src;
+            document.head.append(script);
+            script.onload = () => resolve('Fichier ' + src + ' bien chargé');
+            script.onerror = () => reject(new Error('Echec de chargement de ' + src));
+        });
+    }
+
+    const promesse1 = loadScript('boucle.js');
+    const promesse2 = loadScript('script2.js');
+
+    promesse1.then(
+        function(result){alert(result);},
+        function(error){alert(error);}
+    );
+
+    //Code similaire au précédent avec des fonctions fléchées//
+    promesse2.then(result => alert(result), error => alert(error));
+**Notez qu’on va également pouvoir utiliser then() en ne lui passant qu’une seule fonction de rappel en argument qui sera alors appelée si la promesse est tenue.
+Au contraire, dans le cas où on est intéressé uniquement par le cas où une promesse est rompue, on va pouvoir utiliser la méthode catch() qui va prendre une unique fonction de rappel en argument qui va être appelée si la promesse est rompue**.
+
+    promesse2.catch(alert);
+
+Utiliser à la fois then() et catch() plutôt que simplement then() va souvent créer un code plus rapide dans son exécution et plus clair dans sa syntaxe et va également nous permettre de chainer efficacement les méthodes.
+
+### Le chaînage des promesses
+
+**Chainer** des méthodes signifie les exécuter les unes à la suite des autres. On va pouvoir utiliser cette technique pour exécuter plusieurs opérations asynchrones à la suite et dans un ordre bien précis.
+Cela est possible pour une raison : la méthode then() retourne automatiquement une nouvelle promesse. On va donc pouvoir utiliser une autre méthode then() sur le résultat renvoyé par la première méthode then() et ainsi de suite.
+
+    const promesse2 = promesse1.then(result => alert(result), error => alert(error));
+    ->Ici, notre deuxième promesse représente l’état de complétion de notre première promesse et des fonctions de rappel passées qui peuvent être d’autres fonctions asynchrones renvoyant des promesses.
+On va donc pouvoir effectuer autant d’opérations asynchrones que l’on souhaite dans un ordre bien précis et avec en contrôlant les résultats de chaque opération très simplement.
+
+Pour que ce code fonctionne, il faut cependant bien évidemment que chaque fonction asynchrone renvoie une promesse. Ici, on n’a besoin que d’un seul catch() car une chaine de promesse s’arrête dès qu’une erreur est levée et va chercher le premier catch() disponible pour savoir comment gérer l’erreur.
+
+Notez qu’il va également être possible de continuer à chaîner après un rejet, c’est-à-dire après une méthode catch(). Cela va pouvoir s’avérer très utile pour accomplir de nouvelles actions après qu’une action ait échoué dans la chaine.
+
+    loadScript('boucle.js')
+    .then(result => loadScript('script2.js', result))
+    .then(result2 => loadScript('script3.js', result2))
+    .catch(alert)
+    .then(() => alert('Blabla'));//On peut imaginer d\'autres opérations ici
+Cela est possible car la méthode catch() renvoie également une nouvelle promesse dont la valeur de résolution va être celle de la promesse de base dans le cas d’une résolution (succès) ou va être égale au résultat du gestionnaire de catch() dans le cas contraire. Si un gestionnaire catch() génère une erreur, la nouvelle promesse est également rejetée.
+
+### La composition de promesses 
+
+« Composer » des fonctions signifie combiner plusieurs fonctions pour en produire une nouvelle.
+
+De la même façon, nous allons pouvoir composer des promesses. Pour cela, on va pouvoir utiliser certaines des méthodes de Promise().
+
+Les premières méthodes à connaitre sont les méthodes resolve() et reject() qui vont nous permettre de créer manuellement des promesses déjà résolues ou rejetées et qui vont donc être utiles pour démarrer manuellement une chaine de promesses.
+
+En plus de cela, nous allons pouvoir utiliser la méthode all() de Promise qui va prendre en argument un tableau de promesses et retourner une nouvelle promesse. Cette nouvelle promesse va être résolue si l’ensemble des promesses passées dans le tableau sont résolues ou va être rejetée si au moins l’une des promesses du tableau échoue.
+
+Cette méthode va être très utile pour regrouper les valeurs de plusieurs promesses, et ceci qu’elles s’exécutent en série ou en parallèle.
+
+Notez que cette méthode conserve l’ordre des promesses du tableau passé lors du renvoi des résultats.
+
+On va ainsi pouvoir lancer plusieurs opérations asynchrones en parallèle puis attendre qu’elles soient toutes terminées comme cela :
+
+    Promise.all([func1(), func2(), func3()]).then(([result1, result2, result3]) => {
+        utilisation de result1, result2, result3
+    });
+
+### Utiliser async et await pour créer des promesses plus lisibles en JavaScript
+
+La déclaration **async function** et le mot clef await sont des « sucres syntaxiques », c’est-à-dire qu’ils n’ajoutent pas de nouvelles fonctionnalités en soi au langage mais permettent de créer et d’utiliser des promesses avec un code plus intuitif et qui ressemble davantage à la syntaxe classique du JavaScript à laquelle nous sommes habitués.
+
+#### Le mot clef ASYNC
+
+Nous allons pouvoir placer le mot clef async devant une déclaration de fonction (ou une expression de fonction, ou encore une fonction fléchée) pour la transformer en fonction asynchrone.
+Utiliser le mot clef async devant une fonction va faire que la fonction en question va toujours retourner une promesse. Dans le cas où la fonction retourne explicitement une valeur qui n’est pas une promesse, alors cette valeur sera automatiquement enveloppée dans une promesse.
+Les fonctions définies avec async vont donc toujours retourner une promesse qui sera résolue avec la valeur renvoyée par la fonction asynchrone ou qui sera rompue s’il y a une exception non interceptée émise depuis la fonction asynchrone.
+
+        async function bonjour(){
+    return 'Bonjour';
+    }
+
+    /*Décommentez le code pour l'exécuter
+    //La valeur retournée par bonjour() est enveloppée dans une promesse
+    bonjour().then(alert); // Bonjour
+    */
+
+#### Le mot clef AWAIT
+
+Le mot clef **await** est uniquement valide au sein de fonctions asynchrones définies avec async.
+
+Ce mot clef permet d’interrompre l’exécution d’une fonction asynchrone tant qu’une promesse n’est pas résolue ou rejetée. La fonction asynchrone reprend ensuite puis renvoie la valeur de résolution.
+Ce mot clef permet d’interrompre l’exécution d’une fonction asynchrone tant qu’une promesse n’est pas résolue ou rejetée. La fonction asynchrone reprend ensuite puis renvoie la valeur de résolution.
+
+    async function test(){
+        const promise = new Promise((resolve, reject) => {
+            setTimeout(() => resolve('Ok !'), 2000)
+        });
+        
+        let result = await promise; //Attend que la promesse soit résolue ou rejetée
+        alert(result);
+    }
+
+Le mot clef await permet de mettre en pause l’exécution du code tant qu’une promesse n’est pas consommée, puis retourne ensuite le résultat de la promesse. Cela ne consomme aucune ressource supplémentaire puisque le moteur peut effectuer d’autres tâches en attendant : exécuter d’autres scripts, gérer des événements, etc.
 
 
 ## Le DOM
@@ -2208,6 +2471,10 @@ texte, soit une fonction qui renvoie du texte
 Il y a plusieurs façons d’écrire une requête Ajax, la syntaxe en JavaScript pur est assez complexe, la voici :
 
 [OpenClassroom code](https://openclassrooms.com/fr/courses/245710-ajax-et-lechange-de-donnees-en-javascript/244798-lobjet-xmlhttprequest)
+
+## sources
+
+[](https://www.pierre-giraud.com/javascript-apprendre-coder-cours/promesse-promise/)
 
 ## Exercices dossier exo MM :
 

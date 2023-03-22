@@ -254,3 +254,8 @@ Condition initiale "ou" :
 ->Pour result1 on fait le calcul 8 % 2 = 0 et on obtient ainsi la comparaison 0 > 0 qui renvoie donc false.
 ->Pour result2 on fait le calcul 3 % 2 = 1 et on obtient ainsi la comparaison 1 > 1 qui renvoie donc false. En revanche là on constate que la condition est entourée de parenthèses et est précédée de l'opérateur NON, il nous faut donc inverser le résultat de la condition, ainsi, false devient true !
 ->Et pour terminer, dans result3, nous utilisons l'opérateur logique OU qui renvoie true si l'une des valeurs soumises vaut true elle aussi. Ainsi, false || true = true !*/
+
+let exempleArray = ["A", "B", "C"];
+for(let i = 0; i < exempleArray.length; i++ ){
+    console.log(exempleArray[i]);
+};
