@@ -296,7 +296,7 @@ result3 = result1 || result2;
 
 //let input = document.querySelector('input[type="text"]');
 //problème plusieurs de type text
-let input = document.querySelectorAll('input[type="text"]');
+// let input = document.querySelectorAll('input[type="text"]');
 //renvoie tout les éléments input de type text, renvoie une liste
 //En fonction des navigateurs renvoie un objet
 
