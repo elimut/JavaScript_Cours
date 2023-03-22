@@ -227,28 +227,28 @@ La console affiche le résultat 60 ;*/
 
 
 let nombre1User = window.prompt('Quel nombre entre 1 et 9 souhaitez vous ?');
-console.log(typeof nombre1User);
-/*function verification(x) {
-    if (isNaN(x)) {
-        return x = window.prompt('Quel nombre entre 1 et 10 souhaitez vous ?');;
-    }
-    else{
-        return x;
-    }
-}*/
 function verification(x){
     while (isNaN(x) == true){
-      return x = window.prompt("Ceci n'est pas un chiffre, veuillez-saisir un chiffre");
+       x = window.prompt("Ceci n'est pas un chiffre, veuillez-saisir un chiffre");
     }
 };
 verification(nombre1User);
 nombre1User = parseInt(nombre1User);
-console.log(typeof nombre1User);
+for( nombre1User = 1; nombre1User <= 10; nombre1User++){
+    document.write("<h3>La table de multiplication du nombre: "+ nombre1User +"</h3>")
+    document.write("<table border>");
+    for(var i=1;i<=10;i++){
+     document.write("<tr>");
+     document.write("<td>"+nombre1User+" x "+i+" =</td>");
+     document.write("<td>"+nombre1User*i+"</td>");
+     document.write("</tr>");
+}
+document.write("</table>");
+}
 
-let affichage1 = document.createElement("tr");
-affichage1.innerHTML = multiplication;
-affichage1.style.color = "green";
-document.querySelector("div").appendChild(affichage1);
+
+
+
 
 
 
