@@ -321,12 +321,13 @@ Pour déclarer une variable, on utilise la syntaxe : **var ou let**.
 
 Règle de nommage (valable pour les fonctions)= **CamelCase** :
 
-- Nom unique = **identifier**,
-- Aucune ponctuation,accents,espace, 
-- Mise en capitale de la première lettre des mots, sauf le premier,
-- Doit commencer par une lettre,
-- Doit contenir uniquement des lettres, _,chiffres,
-- Aucun espace
+-Suit la règle du camelCase,dans cette convention, les noms sont constitués de plusieurs mots dont l'initiale est en capitale; 
+- Nom unique = **identifier**;
+- Aucune ponctuation,accents,espace; 
+- Mise en capitale de la première lettre des mots, sauf le premier;
+- Évitez d'utiliser des abréviations ou de raccourcir des mots à chaque fois que c'est possible, même si une version plus courte semble évidente;
+- Doit commencer par une lettre;
+- Doit contenir uniquement des lettres, _,chiffres;
 - Est sensible à la casse (Se dit de tout programme qui fait une distinction entre les lettres majuscules et les lettres minuscules, et qui ne traite donc pas de la même façon les données ou les commandes selon qu'elles sont entrées en majuscules ou en minuscules).
   
 Il existe des noms « réservés » en JavaScript. Vous ne pouvez pas
@@ -446,10 +447,11 @@ exemple, une variable va pouvoir stocker une valeur textuelle à un moment dans 
 
 ##### Quelles valeurs peuvent prendre mes variables?
 
-Les types de valeurs contenues dans les variables en JS.Elles peuvent stocker différents types de valeur.
+Le **type** d'une variable ou d'une constante est tout simplement le genre des données qu'elle enregistre.
+Elles peuvent stocker différents types de valeur.
 On ne stocke pas de la même façon un nombre ou une chaîne de caractères dans une variable, on effectue également pas les mêmes opérations en fonction des valeurs.
 
-- **String** : ou chaîne de caractères. Une chaine de caractères est une séquence de caractères, ou ce qu’on appelle communément un texte.Texte mis entre "" ou '' ou quotes:
+- **String** ou chaîne de caractères: une chaine de caractères est une séquence de caractères, ou ce qu’on appelle communément un texte.Texte mis entre "" ou '' ou quotes (type primitif);
 
         let prenom = "Pierre";
         let hello = "Bonjour, nous sommes...";
@@ -461,39 +463,42 @@ On ne stocke pas de la même façon un nombre ou une chaîne de caractères dans
 
         var d = "65";
         document.getElementById('p1').innerHTML = "Type de: + typeof nomvar; => string
-- **Number**: entiers, réels, float (attention au point):
+- **Number**: entiers ou **integers**, réels, float (les nombres avec des chiffres après la virgule sont aussi appelés nombres en virgule flottante ou floating-point.Attention au point, pas de virgule)(type primitif);
 
         let x = 2.5;
         let y = -75;
         let z = 23;
-- **Boolean**: contient deux valeurs true ou false (valeurs de type booléenne).Un booléen est une valeur binaire.
+- **Boolean** ou valeurs logiques: contient deux valeurs true ou false (valeurs de type booléenne).Un booléen est une valeur binaire.
 Surtout utilisée pour testes, vérification de condition,...
-Pour qu'une variable stocke un booléen, elle doit stocker true ou false, sans "", et sans '':
+Pour qu'une variable stocke un booléen, elle doit stocker true ou false, sans "", et sans ''(type primitif);
 
         let a = true;
 
         let resultat = 8 > 4; => l’affectation se fait en dernier et que la comparaison est faite avant.
     Lorsqu’on écrit « 8 > 4 », (qui signifie 8 strictement supérieur à 4) on demande au JavaScript d’évaluer cette comparaison. Si la comparaison est vérifiée (si elle est vraie), alors JavaScript renvoie le booléen true. Dans le cas contraire, il renvoie le booléen false. On stocke ensuite le booléen renvoyé dans la variable let resultat.
-- **Tableau**: **array** en JS, il contient plusieurs valeurs classées dans un tableau. **Notez qu’en JavaScript, contrairement à d’autres langages, les tableaux sont avant tout des objets et sont des valeurs de type Object**.
-- **Object**: contient des propriétés et des méthodes. Les objets sont des structures complexes qui vont pouvoir stocker plusieurs valeurs en même temps.
-- **Null**: non connaissance de la valeur.
+- **Tableau**: **array** en JS, il contient plusieurs valeurs classées dans un tableau. **Notez qu’en JavaScript, contrairement à d’autres langages, les tableaux sont avant tout des objets et sont des valeurs de type Object**;
+- **Object**: contient des propriétés et des méthodes. Les objets sont des structures complexes qui vont pouvoir stocker plusieurs valeurs en même temps;
+- **Null**: non connaissance de la valeur;
 
         let n = null;
-- **Undefined**: ne pas avoir défini de valeur pour la variable.
+- **Undefined**: ne pas avoir défini de valeur pour la variable;
 
         let u = undefined;
+- **NaN**: not a number;
 
-
+        var nn = NaN;
+- **Symbol**;
+  
 ->Les types de valeurs Null et Undefined sont des types un peu particuliers car ils ne contiennent qu’une valeur chacun : les valeurs null et undefined.
 La valeur null correspond à l’absence de valeur ou du moins à l’absence de valeur connue. Pour qu’une variable contienne null, il va falloir stocker cette valeur qui représente donc l’absence de valeur de manière explicite.
 La valeur null va être utile dans certains cas où on souhaite explicitement indiquer une absence de valeur connue. Il va cependant falloir qu’on ait un peu plus d’expérience avec le JavaScript pour montrer de manière pratique l’intérêt de cette valeur.
 La valeur undefined correspond à une variable « non définie », c’est-à-dire une variable à laquelle on n’a pas affecté de valeur.
 Cette définition peut vous paraitre similaire à celle de null et pourtant ces deux valeurs ont une signification différente.
 **Si on déclare une variable sans lui attribuer de valeur, alors son type sera Undefined. Si on déclare une variable et qu’on lui passe null, alors son type sera Object**.
-- **NaN**: not a number.
 
-        var nn = NaN;
-- **Symbol**: 
+>JavaScript est un langage dit à types dynamiques et à typage faible. Cela signifie que vous pouvez initialiser une variable en tant que nombre, puis la réaffecter comme chaîne, ou tout autre type de variable. Ceci offre une grande souplesse, mais peut aussi conduire à un comportement inattendu si vous opérez sans précaution.
+
+>Les types primitifs sont les briques de base de chaque structure de données en JavaScript. Peu importe la complexité finale de votre application, à sa base se trouveront ces trois types primitifs.
 
 ![objet schéma](img/objets_schéma.png)
 
@@ -526,6 +531,7 @@ Les plus fréquemment utilisés sont :
 • L’opérateur de concaténation ;
 • L’opérateur ternaire ;
 • l’opérateur virgule.
+
 #### Les opérateurs arithmétiques : Calculs sur variables
 
 Il est possible de faire des calculs sur des variables de type number contenues dans différentes variables:
@@ -554,6 +560,10 @@ Exemples:
     var mod = 13 % 3;
 
     let g = x ** 3; => g stocke 2^3 = 2*2*2 = 8
+
+    let cookiesInJar = 10;
+    cookiesInJar -= 2;  //il reste 8 cookies
+    cookiesInJar += 12; // il y a maintenant 20 cookies dans la boîte
 **Attention à bien respecter les priorités de calcul comme en mathématiques!**
 
 #### Les opérateurs d’affectation
@@ -620,6 +630,7 @@ Exemples:
 #### Concaténation et littéraux de gabarits (template literals ou template strings)
 
 ##### Concaténation
+
 Consiste en l' assemblage de texte et de variable (addition de chaîne de caractères).
 On utilise le signe "**+**", utilisé également pour additionner, JS fait la différence en fonction du type de valeurs qui entourent le +.
 **S'il s' agit de nombres: addition, s'il s'agit de textes : concatène**.
@@ -660,9 +671,9 @@ Exemples:
 
 On a vu plus tôt dans ce cours qu’il fallait en JavaScript toujours entourer nos chaines de caractères (nos textes) avec des apostrophes ou des guillemets droits.
 Il existe en fait une troisième manière introduite récemment d’entourer des chaines de caractères en JavaScript qui va utiliser **des accents graves `**.
-**La grande différence entre l’utilisation d’accents graves ou l’utilisation d’apostrophes ou de guillemets est que toute expression placée entre les accents graves va être interprétée en JavaScript. Pour le dire simplement : tout ce qui renvoie une valeur va être remplacé par sa valeur.**
-**Cela signifie notamment qu’on va pouvoir placer du texte et des variables ensemble sans avoir besoin d’utiliser d’opérateur de concaténation puisque les variables vont être interprétées, c’est-à-dire remplacées par leur valeur**.
-**Pour que cela fonctionne bien, il va cependant falloir respecter une certaine syntaxe : il va falloir placer les expressions entre ${ et }**.
+**La grande différence entre l’utilisation d’accents graves ou l’utilisation d’apostrophes ou de guillemets est que toute expression placée entre les accents graves va être interprétée en JavaScript. Pour le dire simplement : tout ce qui renvoie une valeur va être remplacé par sa valeur. Cela signifie notamment qu’on va pouvoir placer du texte et des variables ensemble sans avoir besoin d’utiliser d’opérateur de concaténation puisque les variables vont être interprétées, c’est-à-dire remplacées par leur valeur. Pour que cela fonctionne bien, il va cependant falloir respecter une certaine syntaxe : il va falloir placer les expressions entre ${ et }**.
+
+<la **string interpolation** Pour créer une string interpolation on écrit du texte encadrée par le signe  `  et si on veut injecter une variable dans ce code on utilise l’expression  ${maVariable}. >
 
 Exemples:
 
@@ -677,6 +688,9 @@ Exemples:
 
 ### Constante
 
+Dans de nombreux programmes, certaines données ne seront pas modifiées pendant l'exécution du programme. 
+Pour s'assurer de ne pas réaffecter par inadvertance de nouvelles valeurs à ces données, vous allez utiliser des **constantes**.
+Ce sont simplement des variables qui ne seront pas mutables. On donnera une valeur de départ et on ne pourra plus changer la valeur par la suite. Ainsi s’il y a une erreur de logique dans votre code changeant la valeur du variable (constante) qui ne devait pas changer, javascript retournera une erreur.
 Pour créer ou déclarer une cosntante en JS, il faut utiliser le mot clef : **const**.
 On la déclare de la même façon que let.
 **Il faut obligatoirement l' initialiser lors de sa déclaration sinon une erreur sera retournée**.
@@ -1591,7 +1605,14 @@ En effet, le JavaScript est un langage qui intègre l’orienté objet dans sa d
 
 > Un objet est un ensemble de propriétés et une propriété est une association entre un nom (aussi appelé **clé**) et une **valeur**. La valeur d'une propriété peut être une fonction, auquel cas la propriété peut être appelée « méthode ». En plus des objets natifs fournis par l'environnement, il est possible de construire ses propres objets.
 
-Exemple:
+Exemples:
+
+    let myBook = {
+        title: 'The Story of Tau',
+        author: 'Will Alexander',
+        numberOfPages: 250,
+        isAvailable: true
+    };
 
     let user = {
         nom : ["pierre", "rigot"],
@@ -1617,9 +1638,13 @@ Ce qui nous intéresse particulièrement ici sont les **membres de notre objet**
 
 **Chaque membre d’un objet est toujours composé d’un nom et d’une valeur qui sont séparés par :. Les différents membres d’un objet sont quant-à-eux séparés les uns des autres par des virgules (et non pas des points-virgules, attention !)**.
 
+>Les objets JavaScript sont écrits en JSON (JavaScript Object Notation). Ce sont des séries de paires clés-valeurs séparées par des virgules, entre des accolades. Les objets peuvent être enregistrés dans une variable.Chaque clé est une chaîne (title, author, numberOfPages...), et les valeurs associées peuvent avoir tout type de données (nombre, chaîne, etc.).
+
 >Quels avantages et intérêts de coder en orienté objet en JavaScript ?
 Le développement orienté objet correspond à une autre façon d’envisager et d’organiser son code en groupant des éléments cohérents au sein d’objets.
 Les intérêts supposés principaux de développer en orienté objet plutôt qu’en procédural par exemple sont de permettre une plus grande modularité ou flexibilité du code ainsi qu’une meilleure lisibilité et une meilleure maintenabilité de celui-ci.
+
+>Construire des objets présente un avantage essentiel : cela permet de regrouper les attributs d'une chose unique à un même emplacement, que ce soit un livre, un profil d'utilisateur ou la configuration d'une application, par exemple.
 
 ## Création d’un objet littéral
 
@@ -1652,7 +1677,7 @@ variable. La partie valeur d’un membre peut être n’importe quel type de val
 
 **Les membres d’un objet qui ne servent qu’à stocker des données sont appelés des propriétés tandis que ceux qui manipulent des données (c’est-à-dire ceux qui contiennent des fonctions en valeur) sont appelés des méthodes**.
 
-### Utiliser le point pour accéder aux membres d’un objet, les modifier ou en définir de nouveaux
+### Utiliser le point pour accéder aux membres d’un objet, les modifier ou en définir de nouveaux = dot notation 
 
 **Pour accéder aux propriétés et aux méthodes d’un objet, on utilise le caractère point . qu’on appelle également un accesseur. On va ici commencer par préciser le nom de l’objet puis l’accesseur puis enfin le membre auquel on souhaite accéder**.
 
@@ -1666,6 +1691,17 @@ Exemples:
 
     user.bonjour();
     ->accès à la méthode de l' objet user, exécutée comme une fonction anonyme
+
+    let myBook = {
+        title: "L'Histoire de Tao",
+        author: "Will Alexander",
+        numberOfPages: 250,
+        isAvailable: true
+    };
+    let bookTitle = myBook.title;  // "L'Histoire de Tao"
+    let bookPages = myBook.numberOfPages  // 250
+    =>nomvarquicontientobjet.clé pour récupèrer sa valeur
+
 Cela nous permet de récupérer les valeurs des propriétés.
 En dessous, on utilise notre accesseur avec l’opérateur d’affectation = pour cette fois-ci modifier la valeur de la propriété age de notre objet user.
 Finalement, on utilise notre accesseur pour exécuter la méthode bonjour() de
@@ -1676,10 +1712,34 @@ Exemples:
 
     user.taille = 170;
 
-    user.prez =function(){
+    user.prez = function(){
         alert("txt");
     }
     ->ici, on ajoute une propriété taille et une méthode prez() à notre objet user. 
+
+Il existe également la **notation bracket (bracket notation)**
+Pour accéder à un sous élément vous pouvez utiliser les brackets avec la valeur du sous élément.
+
+Exemple :
+
+    let myBook = {
+       title: "L'Histoire de Tao",
+       author: "Will Alexander",
+       numberOfPages: 250,
+       isAvailable: true
+    };
+    let bookTitle = myBook["title"];  // "L'Histoire de Tao"
+    let bookPages = myBook["numberOfPages"];  // 250
+    ->L'intérêt ici c’est qu’on va pouvoir mettre entre bracket une variable qui contient en string le nom de la propriété que l’on souhaite atteindre.
+
+    let myBook = {
+        title: "L'Histoire de Tao",
+        author: "Will Alexander",
+        numberOfPages: 250,
+        isAvailable: true
+    };
+    let propertyToAccess = "title";
+    let bookTitle = myBook[propertyToAccess];  // "L'Histoire de Tao"
 
 ### Utiliser les crochets pour accéder aux propriétés d’un objet, les modifier ou en définir de nouvelles
 

@@ -2,7 +2,7 @@
 // comment se premunir du cptmt par défaut du formulaire, lorsque l'on soumet un form la page se recharge et a tendance à vider l'input?
 // il faut un écouteur d'évenement , ici form evnmt submit, sur form
 // addevent 2 param : even et fonction callback
-// evet sur input est un input
+// événement sur input est un input
 
 let inputValue = "";
 let affichage = document.createElement("form");
@@ -25,3 +25,8 @@ affichage.addEventListener("submit",e=>{
 //recup valeursaisie input et stocker dans var inputVlaue
 //recup valeur dans input
 
+maDiv.addEventListener("click",()=>{
+    maDiv.classList.toggle('active');
+});
+//toggle vérifie si la class est présente sur l'élément, il check, soit il ajoute, soit il l'enlève
+// au clic, check si pas de css , l'ajoute cela permet au css maDiv.active de

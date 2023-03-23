@@ -1,0 +1,14 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#maDiv{
+    background-color: blue;
+    width: 50px;
+    height: 50px;
+}
+#maDiv.active{
+    display: block;
+}
+/* display: block transforme l'élément en élément de bloc. L'élément s'insère alors dans le contenu comme une section distincte, avec un saut de ligne avant et après. display: inline, à l'inverse, transforme l'élément en élément en ligne. Ainsi, l'élément qui suit s'affiche sur la même ligne. */
