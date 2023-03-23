@@ -1,5 +1,4 @@
-
-// comment se premunir du cptmt par défaut du formulaire, lorsque l'on soumet un form la page se recharge et a tendance à vider l'input?
+// comment se premunir du comportement par défaut du formulaire, lorsque l'on soumet un form la page se recharge et a tendance à vider l'input?
 // il faut un écouteur d'évenement , ici form evnmt submit, sur form
 // addevent 2 param : even et fonction callback
 // événement sur input est un input
@@ -19,9 +18,9 @@ affichage.addEventListener("submit",e=>{
     inputValue = affichage1.value;
     affichage2.innerHTML = inputValue;
 });
-// 2 param event et fct callback
+// 2 param: event et fonction callback
 
-//essayer de remplir var input value par valeur de html
+//essayer de remplir var inputValue par valeur de html
 //recup valeursaisie input et stocker dans var inputVlaue
 //recup valeur dans input
 

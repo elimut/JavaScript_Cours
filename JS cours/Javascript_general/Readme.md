@@ -1965,6 +1965,14 @@ Pour répondre à cette question, il faut savoir que lorsqu’on essaie d’acc�
 d’un objet, le navigateur (qui exécute le JavaScript) va d’abord chercher ce membre au sein de l’objet.
 S’il n’est pas trouvé, alors le membre va être cherché au sein de la propriété proto de l’objet dont le contenu est, rappelons-le, égal à celui de la propriété prototype du constructeur qui a servi à créer l’objet.
 
+----------------------------------------------------------------
+## Manipulez des classes
+
+La construction d'un objet à la main, par la notation à accolades vue précédemment, convient bien à des objets simples et uniques. Mais vous aurez souvent besoin de beaucoup d'objets du même type. C'est là que les classes sont utiles.
+Une classe est un modèle pour un objet dans le code. Elle permet de construire plusieurs objets du même type (appelés instances de la même classe) plus facilement, rapidement et en toute fiabilité.
+
+Pour créer une classe dans JavaScript, utilisez le mot clé   **class**, suivi par un nom. Encadrez ensuite le code de la classe entre accolades :
+
 
 ## L ' asynchrone en JS
 

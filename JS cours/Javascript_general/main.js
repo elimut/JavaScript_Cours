@@ -272,9 +272,9 @@ Object.values(maCollection).map(
     affichage3.style.margin = "10px";
     document.querySelector("div").appendChild(affichage3);
 });
+
     //La méthode Object.entries() renvoie un tableau des paires de propriétés [key, value] énumérables d'un objet donné . C'est la même chose que l'itération avec une boucle for...in , sauf qu'une boucle for...in énumère également les propriétés de la chaîne de prototypes.
     //L'ordre du tableau renvoyé par Object.entries() est le même que celui fourni par une boucle for...in .Si un ordre différent est nécessaire, le tableau doit être trié en premier, comme Object.entries(obj).sort((a, b) => a[0].localeCompare(b[0])); .
-
 *let courses = {
     "fruits": [
       { "kiwis": 3,
@@ -336,6 +336,37 @@ result3 = result1 || result2;
 //renvoie tout les éléments input de type text, renvoie une liste
 //En fonction des navigateurs renvoie un objet
 
+// comment se premunir du comportement par défaut du formulaire, lorsque l'on soumet un form la page se recharge et a tendance à vider l'input?
+// il faut un écouteur d'évenement , ici form evnmt submit, sur form
+// addevent 2 param : even et fonction callback
+// événement sur input est un input
+
+// let inputValue = "";
+// let affichage = document.createElement("form");
+// let affichage1 = document.createElement("input");
+// affichage1.setAttribute("type","text");
+// affichage.append(affichage1);
+// document.body.append(affichage);
+// let affichage2 = document.createElement("p");
+// document.body.append(affichage2);
+
+// affichage.addEventListener("submit",e=>{
+//     e.preventDefault();
+//     console.log(affichage1.value);
+//     inputValue = affichage1.value;
+//     affichage2.innerHTML = inputValue;
+// });
+// 2 param: event et fonction callback
+
+//essayer de remplir var inputValue par valeur de html
+//recup valeursaisie input et stocker dans var inputVlaue
+//recup valeur dans input
+
+// maDiv.addEventListener("click",()=>{
+//     maDiv.classList.toggle('active');
+// });
+//toggle vérifie si la class est présente sur l'élément, il check, soit il ajoute, soit il l'enlève
+// au clic, check si pas de css , l'ajoute cela permet au css maDiv.active de
 
 
 
