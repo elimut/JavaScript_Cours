@@ -76,11 +76,12 @@ Object.values(maCollection).map(
     let popUp = document.createElement("div");
     popUp.innerText = "A remplir"
     popUp.setAttribute("id", "pop");
+    popUp.style.display = "none";
     document.querySelector(".mario").appendChild(popUp);
 });
 function openPop() {
     document.getElementById("pop").style.display = "block";
-    }
+}
 function closePop() {
     document.getElementById("pop").style.display = "none";
 }
@@ -90,6 +91,7 @@ document.querySelectorAll(".open").forEach(element => {
         let key = event.target.id;
         console.log(maCollection[key]);
         button1.addClass('active');
+        openPop();
     });
 });
 
