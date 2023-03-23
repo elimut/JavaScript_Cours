@@ -76,22 +76,35 @@ Object.values(maCollection).map(
     let popUp = document.createElement("div");
     popUp.innerText = "A remplir"
     popUp.setAttribute("id", "pop");
-    popUp.style.display = "none";
+    popUp.style.visibility = "hidden";
     document.querySelector(".mario").appendChild(popUp);
 });
-function openPop() {
-    document.getElementById("pop").style.display = "block";
-}
-function closePop() {
-    document.getElementById("pop").style.display = "none";
-}
+// function openPop() {
+//     document.getElementById("pop").style.display = "block";
+// }
+// function closePop() {
+//     document.getElementById("pop").style.display = "none";
+// }
+button1 = document.getElementsByClassName('open');
 document.querySelectorAll(".open").forEach(element => {
     // console.log(element.id);
     element.addEventListener("click", (event) => {
         let key = event.target.id;
         console.log(maCollection[key]);
-        button1.addClass('active');
-        openPop();
+        // button1.addClass('active');
+        // openPop();
+        document.getElementById("pop").style.visibility = "visible";
     });
 });
-
+document.querySelectorAll("#pop").forEach(element => {
+    element.addEventListener("click", (event) => {
+        let key = event.target.id;
+        console.log(maCollection[key]);
+        // button1.addClass('active');
+        // openPop();
+        document.getElementById("pop").style.visibility = "hidden";
+    });
+});
+// voir pour active;
+//  un seul s'affiche
+// voir function pour open close
