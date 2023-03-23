@@ -74,9 +74,13 @@ Object.values(maCollection).map(
     button1.innerText = "En savoir plus";
     document.querySelector(".mario").appendChild(button1);
     let popUp = document.createElement("div");
-    popUp.innerText = "A remplir"
+    popUp.innerText = "a remplir"
     popUp.setAttribute("id", "pop");
     popUp.style.visibility = "hidden";
+    popUp.style.border = "1px solid green";
+    popUp.style.width = "40%";
+    popUp.style.height = "60px";
+    popUp.style.backgroundColor = "white";
     document.querySelector(".mario").appendChild(popUp);
 });
 // function openPop() {
