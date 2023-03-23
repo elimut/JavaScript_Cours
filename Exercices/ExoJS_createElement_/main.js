@@ -15,5 +15,13 @@ document.body.append(affichage2);
 
 affichage.addEventListener("submit",e=>{
     e.preventDefault();
+    console.log(affichage1.value);
+    inputValue = affichage1.value;
+    affichage2.innerHTML = inputValue;
 });
 // 2 param event et fct callback
+
+//essayer de remplir var input value par valeur de html
+//recup valeursaisie input et stocker dans var inputVlaue
+//recup valeur dans input
+

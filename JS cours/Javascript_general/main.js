@@ -79,6 +79,8 @@ let exo = document.createElement("h2");
 exo.innerHTML = "hello";
 document.querySelector("div").appendChild(exo);
 
+    *Exercices:
+    
     *Créer sur page vierge un input et un p:
 let affichage1 = document.createElement("input");
 document.body.append(affichage1);
