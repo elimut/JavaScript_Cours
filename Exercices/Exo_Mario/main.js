@@ -68,22 +68,28 @@ Object.values(maCollection).map(
     affichage3.style.color = "black";
     affichage3.style.margin = "10px";
     document.querySelector(".mario").appendChild(affichage3);
-    let button = document.createElement("button");
-    button.setAttribute("class", "open");
-    button.setAttribute("id", `${"jeux" + (index+=1)}`)
-    button.innerText = "En savoir plus";
-    document.querySelector(".mario").appendChild(button);
+    let button1 = document.createElement("button");
+    button1.setAttribute("class", "open");
+    button1.setAttribute("id", `${"jeux" + (index+=1)}`)
+    button1.innerText = "En savoir plus";
+    document.querySelector(".mario").appendChild(button1);
     let popUp = document.createElement("div");
     popUp.innerText = "A remplir"
-    popUp.style.display = "none";
     document.querySelector(".mario").appendChild(popUp);
 });
+function openForm() {
+    document.getElementById("open").style.display = "block";
+    }
+function closeForm() {
+    document.getElementById("open").style.display = "none";
+}
 document.querySelectorAll(".open").forEach(element => {
     // console.log(element.id);
     element.addEventListener("click", (event) => {
         let key = event.target.id;
         console.log(maCollection[key]);
-        button.addClass('active');
+        button1.addClass('active');
+        popUp.style.display = "block";
     });
 });
 
