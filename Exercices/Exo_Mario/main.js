@@ -83,7 +83,7 @@ document.querySelectorAll(".open").forEach(element => {
     element.addEventListener("click", (event) => {
         let key = event.target.id;
         console.log(maCollection[key]);
-        
+        button.addClass('active');
     });
 });
 
