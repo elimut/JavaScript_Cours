@@ -96,15 +96,8 @@ document.querySelectorAll(".open").forEach(element => {
         document.getElementById("pop").style.visibility = "visible";
     });
 });
-document.querySelectorAll("#pop").forEach(element => {
-    element.addEventListener("click", (event) => {
-        let key = event.target.id;
-        console.log(maCollection[key]);
-        // button1.addClass('active');
-        // openPop();
-        document.getElementById("pop").style.visibility = "hidden";
-    });
-});
 // voir pour active;
 //  un seul s'affiche
 // voir function pour open close
+// voir close
+// faire style
