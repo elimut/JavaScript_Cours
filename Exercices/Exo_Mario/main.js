@@ -132,3 +132,6 @@ console.log(" btn3 ",btn3);
 // faire style
 // responsive
 //carousel carte
+
+
+// pour cet apres midi avec la methode fetch et les promesse sur lesquels vous avez fait une veille en combinent ce que vous avez vu cette semaine pour pouvoir recuperer la valeur d'un input faite une page qui affiche la meteo de la ville que l'utilisateur a entrer dans l'input en utilisant l'api meteo de votre choix
