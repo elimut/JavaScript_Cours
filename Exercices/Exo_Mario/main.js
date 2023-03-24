@@ -64,6 +64,7 @@ Object.values(maCollection).map(
     console.log("jeux" + (index+=1));
 //recup objet
     let container = document.createElement("div");
+    container.setAttribute("class", "slide");
     let affichage1 = document.createElement("h2");
     affichage1.innerHTML = Jeux.titre;
     affichage1.style.color = "green";

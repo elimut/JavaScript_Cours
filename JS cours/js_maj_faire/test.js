@@ -507,7 +507,7 @@ var arrayStr =  ["a", "b", "c"];
 // faire d'une liste un tab pour appliquer méthode
 // console.log(arrayDiv);
 
-// map : tableau arr =[1, 2,3];
+// map : tableau arr =[1, 2, 3];
 // arr[0]; accèder au premier élément du tableau 
 // arrayDiv.map(el=>element); chaque élément devient individuel
 // arrayDiv.map(el => {console.log(el)});
