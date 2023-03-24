@@ -1,3 +1,5 @@
+
+
 function Jeux(titre, console, annee) {
 this.titre = titre;
 this.console = console;
@@ -70,38 +72,50 @@ Object.values(maCollection).map(
     document.querySelector(".mario").appendChild(affichage3);
     let button1 = document.createElement("button");
     button1.setAttribute("class", "open");
-    button1.setAttribute("id", `${"jeux" + (index+=1)}`)
+    button1.setAttribute("id", `${index}`)
+    // dollar entre deux bactiq=< lit remplace dollar index par valeur de l'index, concatènation
     button1.innerText = "En savoir plus";
+    // button1.style.position = "relative";
+    button1.style.borderRadius = "50px";
+    button1.style.width = "250px";
+    button1.style.height = "70px";
+    // button1.style.backgroundImage = "url('img/pop.png')";
     document.querySelector(".mario").appendChild(button1);
-    let popUp = document.createElement("div");
-    popUp.innerText = "a remplir"
-    popUp.setAttribute("id", "pop");
-    popUp.style.visibility = "hidden";
-    popUp.style.border = "1px solid green";
-    popUp.style.width = "40%";
-    popUp.style.height = "60px";
-    popUp.style.backgroundColor = "white";
-    document.querySelector(".mario").appendChild(popUp);
 });
-// function openPop() {
-//     document.getElementById("pop").style.display = "block";
-// }
-// function closePop() {
-//     document.getElementById("pop").style.display = "none";
-// }
-button1 = document.getElementsByClassName('open');
 document.querySelectorAll(".open").forEach(element => {
     // console.log(element.id);
     element.addEventListener("click", (event) => {
-        let key = event.target.id;
-        console.log(maCollection[key]);
-        // button1.addClass('active');
-        // openPop();
-        document.getElementById("pop").style.visibility = "visible";
+        let key = "jeux" + event.target.id;
+        // console.log(maCollection[key]);
+        document.body.style.backgroundColor = "rgb("+Math.floor(Math.random()*256)+","+ Math.floor(Math.random()*256)+","+ Math.floor(Math.random()*256)+")";
+        let popUp = document.createElement("div");
+        popUp.style.fontSize = "15px";
+        popUp.style.fontWeight = "bold";
+        popUp.innerText = `${maCollection[key].titre} 
+            
+            Dans la culture populaire, Mario est connu pour être plombier. Cependant, Miyamoto aurait d'abord choisi de faire de Mario un charpentier dans Donkey Kong. C'est dans le jeu Mario Bros. sorti sur borne d'arcade en 1983 qu'il devint un plombier, combattant les créatures des égouts de New York avec son frère Luigi.`;
+        popUp.setAttribute("class", "pop");
+        popUp.style.border = "1px solid green";
+        popUp.style.padding = "10px"
+        popUp.style.width = "40%";
+        popUp.style.height = "220px";
+        popUp.style.zIndex = "1";
+        popUp.style.position = "absolute";
+        popUp.style.top = `${10 + 30 * (event.target.id - 1)}%`;
+        popUp.style.borderRadius = "20px";
+        popUp.style.backgroundColor = "white";
+        popUp.style.backgroundImage = "url(img/pop1.png)";
+        popUp.style.backgroundSize = "50px";
+        popUp.style.backgroundRepeat = "no-repeat";
+        popUp.style.backgroundPosition = "25% 75%"
+        document.querySelector(".mario").appendChild(popUp);
+        popUp.addEventListener("click", (event) => {
+            popUp.style.visibility = "hidden";
+        });
     });
 });
-// voir pour active;
-//  un seul s'affiche
-// voir function pour open close
-// voir close
+// retirer button 1
+// img
 // faire style
+// responsive
+//carousel carte
