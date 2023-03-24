@@ -3,6 +3,14 @@
     padding: 0;
     box-sizing: border-box;
 }
+#content{
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+}
 .open{
     margin-bottom: 50px;
+}
+.pop{
+    display: flex;
 }

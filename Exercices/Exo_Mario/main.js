@@ -6,7 +6,13 @@ this.console = console;
 this.annee = annee;
 }
 //constructeur objet
-
+function randombg(element){
+    var random= Math.floor(Math.random()*2);
+    var bigSize = ["url('img/pop1.png')",
+                   "url('img/pop2.png')"
+                ];
+    element.style.backgroundImage=bigSize[random];
+}
 let jeux1 = new Jeux("Super Mario Bros", "Nintendo", 1985);
 let jeux2 = new Jeux("Mario Bros", "Nintendo", 1983);
 let jeux3 = new Jeux("Super Mario Bros .3", "Nintendo", 1988);
@@ -28,6 +34,7 @@ console.log(maCollection);
 for (const key in maCollection){
     console.log(maCollection[key]);
 }
+
 /*affiche titre des propriété = key dans maCollection
 key = attribut
 maCollection[key]->dynamique on évite maCollection.propriété
@@ -56,20 +63,21 @@ Object.values(maCollection).map(
     console.log(Jeux.year);
     console.log("jeux" + (index+=1));
 //recup objet
+    let container = document.createElement("div");
     let affichage1 = document.createElement("h2");
     affichage1.innerHTML = Jeux.titre;
     affichage1.style.color = "green";
-    document.querySelector(".mario").appendChild(affichage1);
+    container.appendChild(affichage1);
     let affichage2 = document.createElement("h3");
     affichage2.innerHTML = `Console: ${Jeux.console}`;
     affichage2.style.color = "black";
     affichage2.style.margin = "10px";
-    document.querySelector(".mario").appendChild(affichage2);
+    container.appendChild(affichage2);
     let affichage3 = document.createElement("h3");
     affichage3.innerHTML = `Année de sortie: ${Jeux.annee}`;
     affichage3.style.color = "black";
     affichage3.style.margin = "10px";
-    document.querySelector(".mario").appendChild(affichage3);
+    container.appendChild(affichage3);
     let button1 = document.createElement("button");
     button1.setAttribute("class", "open");
     button1.setAttribute("id", `${index}`)
@@ -78,9 +86,10 @@ Object.values(maCollection).map(
     // button1.style.position = "relative";
     button1.style.borderRadius = "50px";
     button1.style.width = "250px";
-    button1.style.height = "70px";
+    button1.style.height = "40px";
     // button1.style.backgroundImage = "url('img/pop.png')";
-    document.querySelector(".mario").appendChild(button1);
+    container.appendChild(button1);
+    document.querySelector(".mario").appendChild(container);
 });
 document.querySelectorAll(".open").forEach(element => {
     // console.log(element.id);
@@ -101,10 +110,10 @@ document.querySelectorAll(".open").forEach(element => {
         popUp.style.height = "220px";
         popUp.style.zIndex = "1";
         popUp.style.position = "absolute";
-        popUp.style.top = `${10 + 30 * (event.target.id - 1)}%`;
+        popUp.style.top = `${10 + 25 * (event.target.id - 1)}%`;
         popUp.style.borderRadius = "20px";
         popUp.style.backgroundColor = "white";
-        popUp.style.backgroundImage = "url(img/pop1.png)";
+        popUp.style.backgroundImage = randombg(popUp);
         popUp.style.backgroundSize = "50px";
         popUp.style.backgroundRepeat = "no-repeat";
         popUp.style.backgroundPosition = "25% 75%"
@@ -114,8 +123,12 @@ document.querySelectorAll(".open").forEach(element => {
         });
     });
 });
+const btn3 = document.getElementById("3");
+console.log(" btn3 ",btn3);
 // retirer button 1
 // img
+//https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect
+//paragraphe pops
 // faire style
 // responsive
 //carousel carte
