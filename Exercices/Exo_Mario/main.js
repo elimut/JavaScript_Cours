@@ -1,11 +1,9 @@
-
-
 function Jeux(titre, console, annee) {
 this.titre = titre;
 this.console = console;
 this.annee = annee;
 }
-//constructeur objet
+/*constructeur objet*/
 function randombg(element){
     var random= Math.floor(Math.random()*2);
     var bigSize = ["url('img/pop1.png')",
@@ -63,41 +61,40 @@ Object.values(maCollection).map(
     console.log(Jeux.year);
     console.log("jeux" + (index+=1));
 //recup objet
-    let container = document.createElement("div");
-    container.setAttribute("class", "slide");
+    let photo = document.createElement("div");
+    photo.setAttribute("class", "slide");
     let affichage1 = document.createElement("h2");
     affichage1.innerHTML = Jeux.titre;
     affichage1.style.color = "green";
-    container.appendChild(affichage1);
+    photo.appendChild(affichage1);
     let affichage2 = document.createElement("h3");
     affichage2.innerHTML = `Console: ${Jeux.console}`;
     affichage2.style.color = "black";
     affichage2.style.margin = "10px";
-    container.appendChild(affichage2);
+    photo.appendChild(affichage2);
     let affichage3 = document.createElement("h3");
     affichage3.innerHTML = `Année de sortie: ${Jeux.annee}`;
     affichage3.style.color = "black";
     affichage3.style.margin = "10px";
-    container.appendChild(affichage3);
+    photo.appendChild(affichage3);
     let button1 = document.createElement("button");
     button1.setAttribute("class", "open");
     button1.setAttribute("id", `${index}`)
-    // dollar entre deux bactiq=< lit remplace dollar index par valeur de l'index, concatènation
+    // dollars entre deux bactiq=> lit et remplace dollars index par valeur de l'index, concatènation
     button1.innerText = "En savoir plus";
-    // button1.style.position = "relative";
     button1.style.borderRadius = "50px";
-    button1.style.width = "250px";
+    button1.style.width = "245px";
     button1.style.height = "40px";
     // button1.style.backgroundImage = "url('img/pop.png')";
-    container.appendChild(button1);
-    document.querySelector(".mario").appendChild(container);
+    photo.appendChild(button1);
+    document.querySelector(".mario").appendChild(photo);
 });
 document.querySelectorAll(".open").forEach(element => {
     // console.log(element.id);
     element.addEventListener("click", (event) => {
         let key = "jeux" + event.target.id;
         // console.log(maCollection[key]);
-        document.body.style.backgroundColor = "rgb("+Math.floor(Math.random()*256)+","+ Math.floor(Math.random()*256)+","+ Math.floor(Math.random()*256)+")";
+        // document.body.style.backgroundColor = "rgb("+Math.floor(Math.random()*256)+","+ Math.floor(Math.random()*256)+","+ Math.floor(Math.random()*256)+")";
         let popUp = document.createElement("div");
         popUp.style.fontSize = "15px";
         popUp.style.fontWeight = "bold";
@@ -107,8 +104,8 @@ document.querySelectorAll(".open").forEach(element => {
         popUp.setAttribute("class", "pop");
         popUp.style.border = "1px solid green";
         popUp.style.padding = "10px"
-        popUp.style.width = "40%";
-        popUp.style.height = "220px";
+        popUp.style.width = "50%";
+        popUp.style.height = "300px";
         popUp.style.zIndex = "1";
         popUp.style.position = "absolute";
         popUp.style.top = `${10 + 25 * (event.target.id - 1)}%`;
@@ -124,8 +121,54 @@ document.querySelectorAll(".open").forEach(element => {
         });
     });
 });
-const btn3 = document.getElementById("3");
-console.log(" btn3 ",btn3);
+/*const btn3 = document.getElementById("3");
+console.log(" btn3 ",btn3); vérifier quel élément est ciblé par id 3*/
+let nbr = 5;
+let p = 0;
+/*position = 0 par défaut*/
+let container = document.querySelector(".slide");
+let g = document.getElementById("left");
+let d = document.getElementById("right");
+container.style.width = (250 * nbr) + "px";
+console.log(container)
+g.onclick = function(){
+    if (p > -nbr + 1) {
+        /*fin dernière image*/
+        p--;
+        // décrémente de 1 la position?
+        container.style.transform = "translate("+p*250+"px)";
+        container.style.transition = "all 0.5s ease";
+        afficherMasquer();
+    };
+}
+d.onclick = function(){
+    if (p < 0) {
+        /*fin dernière image*/
+        p++;
+        // décrémente de 1 la position?
+        container.style.transform = "translate("+ p*250 +"px)";
+        container.style.transition = "all 0.5s ease";
+        afficherMasquer();
+    };
+}
+function afficherMasquer(){
+    if(p == -nbr + 1){
+        g.style.visibility = "hidden";
+    }
+    else{
+        g.style.visibility = "visible";
+    }
+    if(p == 0){
+        d.style.visibility = "hidden";
+    }
+    else{
+        d.style.visibility = "visible";
+    }
+}
+
+
+
+
 // retirer button 1
 // img
 //https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect
