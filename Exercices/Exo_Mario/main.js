@@ -56,27 +56,27 @@ document.querySelector("div").appendChild(exo);
     recuperer val objet comme tableau : Object.value*/
 Object.values(maCollection).map(
 (Jeux, index, key) => {
-    console.log(Jeux.console);
-    console.log(Jeux.name);
-    console.log(Jeux.year);
-    console.log("jeux" + (index+=1));
+    // console.log(Jeux.console);
+    // console.log(Jeux.name);
+    // console.log(Jeux.year);
+    // console.log("jeux" + (index+=1));
 //recup objet
-    let photo = document.createElement("div");
-    photo.setAttribute("class", "slide");
+    let container = document.createElement("div");
+    container.setAttribute("class", "slide");
     let affichage1 = document.createElement("h2");
     affichage1.innerHTML = Jeux.titre;
     affichage1.style.color = "green";
-    photo.appendChild(affichage1);
+    container.appendChild(affichage1);
     let affichage2 = document.createElement("h3");
     affichage2.innerHTML = `Console: ${Jeux.console}`;
     affichage2.style.color = "black";
     affichage2.style.margin = "10px";
-    photo.appendChild(affichage2);
+    container.appendChild(affichage2);
     let affichage3 = document.createElement("h3");
     affichage3.innerHTML = `Année de sortie: ${Jeux.annee}`;
     affichage3.style.color = "black";
     affichage3.style.margin = "10px";
-    photo.appendChild(affichage3);
+    container.appendChild(affichage3);
     let button1 = document.createElement("button");
     button1.setAttribute("class", "open");
     button1.setAttribute("id", `${index}`)
@@ -86,47 +86,12 @@ Object.values(maCollection).map(
     button1.style.width = "245px";
     button1.style.height = "40px";
     // button1.style.backgroundImage = "url('img/pop.png')";
-    photo.appendChild(button1);
-    document.querySelector(".mario").appendChild(photo);
-});
-document.querySelectorAll(".open").forEach(element => {
-    // console.log(element.id);
-    element.addEventListener("click", (event) => {
-        let key = "jeux" + event.target.id;
-        // console.log(maCollection[key]);
-        // document.body.style.backgroundColor = "rgb("+Math.floor(Math.random()*256)+","+ Math.floor(Math.random()*256)+","+ Math.floor(Math.random()*256)+")";
-        let popUp = document.createElement("div");
-        popUp.style.fontSize = "15px";
-        popUp.style.fontWeight = "bold";
-        popUp.innerText = `${maCollection[key].titre} 
-            
-            Dans la culture populaire, Mario est connu pour être plombier. Cependant, Miyamoto aurait d'abord choisi de faire de Mario un charpentier dans Donkey Kong. C'est dans le jeu Mario Bros. sorti sur borne d'arcade en 1983 qu'il devint un plombier, combattant les créatures des égouts de New York avec son frère Luigi.`;
-        popUp.setAttribute("class", "pop");
-        popUp.style.border = "1px solid green";
-        popUp.style.padding = "10px"
-        popUp.style.width = "50%";
-        popUp.style.height = "300px";
-        popUp.style.zIndex = "1";
-        popUp.style.position = "absolute";
-        popUp.style.top = `${10 + 25 * (event.target.id - 1)}%`;
-        popUp.style.borderRadius = "20px";
-        popUp.style.backgroundColor = "white";
-        popUp.style.backgroundImage = randombg(popUp);
-        popUp.style.backgroundSize = "50px";
-        popUp.style.backgroundRepeat = "no-repeat";
-        popUp.style.backgroundPosition = "25% 75%"
-        document.querySelector(".mario").appendChild(popUp);
-        popUp.addEventListener("click", (event) => {
-            popUp.style.visibility = "hidden";
-        });
-    });
-});
-/*const btn3 = document.getElementById("3");
-console.log(" btn3 ",btn3); vérifier quel élément est ciblé par id 3*/
-let nbr = 5;
+    container.appendChild(button1);
+    document.querySelector(".mario").appendChild(container);
+    let nbr = 5;
 let p = 0;
 /*position = 0 par défaut*/
-let container = document.querySelector(".slide");
+// let container = document.querySelector(".slide");
 let g = document.getElementById("left");
 let d = document.getElementById("right");
 container.style.width = (250 * nbr) + "px";
@@ -165,6 +130,41 @@ function afficherMasquer(){
         d.style.visibility = "visible";
     }
 }
+});
+document.querySelectorAll(".open").forEach(element => {
+    // console.log(element.id);
+    element.addEventListener("click", (event) => {
+        let key = "jeux" + event.target.id;
+        // console.log(maCollection[key]);
+        // document.body.style.backgroundColor = "rgb("+Math.floor(Math.random()*256)+","+ Math.floor(Math.random()*256)+","+ Math.floor(Math.random()*256)+")";
+        let popUp = document.createElement("div");
+        popUp.style.fontSize = "15px";
+        popUp.style.fontWeight = "bold";
+        popUp.innerText = `${maCollection[key].titre} 
+            
+            Dans la culture populaire, Mario est connu pour être plombier. Cependant, Miyamoto aurait d'abord choisi de faire de Mario un charpentier dans Donkey Kong. C'est dans le jeu Mario Bros. sorti sur borne d'arcade en 1983 qu'il devint un plombier, combattant les créatures des égouts de New York avec son frère Luigi.`;
+        popUp.setAttribute("class", "pop");
+        popUp.style.border = "1px solid green";
+        popUp.style.padding = "10px"
+        popUp.style.width = "50%";
+        popUp.style.height = "300px";
+        popUp.style.zIndex = "1";
+        popUp.style.position = "absolute";
+        popUp.style.top = `${10 + 25 * (event.target.id - 1)}%`;
+        popUp.style.borderRadius = "20px";
+        popUp.style.backgroundColor = "white";
+        popUp.style.backgroundImage = randombg(popUp);
+        popUp.style.backgroundSize = "50px";
+        popUp.style.backgroundRepeat = "no-repeat";
+        popUp.style.backgroundPosition = "25% 75%"
+        document.querySelector(".mario").appendChild(popUp);
+        popUp.addEventListener("click", (event) => {
+            popUp.style.visibility = "hidden";
+        });
+    });
+});
+/*const btn3 = document.getElementById("3");
+console.log(" btn3 ",btn3); vérifier quel élément est ciblé par id 3*/
 
 
 
