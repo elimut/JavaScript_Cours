@@ -88,81 +88,84 @@ Object.values(maCollection).map(
     // button1.style.backgroundImage = "url('img/pop.png')";
     container.appendChild(button1);
     document.querySelector(".mario").appendChild(container);
-    let nbr = 5;
-let p = 0;
-/*position = 0 par défaut*/
-// let container = document.querySelector(".slide");
-let g = document.getElementById("left");
-let d = document.getElementById("right");
-container.style.width = (250 * nbr) + "px";
-console.log(container)
-g.onclick = function(){
-    if (p > -nbr + 1) {
-        /*fin dernière image*/
-        p--;
-        // décrémente de 1 la position?
-        container.style.transform = "translate("+p*250+"px)";
-        container.style.transition = "all 0.5s ease";
-        afficherMasquer();
-    };
-}
-d.onclick = function(){
-    if (p < 0) {
-        /*fin dernière image*/
-        p++;
-        // décrémente de 1 la position?
-        container.style.transform = "translate("+ p*250 +"px)";
-        container.style.transition = "all 0.5s ease";
-        afficherMasquer();
-    };
-}
-function afficherMasquer(){
-    if(p == -nbr + 1){
-        g.style.visibility = "hidden";
-    }
-    else{
-        g.style.visibility = "visible";
-    }
-    if(p == 0){
-        d.style.visibility = "hidden";
-    }
-    else{
-        d.style.visibility = "visible";
-    }
-}
-});
-document.querySelectorAll(".open").forEach(element => {
-    // console.log(element.id);
-    element.addEventListener("click", (event) => {
-        let key = "jeux" + event.target.id;
-        // console.log(maCollection[key]);
-        // document.body.style.backgroundColor = "rgb("+Math.floor(Math.random()*256)+","+ Math.floor(Math.random()*256)+","+ Math.floor(Math.random()*256)+")";
-        let popUp = document.createElement("div");
-        popUp.style.fontSize = "15px";
-        popUp.style.fontWeight = "bold";
-        popUp.innerText = `${maCollection[key].titre} 
-            
-            Dans la culture populaire, Mario est connu pour être plombier. Cependant, Miyamoto aurait d'abord choisi de faire de Mario un charpentier dans Donkey Kong. C'est dans le jeu Mario Bros. sorti sur borne d'arcade en 1983 qu'il devint un plombier, combattant les créatures des égouts de New York avec son frère Luigi.`;
-        popUp.setAttribute("class", "pop");
-        popUp.style.border = "1px solid green";
-        popUp.style.padding = "10px"
-        popUp.style.width = "50%";
-        popUp.style.height = "300px";
-        popUp.style.zIndex = "1";
-        popUp.style.position = "absolute";
-        popUp.style.top = `${10 + 25 * (event.target.id - 1)}%`;
-        popUp.style.borderRadius = "20px";
-        popUp.style.backgroundColor = "white";
-        popUp.style.backgroundImage = randombg(popUp);
-        popUp.style.backgroundSize = "50px";
-        popUp.style.backgroundRepeat = "no-repeat";
-        popUp.style.backgroundPosition = "25% 75%"
-        document.querySelector(".mario").appendChild(popUp);
-        popUp.addEventListener("click", (event) => {
-            popUp.style.visibility = "hidden";
+    document.querySelectorAll(".open").forEach(element => {
+        // console.log(element.id);
+        element.addEventListener("click", (event) => {
+            let key = "jeux" + event.target.id;
+            // console.log(maCollection[key]);
+            // document.body.style.backgroundColor = "rgb("+Math.floor(Math.random()*256)+","+ Math.floor(Math.random()*256)+","+ Math.floor(Math.random()*256)+")";
+            let popUp = document.createElement("div");
+            popUp.style.fontSize = "15px";
+            popUp.style.fontWeight = "bold";
+            popUp.innerText = `${maCollection[key].titre} 
+                
+                Dans la culture populaire, Mario est connu pour être plombier. Cependant, Miyamoto aurait d'abord choisi de faire de Mario un charpentier dans Donkey Kong. C'est dans le jeu Mario Bros. sorti sur borne d'arcade en 1983 qu'il devint un plombier, combattant les créatures des égouts de New York avec son frère Luigi.`;
+            popUp.setAttribute("class", "pop");
+            popUp.style.border = "1px solid green";
+            popUp.style.padding = "10px"
+            popUp.style.width = "100%";
+            popUp.style.height = "500px";
+            popUp.style.paddingTop = "60px";
+            popUp.style.zIndex = "1";
+            popUp.style.position = "absolute";
+            popUp.style.top = `${10 + 25 * (event.target.id - 1)}%`;
+            popUp.style.borderRadius = "20px";
+            popUp.style.backgroundColor = "white";
+            popUp.style.backgroundImage = randombg(popUp);
+            popUp.style.backgroundSize = "50px";
+            popUp.style.backgroundRepeat = "no-repeat";
+            popUp.style.backgroundPosition = "25% 75%"
+            document.querySelector(".mario").appendChild(popUp);
+            popUp.addEventListener("click", (event) => {
+                popUp.style.visibility = "hidden";
+            });
         });
     });
+    let nbr = 5;
+    let p = 0;
+    /*position = 0 par défaut*/
+    container = document.querySelector(".slide");
+    container.style.width = (250 * nbr) + "px";
+    console.log(container)
+    let g = document.getElementById("left");
+    let d = document.getElementById("right");
+    function afficherMasquer(){
+        if(p == -nbr + 1){
+            g.style.visibility = "hidden";
+        }
+        else{
+            g.style.visibility = "visible";
+        }
+        if(p == 0){
+            d.style.visibility = "hidden";
+        }
+        else{
+            d.style.visibility = "visible";
+        }
+    }
+    g.onclick = function(){
+        if (p > -nbr + 1) {
+            /*fin dernière image*/
+            p--;
+            // décrémente de 1 la position?
+            container.style.transform = "translate("+p*250+"px)";
+            container.style.transition = "all 0.5s ease";
+            afficherMasquer();
+        };
+    }
+    d.onclick = function(){
+        if (p < 0) {
+            /*fin dernière image*/
+            p++;
+            // décrémente de 1 la position?
+            container.style.transform = "translate("+ p*250 +"px)";
+            container.style.transition = "all 0.5s ease";
+            afficherMasquer();
+        };
+    }
 });
+
+
 /*const btn3 = document.getElementById("3");
 console.log(" btn3 ",btn3); vérifier quel élément est ciblé par id 3*/
 
