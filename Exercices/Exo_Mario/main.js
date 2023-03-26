@@ -80,25 +80,22 @@ Object.values(maCollection).map(
     let button1 = document.createElement("button");
     button1.setAttribute("class", "open");
     button1.setAttribute("id", `${index}`)
+    console.log(index);
     // dollars entre deux bactiq=> lit et remplace dollars index par valeur de l'index, concatènation
     button1.innerText = "En savoir plus";
     button1.style.borderRadius = "50px";
     button1.style.width = "245px";
     button1.style.height = "40px";
-    // button1.style.backgroundImage = "url('img/pop.png')";
     container.appendChild(button1);
     document.querySelector(".mario").appendChild(container);
     document.querySelectorAll(".open").forEach(element => {
-        // console.log(element.id);
         element.addEventListener("click", (event) => {
-            let key = "jeux" + event.target.id;
-            // console.log(maCollection[key]);
-            // document.body.style.backgroundColor = "rgb("+Math.floor(Math.random()*256)+","+ Math.floor(Math.random()*256)+","+ Math.floor(Math.random()*256)+")";
+            let key = "Jeux" + event.target.id;
             let popUp = document.createElement("div");
             popUp.style.fontSize = "15px";
             popUp.style.fontWeight = "bold";
-            popUp.innerText = `${maCollection[key].titre} 
-                
+            popUp.innerText = `${Jeux.titre} 
+            
                 Dans la culture populaire, Mario est connu pour être plombier. Cependant, Miyamoto aurait d'abord choisi de faire de Mario un charpentier dans Donkey Kong. C'est dans le jeu Mario Bros. sorti sur borne d'arcade en 1983 qu'il devint un plombier, combattant les créatures des égouts de New York avec son frère Luigi.`;
             popUp.setAttribute("class", "pop");
             popUp.style.border = "1px solid green";
