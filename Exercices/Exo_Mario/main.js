@@ -9,7 +9,7 @@ function randombg(element){
     var bigSize = ["url('img/pop1.png')",
                    "url('img/pop2.png')"
                 ];
-    element.style.backgroundImage=bigSize[random];
+    element.style.backgroundImage = bigSize[random];
 }
 let jeux1 = new Jeux("Super Mario Bros", "Nintendo", 1985);
 let jeux2 = new Jeux("Mario Bros", "Nintendo", 1983);
