@@ -2075,9 +2075,9 @@ Les avantages des promesses par rapport à l’utilisation de simples fonctions 
 ### Présentation et définition des promesses
 
 Une promesse en JavaScript est un objet qui représente l’état d’une opération asynchrone. Une opération asynchrone peut être dans l’un des états suivants :
-- Opération en cours (non terminée) ;
-- Opération terminée avec succès (promesse résolue) ;
-- Opération terminée ou plus exactement stoppée après un échec (promesse rejetée).
+- Opération en cours (non terminée) = **pending** ;
+- Opération terminée avec succès (promesse résolue) = **fulfilled**;
+- Opération terminée ou plus exactement stoppée après un échec (promesse rejetée) = **rejected**.
   
 **L’idée est la suivante : nous allons définir une fonction dont le rôle est d’effectuer une opération asynchrone et cette fonction va, lors de son exécution, créer et renvoyer un objet Promesse**.
 
@@ -2239,6 +2239,47 @@ Ce mot clef permet d’interrompre l’exécution d’une fonction asynchrone ta
 
 Le mot clef await permet de mettre en pause l’exécution du code tant qu’une promesse n’est pas consommée, puis retourne ensuite le résultat de la promesse. Cela ne consomme aucune ressource supplémentaire puisque le moteur peut effectuer d’autres tâches en attendant : exécuter d’autres scripts, gérer des événements, etc.
 
+### Méthode fetch
+
+Méthode fetch = "Va chercher".
+
+Le fetch est une fonction Javascript qui est utilisée pour effectuer des requêtes HTTP asynchrones vers des ressources sur le Web.
+Fetch utilise la syntaxe des promesses, ce qui signifie qu’il renvoie une promesse qui est résolue avec la réponse HTTP une fois que la requête est terminée.
+
+#### Qu'est-ce que les requêtes et les réponses HTTP ?
+
+HTTP(HypertextTransferProtocol):
+-> est le protocole standard utilisé pour transférer des données sur le Web. Les requêtes et les réponses HTTP sont échangées entre un client (tel qu’un navigateur Web) et un serveur pour demander ou fournir des ressources Web.
+
+Voir dossiers exercices fetch.
+
+Exemple:
+
+    fetch("img/image_test.jpg").then(image => {
+        console.log(image)
+    });
+    ->fetch(param: URL).then(param: fonction callback => {
+    instruction
+    });
+    ->.then = promise
+    =>récupération de l' image et console log
+
+    fetch("https://jsonplaceholder.typicode.com/posts/")
+    .then(response => response.json())
+    ->méthode transformation Response en objet JS
+    .then(data => console.log(data))
+    ->nommer comme l'on veut sauf Response, nom objet réponse
+    .catch(error => console.log(error));
+    ->attraper erreur, promise pas forcé de la tenir
+    ou, pour catch:
+
+    try{
+
+    }
+    catch{
+
+    }
+    =>sorte de if/else
 
 ## Le DOM
 
