@@ -413,11 +413,6 @@
 //     }
 // ]
 
-
-
-
-
-
 /*est-ce que la note du public est égale à 5 -> si >= pouce vers le haut, sinon pouce vers le bas*/
 
 // let exercice = document.getElementById("exercice");
@@ -429,7 +424,83 @@
 //     )
 // ).join("");
 
+/*Créer un tableau d'objet results
+automatiser le remplissage du tableau objets results*/
 
+let movies = [];
+let movie = "thermodynamique";
+const ApiKey = '3aa6970a57e694fc61a86fcf810ba744';
+let exercice = document.getElementById("exerciceFetch");
+// fetch(`https://api.themoviedb.org/3/search/movie?api_key=${ApiKey}&query=melancholia`)
+/*aucun espace dans recherche*/
+// .then(raiponce => console.log(raiponce.json()))
+/*
+envoie objet JS->
+promise
+console: Promise {<pending>}
+[[Prototype]]
+: 
+Promise
+[[PromiseState]]
+: 
+"fulfilled"
+[[PromiseResult]]
+: 
+Object
+*/
+// .then(raiponce => console.log(raiponce.json.results()))
+/*renvoie undefined car dans promise tableau donc manque index. On veut faire une requête asynchrone,
+mot clef async et await
+*/
+
+const fetchMovie = async ()=>{
+    const ApiUri = `https://api.themoviedb.org/3/search/movie?api_key=${ApiKey}&query=${movie}`;
+    movies = await fetch(ApiUri)
+    .then((response) => response.json());
+    /*results ce qui est renvoyé en tableau results*/
+    console.log(movies.results[0].original_title)
+    /*récupèrer les résultat dans l'objet results, tableau js*/
+    // console.log(movies.results.original_title);
+    /*renvoie undefined car tableau, pour accèder à l'attribut original title soit console log-> index mais un seul élément accessible
+    //=> console.log(movies.results[0].original_title);
+    /*ou boucle for ou map
+    */
+} 
+
+// https://image.tmdb.org/t/p/w200${film.poster_path}
+const moviesDiplay = async ()=>{
+    await fetchMovie();
+    exercice.innerHTML = movies.results.map((film) => (
+        (film.vote_average >= 5) ? 
+        `<div class="bob" style="width: 18rem;">
+            <h2>${film.original_title} avec un avis <i class="fa-regular fa-thumbs-up"></i></h2>
+            ${(film.poster_path == undefined) ? (`<img src=img/image.jpg>`) : (`<img src=https://image.tmdb.org/t/p/w200${film.poster_path}`)}
+            <p>il a une note de ${film.vote_average}</p>
+        </div>`: 
+        `<div class="bob" style="width: 18rem;">
+            <h2>${film.original_title} avec un avis <i class="fa-regular fa-thumbs-down"></i></h2> 
+            ${(film.poster_path == undefined) ? (`<img src=img/image.jpg>`) : (`<img src=https://image.tmdb.org/t/p/w200${film.poster_path}`)}     
+            <p>il a une note de ${film.vote_average}</p>
+        </div>` 
+        )
+    ).join("");
+}
+/*fonction fléchée movieDisplay fonction fetchMovie, on lui demande d' attendre la réponse. 
+il faut appeler la fonction moviesDisplay qui cntent la fonction fetchMovie
+*/
+moviesDiplay();
+movie = "paul";
+moviesDiplay();
+
+
+
+
+
+
+
+
+
+/* deux manieres d' interagir avec api => consommer (fetch) ou développer*/
 
 
 

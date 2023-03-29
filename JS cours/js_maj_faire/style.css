@@ -28,7 +28,7 @@ button{
     margin: 30px;
     background-color: #950b7a;
 }
-#exercice{
+#exerciceFetch{
     display: flex;
     flex-wrap: wrap;
 }
@@ -38,6 +38,17 @@ button{
 .fa-thumbs-down{
     color: red;
 }
-h2, img, p{
+h2, img,p{
     margin: 10px;
+}
+.bob{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid pink;
+    margin: 5px;
+}
+img{
+    width: 150px;
 }
