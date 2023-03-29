@@ -100,7 +100,7 @@ affichage.addEventListener("submit",e=>{
     e.preventDefault();
     inputValue = affichage1.value;
     var reponse = fetch("https://www.themoviedb.org/search?language=fr&query="+inputValue)
-    .then(response => reponse.json())
+    .then(response => response.json())
     .then(data => {
         resu.textContent = `${data}`;
     });
@@ -208,8 +208,28 @@ const promise1 = fetch("https://jsonplaceholder.typicode.com/users",
 });
 console.log(promise1);
 // code statut 201 = created indique que la requête a réussi et qu'une ressource a été créee en conséquence.Généralement obtenu suite methode POST.
+
+
 */
 
 
 
 
+let inputValue = "";
+let resu = document.querySelector("p");
+let affichage = document.createElement("form");
+let affichage1 = document.createElement("input");
+affichage1.setAttribute("type","text");
+affichage1.setAttribute("id", "formulaire")
+affichage1.setAttribute("placeholder", "Saisir titre")
+affichage.appendChild(affichage1);
+document.body.appendChild(affichage);
+affichage.addEventListener("submit",e=>{
+    e.preventDefault();
+    inputValue = affichage1.value;
+    var reponse = fetch("https://www.themoviedb.org/search?language=fr&query="+inputValue)
+    .then(response => response.json())
+    .then(data => {
+        resu.textContent = `${data}`;
+    });
+}); 

@@ -28,3 +28,16 @@ button{
     margin: 30px;
     background-color: #950b7a;
 }
+#exercice{
+    display: flex;
+    flex-wrap: wrap;
+}
+.fa-thumbs-up{
+    color: green;
+}
+.fa-thumbs-down{
+    color: red;
+}
+h2, img, p{
+    margin: 10px;
+}

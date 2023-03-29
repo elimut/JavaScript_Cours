@@ -2246,10 +2246,14 @@ Méthode fetch = "Va chercher".
 Le fetch est une fonction Javascript qui est utilisée pour effectuer des requêtes HTTP asynchrones vers des ressources sur le Web.
 Fetch utilise la syntaxe des promesses, ce qui signifie qu’il renvoie une promesse qui est résolue avec la réponse HTTP une fois que la requête est terminée.
 
+    fetch("url").then(monparam => {moncode});
+    -> va chercher dans URL le paramètre et fait cela.
+
 #### Qu'est-ce que les requêtes et les réponses HTTP ?
 
 HTTP(HypertextTransferProtocol):
 -> est le protocole standard utilisé pour transférer des données sur le Web. Les requêtes et les réponses HTTP sont échangées entre un client (tel qu’un navigateur Web) et un serveur pour demander ou fournir des ressources Web.
+
 
 Voir dossiers exercices fetch.
 
