@@ -529,6 +529,7 @@ const fetchMovie = async ()=>{
     const ApiUri = `https://api.themoviedb.org/3/search/movie?api_key=${ApiKey}&query=${movie}`;
     movies = await fetch(ApiUri)
     .then((response) => response.json());
+    // console.log(movies.results)
 }
 
 const moviesDiplay = async ()=>{
@@ -538,12 +539,18 @@ const moviesDiplay = async ()=>{
         `<div class="bob" style="width: 18rem;">
             <h2>${film.original_title} avec un avis <i class="fa-regular fa-thumbs-up"></i></h2>
             ${(film.poster_path == undefined) ? (`<img src=img/image.jpg>`) : (`<img src=https://image.tmdb.org/t/p/w200${film.poster_path}`)}
-            <p>il a une note de ${film.vote_average}</p>
+            <p>Il a une note de ${film.vote_average}</p>
+            <p>Sorti en ${film.release_date}</p>
+            <p>Synopsis: ${film.overview}</p>
+            <p>VO: ${film.original_language}</p>
         </div>`: 
         `<div class="bob" style="width: 18rem;">
             <h2>${film.original_title} avec un avis <i class="fa-regular fa-thumbs-down"></i></h2> 
             ${(film.poster_path == undefined) ? (`<img src=img/image.jpg>`) : (`<img src=https://image.tmdb.org/t/p/w200${film.poster_path}`)}     
-            <p>il a une note de ${film.vote_average}</p>
+            <p>Il a une note de ${film.vote_average}</p>
+            <p>Sorti en ${film.release_date}</p>
+            <p>Synopsis: ${film.overview}</p>
+            <p>VO: ${film.original_language}</p>
         </div>` 
         )
     ).join("");
@@ -563,7 +570,7 @@ affichage.addEventListener("submit",e=>{
 
 /*
 Etape par étape = procédural
-ici, tout dans des fonctions (addevent méthode) = fonctionnel
+ici, tout dans des fonctions (add.Event méthode) = fonctionnel
 
 clean code = reprend plusisuers concepts, ici clean code car ne dépasse pas 3 lignes et ne résout qu'un problème:
 affichage.addEventListener("submit",e=>{
@@ -575,4 +582,5 @@ affichage.addEventListener("submit",e=>{
 https://developpeurfullstack.fr/posts/les-principes-solid/
 solid inverse de stupid
 
+voir simplon js
 */
