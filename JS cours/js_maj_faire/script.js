@@ -427,10 +427,10 @@
 /*Créer un tableau d'objet results
 automatiser le remplissage du tableau objets results*/
 
-let movies = [];
-let movie = "thermodynamique";
-const ApiKey = '3aa6970a57e694fc61a86fcf810ba744';
-let exercice = document.getElementById("exerciceFetch");
+// let movies = [];
+// let movie = "thermodynamique";
+// const ApiKey = '3aa6970a57e694fc61a86fcf810ba744';
+// let exercice = document.getElementById("exerciceFetch");
 // fetch(`https://api.themoviedb.org/3/search/movie?api_key=${ApiKey}&query=melancholia`)
 /*aucun espace dans recherche*/
 // .then(raiponce => console.log(raiponce.json()))
@@ -452,22 +452,85 @@ Object
 /*renvoie undefined car dans promise tableau donc manque index. On veut faire une requête asynchrone,
 mot clef async et await
 */
+// let movies = [];
+// let movie = "";
+// const ApiKey = '3aa6970a57e694fc61a86fcf810ba744';
+// let exercice = document.getElementById("exerciceFetch");
+// let inputValue = "";
+// let affichage = document.createElement("form");
+// let affichage1 = document.createElement("input");
+// let affichage2 = document.createElement("input");
 
-const fetchMovie = async ()=>{
-    const ApiUri = `https://api.themoviedb.org/3/search/movie?api_key=${ApiKey}&query=${movie}`;
-    movies = await fetch(ApiUri)
-    .then((response) => response.json());
+
+// affichage1.setAttribute("type","text");
+// affichage1.setAttribute("placeholder", "Saisir titre")
+// affichage2.setAttribute("type","submit");
+// affichage.appendChild(affichage1);
+// affichage.appendChild(affichage2);
+// document.body.appendChild(affichage);
+// affichage.addEventListener("submit",e=>{
+//     e.preventDefault();
+//     movie = affichage1.value;
+//     console.log(movie);
+//     moviesDiplay();
+// });
+
+// const fetchMovie = async ()=>{
+//     const ApiUri = `https://api.themoviedb.org/3/search/movie?api_key=${ApiKey}&query=${movie}`;
+//     movies = await fetch(ApiUri)
+//     .then((response) => response.json());
     /*results ce qui est renvoyé en tableau results*/
-    console.log(movies.results[0].original_title)
+    // console.log(movies.results[0].original_title)
     /*récupèrer les résultat dans l'objet results, tableau js*/
     // console.log(movies.results.original_title);
     /*renvoie undefined car tableau, pour accèder à l'attribut original title soit console log-> index mais un seul élément accessible
     //=> console.log(movies.results[0].original_title);
     /*ou boucle for ou map
     */
-} 
+// } 
 
-// https://image.tmdb.org/t/p/w200${film.poster_path}
+
+// const moviesDiplay = async ()=>{
+//     await fetchMovie();
+//     exercice.innerHTML = movies.results.map((film) => (
+//         (film.vote_average >= 5) ? 
+//         `<div class="bob" style="width: 18rem;">
+//             <h2>${film.original_title} avec un avis <i class="fa-regular fa-thumbs-up"></i></h2>
+//             ${(film.poster_path == undefined) ? (`<img src=img/image.jpg>`) : (`<img src=https://image.tmdb.org/t/p/w200${film.poster_path}`)}
+//             <p>il a une note de ${film.vote_average}</p>
+//         </div>`: 
+//         `<div class="bob" style="width: 18rem;">
+//             <h2>${film.original_title} avec un avis <i class="fa-regular fa-thumbs-down"></i></h2> 
+//             ${(film.poster_path == undefined) ? (`<img src=img/image.jpg>`) : (`<img src=https://image.tmdb.org/t/p/w200${film.poster_path}`)}     
+//             <p>il a une note de ${film.vote_average}</p>
+//         </div>` 
+//         )
+//     ).join("");
+// }
+/*fonction fléchée movieDisplay fonction fetchMovie, on lui demande d' attendre la réponse. 
+il faut appeler la fonction moviesDisplay qui cntent la fonction fetchMovie
+fonction call back fonction dasn méthode, fléchée
+/* deux manieres d' interagir avec api => consommer (fetch) ou développer*/
+
+
+
+
+
+let movies = [];
+let movie = "";
+const ApiKey = '3aa6970a57e694fc61a86fcf810ba744';
+const exercice = document.getElementById("exerciceFetch");
+const affichage = document.createElement("form");
+const affichage1 = document.createElement("input");
+const affichage2 = document.createElement("input");
+
+
+const fetchMovie = async ()=>{
+    const ApiUri = `https://api.themoviedb.org/3/search/movie?api_key=${ApiKey}&query=${movie}`;
+    movies = await fetch(ApiUri)
+    .then((response) => response.json());
+}
+
 const moviesDiplay = async ()=>{
     await fetchMovie();
     exercice.innerHTML = movies.results.map((film) => (
@@ -485,23 +548,31 @@ const moviesDiplay = async ()=>{
         )
     ).join("");
 }
-/*fonction fléchée movieDisplay fonction fetchMovie, on lui demande d' attendre la réponse. 
-il faut appeler la fonction moviesDisplay qui cntent la fonction fetchMovie
+
+affichage1.setAttribute("type","text");
+affichage1.setAttribute("placeholder", "Saisir titre")
+affichage2.setAttribute("type","submit");
+affichage.appendChild(affichage1);
+affichage.appendChild(affichage2);
+document.body.appendChild(affichage);
+affichage.addEventListener("submit",e=>{
+    e.preventDefault();
+    movie = affichage1.value;
+    moviesDiplay();
+});
+
+/*
+Etape par étape = procédural
+ici, tout dans des fonctions (addevent méthode) = fonctionnel
+
+clean code = reprend plusisuers concepts, ici clean code car ne dépasse pas 3 lignes et ne résout qu'un problème:
+affichage.addEventListener("submit",e=>{
+    e.preventDefault();
+    movie = affichage1.value;
+    moviesDiplay();
+});
+
+https://developpeurfullstack.fr/posts/les-principes-solid/
+solid inverse de stupid
+
 */
-moviesDiplay();
-movie = "paul";
-moviesDiplay();
-
-
-
-
-
-
-
-
-
-/* deux manieres d' interagir avec api => consommer (fetch) ou développer*/
-
-
-
-
