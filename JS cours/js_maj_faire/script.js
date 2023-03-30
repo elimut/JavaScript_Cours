@@ -529,7 +529,7 @@ const fetchMovie = async ()=>{
     const ApiUri = `https://api.themoviedb.org/3/search/movie?api_key=${ApiKey}&query=${movie}`;
     movies = await fetch(ApiUri)
     .then((response) => response.json());
-    // console.log(movies.results)
+    console.log(movies)
 }
 
 const moviesDiplay = async ()=>{
