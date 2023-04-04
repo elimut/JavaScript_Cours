@@ -1,3 +1,5 @@
+// Faire un dark mode qui perdure au changeent de page
+
 const bouton = document.querySelector("#dark");
 const darkMode = document.querySelector("body");
 let dark = localStorage.getItem("dark", "true");
