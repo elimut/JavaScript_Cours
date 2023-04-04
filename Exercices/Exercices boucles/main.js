@@ -143,10 +143,10 @@ let newExo2 = exercice.map(el => {
 });
 console.log(newExo2);
 let newExo3 = exercice.map(el => {
-    return el*el;
+    return el**2;
 });
 console.log(newExo3);
 let newExo4 = exercice.map(el => {
     return el;
 });
-console.log(`1/${newExo4}`);
+console.log(`1/${newExo4[0]} 1/${newExo4[1]} 1/${newExo4[2]} 1/${newExo4[3]} 1/${newExo4[4]} `);
