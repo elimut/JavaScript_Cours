@@ -15,7 +15,11 @@ Le DOM est ainsi une représentation structurée du document sous forme « d’a
 Le DOM contient ou correspond à un ensemble d’APIs qui font partie du BOM comme l’interface Document par exemple qui représente une page et sert de point d’entrée dans l’arborescence du DOM.
 Pour utiliser les propriétés et méthodes de l’interface.Le terme interface est généralement utilisé en informatique pour désigner un programme permettant un échange de données : il peut s'agir d'un échange entre deux logiciels : l'interface est, par exemple, un programme qui reformate les données pour assurer la compatibilité entre ces deux logiciels. Document, nous allons tout simplement utiliser la propriété document de Window. Nous avons déjà utilisée cette propriété de nombreuses fois dans ce cours, notamment lorsqu’on souhaitait injecter du texte dans un paragraphe avec le code document: getElementById('#').innerHTML.
 Lorsqu’on demande à un navigateur d’afficher une page Web, celui-ci va automatiquement créer un modèle objet de la page ou du document. Ce modèle objet correspond à une autre représentation de la page sous forme d’arborescence contenant des objets qui sont de type Node (nœuds).
-![DOM](img/interpretation.png)
+
+DOM:
+<p align="center" width="100%">
+    <img width="100%" src="img/interpretation.png">
+</p>
 
 Tous les navigateurs sur le marché sont capables d’exécuter JavaScript mais attention, ils n’ont pas tous le même moteur. C’est pourquoi il est important de tester son programme sur les
 principaux navigateurs.
@@ -38,9 +42,8 @@ Sa syntaxe est dite de haut niveau, plus proche du langage naturel que du langag
 Langage interprété:
 Un langage interprété est un langage qui est exécuté par un autre programme : l'interpréteur.
 Celui-ci lit une ligne de code, l'analyse, l'exécute si elle est correcte et passe à la suivante ; il répète ce processus pour chaque instruction du programme. Un programme en langage interprété est donc exécuté au fur et à mesure de sa lecture.
-![interpréteur](img/interpretation.png)
 
-Langage de programation majoritairement **client-side**
+Langage de programmation majoritairement **client-side**
 La catégorisation langages statiques / langage dynamique est une première façon de
 classer les différents langages de programmation.
 On peut également classer les différents langages selon l’endroit où ils vont s’exécuter :
@@ -303,7 +306,9 @@ nouvelle indentation à l'intérieure, si instruction en contient sinon même in
 
 ### Les variables:
 
-![schéma](img/variables_schéma.png)
+<p align="center" width="100%">
+    <img width="60%" src="img/variables_schéma.png">
+</p>
 
 Sorte de petite boîte qui possède un nom et contient une valeur.
 Comme son nom l'indique peut changer de valeur à tout moment.
