@@ -66,22 +66,17 @@ La chose importante à retenir ici est que le JavaScript est un langage principa
 en place un environnement favorable (en utilisant Node.js par exemple).
 
 
-**Langage orienté objet à prototype**= JS va utiliser des objets dans son fonctionnement global et ces objets sont prototypés.
+**Langage orienté objet à prototype** = JS va utiliser des objets dans son fonctionnement global et ces objets sont prototypés.
 Objet= bloc cohérent de code qui sert à effectuer telle ou telle opération.
 
 JavaScript est utilisé pour manipuler dynamiquement le code HTML d'un page.
 >Attention différence JAVA et JS, concepts totalement différents, tâches différentes.
-Retenez ici que ces deux langages, bien que syntaxiquement assez proches à la base,
-reposent sur des concepts fondamentaux complètement différents et servent à effectuer
+Retenez ici que ces deux langages, bien que syntaxiquement assez proches à la base, reposent sur des concepts fondamentaux complètement différents et servent à effectuer
 des tâches totalement différentes.
-Pourquoi des noms aussi proches ? Java est une technologie créée originellement par
-Sun Microsystems tandis que JavaScript est un langage créé par la société Netscape.
-Avant sa sortie officielle, le nom original du JavaScript était « LiveScript ». Quelques jours
-avant la sortie du LiveScript, le langage est renommé JavaScript.
+Pourquoi des noms aussi proches ? Java est une technologie créée originellement par Sun Microsystems tandis que JavaScript est un langage créé par la société Netscape.
+Avant sa sortie officielle, le nom original du JavaScript était « LiveScript ». Quelques jours avant la sortie du LiveScript, le langage est renommé JavaScript.
 A l’époque, Sun et Netscape étaient partenaires et le Java était de plus en plus populaire.
-Il est donc communément admis que le nom « JavaScript » a été choisi pour des raisons
-marketing et pour créer une association dans la tête des gens avec le Java afin que les
-deux langages se servent mutuellement.
+Il est donc communément admis que le nom « JavaScript » a été choisi pour des raisons marketing et pour créer une association dans la tête des gens avec le Java afin que les deux langages se servent mutuellement.
 Le créateur du JavaScript a également expliqué que l’idée de base derrière le développement du JavaScript était d’en faire un langage complémentaire au Java.
 
 On oppose généralement les langages « dynamiques » aux langages « statiques » comme le HTML et le CSS. Illustrons les différences d’utilisation entre ces types de langage en discutant des possibilités du HTML, du CSS et du JavaScript.
@@ -91,43 +86,22 @@ Le navigateur comprend les différentes balises HTML et va alors afficher notre 
 
 ### JavaScript, API, librairies et framework
 
-Le JavaScript en tant que langage correspond à un ensemble de structures de codes ou
-un ensemble d’éléments qu’on va pouvoir utiliser pour implémenter des fonctionnalités sur
-nos pages web.
-Les API et les librairies JavaScript sont construites à partir de ces éléments de base du
-JavaScript et vont nous permettre d’utiliser des structures plus complexes déjà prêtes à
-l’emploi qui vont in-fine nous permettre de réaliser simplement des opérations qu’il aurait
-été très difficile de réaliser si on avait dû les coder entièrement à la main.
+Le JavaScript en tant que langage correspond à un ensemble de structures de codes ou un ensemble d’éléments qu’on va pouvoir utiliser pour implémenter des fonctionnalités sur nos pages web.
+Les API et les librairies JavaScript sont construites à partir de ces éléments de base du JavaScript et vont nous permettre d’utiliser des structures plus complexes déjà prêtes à l’emploi qui vont in-fine nous permettre de réaliser simplement des opérations qu’il aurait été très difficile de réaliser si on avait dû les coder entièrement à la main.
 Une API (« Application Programming Interface » ou « Interface de Programmation ») est
-une interface qui nous permet d’utiliser facilement une application. Une application est un
-programme, c’est-à-dire un ensemble cohérent de code qui permet de réaliser certaines
-actions.
-On utilise les API pour demander au programme d’effectuer certaines actions pour nous,
-comme par exemple afficher une carte d’une certaine ville à une certaine échelle (Google
-Maps API) ou pour afficher la liste de nos derniers Tweets (Twitter API) ou encore pour
-manipuler le contenu HTML d’une page web (DOM API).
-Pour utiliser une API et donc l’application correspondante, il faudra généralement
-demander au propriétaire de l’application une clef qui va nous permettre de nous identifier.
-Une librairie ou « bibliothèque » JavaScript est un ensemble de fichiers de code JavaScript
-homogènes (= qui se concentrent sur un aspect particulier du langage) qu’on va devoir
-télécharger pour les utiliser. Ces fichiers de code contiennent des structures de code
-prêtes à l’emploi qu’on va pouvoir utiliser immédiatement pour gagner du temps en
-développement. Parmi les librairies les plus célèbres, on peut notamment citer jQuery.
-Il convient donc de ne pas confondre API et librairies : une librairie est un ensemble de
-fichiers qu’on va télécharger et contient un ensemble de structures de codes prêtes à
-l’emploi. Nous allons pouvoir choisir celles qui nous intéressent pour les intégrer dans nos
-propres scripts et ainsi gagner du temps de développement. Une API, de l’autre côté, va
-nous permettre d’utiliser une application qu’on n’a pas le droit de manipuler directement.
-Finalement, un framework ou « cadre de travail » est relativement similaire dans son but
-à une « super librairie ». Les framework vont également nous fournir un ensemble de
-codes tout prêts pour nous faire gagner du temps en développement. La grande différence
-entre un framework et une librairie réside dans la notion d’inversion du contrôle : lorsqu’on
-télécharge une librairie, on peut l’utiliser comme on le souhaite en intégrant ses éléments
+une interface qui nous permet d’utiliser facilement une application. Une application est un programme, c’est-à-dire un ensemble cohérent de code qui permet de réaliser certaines actions.
+On utilise les API pour demander au programme d’effectuer certaines actions pour nous, comme par exemple afficher une carte d’une certaine ville à une certaine échelle (Google Maps API) ou pour afficher la liste de nos derniers Tweets (Twitter API) ou encore pour manipuler le contenu HTML d’une page web (DOM API).
+Pour utiliser une API et donc l’application correspondante, il faudra généralement demander au propriétaire de l’application une clef qui va nous permettre de nous identifier.
+Une librairie ou « bibliothèque » JavaScript est un ensemble de fichiers de code JavaScript homogènes (= qui se concentrent sur un aspect particulier du langage) qu’on va devoir télécharger pour les utiliser. Ces fichiers de code contiennent des structures de code
+prêtes à l’emploi qu’on va pouvoir utiliser immédiatement pour gagner du temps en développement. Parmi les librairies les plus célèbres, on peut notamment citer jQuery.
+Il convient donc de ne pas confondre API et librairies : une librairie est un ensemble de fichiers qu’on va télécharger et contient un ensemble de structures de codes prêtes à l’emploi. Nous allons pouvoir choisir celles qui nous intéressent pour les intégrer dans nos propres scripts et ainsi gagner du temps de développement. Une API, de l’autre côté, va nous permettre d’utiliser une application qu’on n’a pas le droit de manipuler directement.
+Finalement, un framework ou « cadre de travail » est relativement similaire dans son but à une « super librairie ». Les framework vont également nous fournir un ensemble de codes tout prêts pour nous faire gagner du temps en développement. La grande différence
+entre un framework et une librairie réside dans la notion d’inversion du contrôle : lorsqu’on télécharge une librairie, on peut l’utiliser comme on le souhaite en intégrant ses éléments
 à nos scripts tandis que pour utiliser un framework il faut respecter son cadre (ses règles).
-Les framework JavaScript les plus connus aujourd’hui sont Angular.js et React.js.
-Dans le début de ce cours, nous n’utiliserons bien évidemment pas d’API ni de librairie et
-encore moins de framework. Cependant, il reste intéressant de déjà définir ces différents
-termes pour vous donner une première « vue d’ensemble » des outils JavaScript.
+Les framework JavaScript les plus connus aujourd’hui sont Angular.js et React.js. 
+Dans le début de ce cours, nous n’utiliserons bien évidemment pas d’API ni de librairie et encore moins de framework. Cependant, il reste intéressant de déjà définir ces différents termes pour vous donner une première « vue d’ensemble » des outils JavaScript.
+
+------------------------------------------------------------------
 
 ## L'environnement de travail
 
@@ -138,10 +112,8 @@ Pour coder en JS:
   
 ### Les librairies JavaScript à télécharger
 
-Pour coder en JavaScript, un simple éditeur de texte suffit en théorie. Cependant, pour exploiter toute la puissance du JavaScript et pour gagner du temps de développement,
-nous utiliserons régulièrement des librairies JavaScript en plus du JavaScript « vanilla » (JavaScript « pur »).
-Pour qu’une librairie JavaScript fonctionne, il va falloir que le navigateur des personnes qui affichent la page la connaisse. Pour cela, on « forcera » le navigateur de nos visiteurs
-à télécharger les librairies qu’on utilise dans nos pages.
+Pour coder en JavaScript, un simple éditeur de texte suffit en théorie. Cependant, pour exploiter toute la puissance du JavaScript et pour gagner du temps de développement, nous utiliserons régulièrement des librairies JavaScript en plus du JavaScript « vanilla » (JavaScript « pur »).
+Pour qu’une librairie JavaScript fonctionne, il va falloir que le navigateur des personnes qui affichent la page la connaisse. Pour cela, on « forcera » le navigateur de nos visiteurs à télécharger les librairies qu’on utilise dans nos pages.
 Pour le début de ce cours, cependant, nous n’utiliserons pas de librairie car je veux que vous compreniez bien comment fonctionne le JavaScript et que vous appreniez à résoudre différents problèmes avec du **JavaScript vanilla**. Je pense que c’est en effet une grosse erreur d’essayer de contourner certaines difficultés en JavaScript en utilisant des librairies lorsqu’on ne maitrise pas suffisamment le JavaScript classique. 
 
 ## Ou écrire le code JS
@@ -183,9 +155,9 @@ Dans une balise ouvrante:
 
     <button onclick="alert("Bonjour!")>
     ->Ici, on crée deux boutons en HTML et on place nos codes JavaScript à l’intérieur
-    d’attributs onclick. Le code placé en valeur des attributs va s’exécuter dès qu’on va cliquer
-sur le bouton correspondant.
->**Quand on écrit dans fichier Html,on peut utiliser autant de script que nécessaire dans head,body, ou les deux, mais par souci de clarté et performance, on le place dans un même élément.
+    d’attributs onclick. Le code placé en valeur des attributs va s’exécuter dès qu’on va cliquer sur le bouton correspondant.
+
+>Quand on écrit dans fichier Html,on peut utiliser autant de script que nécessaire dans head,body, ou les deux, mais par souci de clarté et performance, on le place dans un même élément.
 Ceci seront lu linéairement (ordre d'écriture)**.
 
 ### Dans fichier séparé:
@@ -203,47 +175,27 @@ Méthode de préférence.
 
 ### La place du code et l’ordre d’exécution de celui-ci
 
-Il y a un factuer très important lorsque l'on ajoute du JS dans les pages HTML: l'ordre d' exécution du code par le navigateur.
-**Un navigateur va lire
-et exécuter le code dans l’ordre de son écriture**.
-Plus précisément, lorsque le navigateur arrive à un élément script, il va stopper le
-traitement du reste du HTML jusqu’à ce que le code JavaScript soit chargé dans la page
-et exécuté.
-Nos codes JavaScript ci-dessus ont besoin des éléments button de notre page HTML pour
-fonctionner. En effet, les codes getElementById('b1') et getElementById('b2') vont
-récupérer les éléments dont les id sont « b1 » et « b2 » pour les manipuler.
-Cela risque de poser problème dans le cas présent car si notre code JavaScript est
-exécuté avant que le code HTML de nos boutons ne soit traité par le navigateur, il ne
-fonctionnera puisqu’il cherchera à utiliser des éléments qui n’existent pas encore.
-C’est la raison pour laquelle, lorsque j’ai choisi d’insérer le code JavaScript directement
-dans la page HTML au sein d’éléments script, j’ai été obligé d’entourer le code JavaScript
-qui affiche la boite d’alerte déclaré dans l’élément head par le
-code document.addEventListener('DOMContentLoaded', function(){}) ;. Ce code indique
-en effet au navigateur qu’il doit d’abord charger tout le contenu HTML avant d’exécuter le
-JavaScript à l’intérieur de celui-ci.
-Dans ce même exemple, mon deuxième élément script était lui placé en fin de body et est
-donc par défaut exécuté après le reste du code. Il n’y avait donc pas de problème dans ce
-cas.
-Notez que le même problème va avoir lieu dans le cas où on fait appel à un fichier
-JavaScript externe par défaut : selon l’endroit dans le code où le fichier est demandé, il
-pourra ne pas fonctionner s’il utilise du code HTML pas encore défini.
-**Ce souci est la raison pour laquelle il a longtemps été recommandé de placer ses
-éléments script juste avant la balise fermante de l’élément body, après tout code HTML.
-Cette façon de faire semble en effet résoudre le problème à priori mais n’est pas toujours
-optimale en termes de performances.**
+Il y a un factuer très important lorsque l'on ajoute du JS dans les pages HTML: l'ordre d' exécution du code par le navigateur. **Un navigateur va lire et exécuter le code dans l’ordre de son écriture**.
+Plus précisément, lorsque le navigateur arrive à un élément script, il va stopper le traitement du reste du HTML jusqu’à ce que le code JavaScript soit chargé dans la page et exécuté.
+Nos codes JavaScript ci-dessus ont besoin des éléments button de notre page HTML pour fonctionner. En effet, les codes getElementById('b1') et getElementById('b2') vont récupérer les éléments dont les id sont « b1 » et « b2 » pour les manipuler.
+Cela risque de poser problème dans le cas présent car si notre code JavaScript est exécuté avant que le code HTML de nos boutons ne soit traité par le navigateur, il ne fonctionnera puisqu’il cherchera à utiliser des éléments qui n’existent pas encore.
+C’est la raison pour laquelle, lorsque j’ai choisi d’insérer le code JavaScript directement dans la page HTML au sein d’éléments script, j’ai été obligé d’entourer le code JavaScript qui affiche la boite d’alerte déclaré dans l’élément head par le code document.addEventListener('DOMContentLoaded', function(){}) ;. Ce code indique
+en effet au navigateur qu’il doit d’abord charger tout le contenu HTML avant d’exécuter le JavaScript à l’intérieur de celui-ci.
+Dans ce même exemple, mon deuxième élément script était lui placé en fin de body et est donc par défaut exécuté après le reste du code. Il n’y avait donc pas de problème dans ce cas.
+Notez que le même problème va avoir lieu dans le cas où on fait appel à un fichier JavaScript externe par défaut : selon l’endroit dans le code où le fichier est demandé, il pourra ne pas fonctionner s’il utilise du code HTML pas encore défini.
+**Ce souci est la raison pour laquelle il a longtemps été recommandé de placer ses éléments script juste avant la balise fermante de l’élément body, après tout code HTML. Cette façon de faire semble en effet résoudre le problème à priori mais n’est pas toujours optimale en termes de performances.**
+
 En effet résumons ce qu’il se passe dans ce cas :
 1. Le navigateur commence à analyser (ou à traiter) le code HTML ;
 2. L’analyseur du navigateur rencontre un élément script ;
-3. Le contenu JavaScript est demandé et téléchargé (dans le cas où il se situe dans
-un fichier externe) puis exécuté. Durant tout ce temps, l’analyseur bloque l’affichage du HTML, ce qui peut dans le cas où le script est long ralentir significativement le temps d’affichage de la page ;
+3. Le contenu JavaScript est demandé et téléchargé (dans le cas où il se situe dans un fichier externe) puis exécuté. Durant tout ce temps, l’analyseur bloque l’affichage du HTML, ce qui peut dans le cas où le script est long ralentir significativement le temps d’affichage de la page ;
 4. Dès que le JavaScript a été exécuté, le contenu HTML finit d’être analysé et est affiché.
 Ce problème précis de temps d’attente de chargement des fichiers JavaScript va pouvoir être résolu en grande partie grâce au téléchargement asynchrone des données qui va pouvoir être ordonné en précisant un attribut **async ou defer** dans nos éléments script.
-Le téléchargement asynchrone est une notion complexe et nous l’étudierons donc beaucoup plus tard dans ce cours. Pour le moment, retenez simplement que nous n’allons
-pouvoir utiliser les attributs async et defer que dans le cas où on fait appel à des fichiers JavaScript externes (c’est-à-dire à du code JavaScript stocké dans des fichiers séparés).
+Le téléchargement asynchrone est une notion complexe et nous l’étudierons donc beaucoup plus tard dans ce cours. Pour le moment, retenez simplement que nous n’allons pouvoir utiliser les attributs async et defer que dans le cas où on fait appel à des fichiers JavaScript externes (c’est-à-dire à du code JavaScript stocké dans des fichiers séparés).
 C’est une raison supplémentaire qui nous fera préférer l’enregistrement du code JavaScript dans des fichiers séparés.
 
-    <script src=".js" async ou defer></script> 
-    -> dans head.
+        <script src=".js" async ou defer></script> 
+        -> dans head.
 
 ## Commentaires, indentation et syntaxe de base
 
@@ -273,8 +225,8 @@ Avant tout, vous devez savoir qu’un code JavaScript est composé d’instructi
 
 Il existe des commentaires monoligne et des commentaires multilignes.
 On peut utiliser la syntaxe des commentaires multi pour les mono.
-**// -> mono
-/ * début et * / fin -> multi (on peut rajouter une étoile sur les lignes du milieu).**
+// -> mono
+/ * début et * / fin -> multi (on peut rajouter une étoile sur les lignes du milieu).
 
 ### L' indentation
 
@@ -283,6 +235,8 @@ Une bonne pratique est d’effectuer un retrait vers la droite équivalent à un
 
 Quand : hiérarchie?
 nouvelle indentation à l'intérieure, si instruction en contient sinon même indentation.
+
+--------------------------------------------------------------------
 
 ## Gestion des données
 
@@ -306,9 +260,9 @@ Pour déclarer une variable, on utilise la syntaxe : **var ou let**.
 - var ancienne syntaxe,
 - let nouvelle, à privilégier.
 
-Règle de nommage (valable pour les fonctions)= **CamelCase** :
+Règle de nommage (valable pour les fonctions) = **CamelCase** :
 
--Suit la règle du camelCase,dans cette convention, les noms sont constitués de plusieurs mots dont l'initiale est en capitale; 
+- Suit la règle du camelCase,dans cette convention, les noms sont constitués de plusieurs mots dont l'initiale est en capitale; 
 - Nom unique = **identifier**;
 - Aucune ponctuation,accents,espace; 
 - Mise en capitale de la première lettre des mots, sauf le premier;
@@ -332,7 +286,7 @@ Exemple :
 
 #### Initialisation:
 
-**Initialiser**= **assigner** une valeur pour la première fois.
+**Initialiser** = **assigner** une valeur pour la première fois.
 On utilise le signe **=**. = est un **opérateur d' affectation** ou **d' assignation** et non d' égalité, assigne voire affecte une valeur à une variable.Permet de stocker une valeur dans une variable.
 
 Elle peut se faire:
@@ -355,8 +309,7 @@ Exemples:
 #### Différence entre les mots clefs  let et var
 
 Pourquoi possède-t-on deux mots clefs différents pour déclarer des variables en JavaScript ? Cela provient du fait qu’aucun langage n’est parfait ainsi que du fait que les langages informatiques ne sont pas figés mais sont des langages qui évoluent beaucoup et rapidement.
-En même temps qu’un nouveau mot clef a été créé, les créateurs du JavaScript en ont profité pour résoudre quelques problèmes liés à la déclaration de variables en utilisant var, ce qui fait que let ne va pas nous permettre de créer des variables de la même façon
-que var.
+En même temps qu’un nouveau mot clef a été créé, les créateurs du JavaScript en ont profité pour résoudre quelques problèmes liés à la déclaration de variables en utilisant var, ce qui fait que let ne va pas nous permettre de créer des variables de la même façon que var.
 **Il existe 3 grandes différences de comportement entre les variables déclarées avec var et avec let**.
 
 - Hoisting des variables,
@@ -417,8 +370,7 @@ Vous pouvez pour le moment retenir si vous le souhaitez que les variables décla
 
 #### Quelle utilité pour les variables en pratique?
 
-Les variables vont être à la base de la plupart de nos scripts JavaScript. En effet, il va être très pratique de stocker différents types d’informations dans les variables pour ensuite manipuler simplement ces informations notamment lorsqu’on n’a pas accès à ces
-informations lorsqu’on crée le script.
+Les variables vont être à la base de la plupart de nos scripts JavaScript. En effet, il va être très pratique de stocker différents types d’informations dans les variables pour ensuite manipuler simplement ces informations notamment lorsqu’on n’a pas accès à ces informations lorsqu’on crée le script.
 
 Par exemple, on va pouvoir demander à des utilisateurs de nous envoyer des données grâce à la fonction (ou la méthode pour être tout à fait précis mais nous verrons cela plus tard) prompt(). Lorsqu’on écrit notre script avec notre fonction prompt(), on ne sait pas encore ce que les utilisateurs vont nous envoyer comme données. Dans ce cas, notre script va être créé de manière à ce que les données envoyées soient stockées lors de leur envoi dans des variables qu’on définit. Cela nous permet déjà de pouvoir manipuler les dites variables et par extension les données qu’elles vont stocker.
 
@@ -426,10 +378,8 @@ Par exemple, on va pouvoir demander à des utilisateurs de nous envoyer des donn
 #### Les types
 
 Les variables JavaScript vont pouvoir stocker différents types de valeurs, comme du texte ou un nombre par exemple. Par abus de langage, nous parlerons souvent de **types de variables** JavaScript.
-En JavaScript, contrairement à d’autres langages de programmation, nous n’avons pas besoin de préciser à priori le type de valeur qu’une variable va pouvoir stocker. Le JavaScript va en effet automatiquement détecter quel est le type de la valeur stockée dans
-telle ou telle variable, et nous allons ensuite pouvoir effectuer différentes opérations selon le type de la variable, ce qui va s’avérer très pratique pour nous !
-Une conséquence directe de cela est qu’on va pouvoir stocker différents types de valeurs dans une variable au fil du temps sans se préoccuper d’une quelconque compatibilité. Par
-exemple, une variable va pouvoir stocker une valeur textuelle à un moment dans un script puis un nombre à un autre moment.
+En JavaScript, contrairement à d’autres langages de programmation, nous n’avons pas besoin de préciser à priori le type de valeur qu’une variable va pouvoir stocker. Le JavaScript va en effet automatiquement détecter quel est le type de la valeur stockée dans telle ou telle variable, et nous allons ensuite pouvoir effectuer différentes opérations selon le type de la variable, ce qui va s’avérer très pratique pour nous !
+Une conséquence directe de cela est qu’on va pouvoir stocker différents types de valeurs dans une variable au fil du temps sans se préoccuper d’une quelconque compatibilité. Par exemple, une variable va pouvoir stocker une valeur textuelle à un moment dans un script puis un nombre à un autre moment.
 
 
 ##### Quelles valeurs peuvent prendre mes variables?
@@ -487,11 +437,13 @@ Cette définition peut vous paraitre similaire à celle de null et pourtant ces 
 
 >Les types primitifs sont les briques de base de chaque structure de données en JavaScript. Peu importe la complexité finale de votre application, à sa base se trouveront ces trois types primitifs.
 
-![objet schéma](img/objets_schéma.png)
+<p align="center" width="100%">
+    <img width="80%" src="img/objets_schéma.png">
+</p>
 
 >**-> JavaScript est conçu autour d'un paradigme simple, basé sur les objets. Un objet est un ensemble de propriétés et une propriété est une association entre un nom (aussi appelé clé) et une valeur. La valeur d'une propriété peut être une fonction, auquel cas la propriété peut être appelée « méthode ». En plus des objets natifs fournis par l'environnement, il est possible de construire ses propres objets. Ce chapitre aborde la manipulation d'objets, l'utilisation des propriétés, fonctions et méthodes, il explique également comment créer ses objets**.
 
-##### Tester type de valeur:
+##### Tester type de valeur
 
 On utilise généralement fonction **typeof**.
 Attention, renvoie parfois des valeurs contestables.
@@ -660,7 +612,8 @@ On a vu plus tôt dans ce cours qu’il fallait en JavaScript toujours entourer 
 Il existe en fait une troisième manière introduite récemment d’entourer des chaines de caractères en JavaScript qui va utiliser **des accents graves `**.
 **La grande différence entre l’utilisation d’accents graves ou l’utilisation d’apostrophes ou de guillemets est que toute expression placée entre les accents graves va être interprétée en JavaScript. Pour le dire simplement : tout ce qui renvoie une valeur va être remplacé par sa valeur. Cela signifie notamment qu’on va pouvoir placer du texte et des variables ensemble sans avoir besoin d’utiliser d’opérateur de concaténation puisque les variables vont être interprétées, c’est-à-dire remplacées par leur valeur. Pour que cela fonctionne bien, il va cependant falloir respecter une certaine syntaxe : il va falloir placer les expressions entre ${ et }**.
 
-<la **string interpolation** Pour créer une string interpolation on écrit du texte encadrée par le signe  `  et si on veut injecter une variable dans ce code on utilise l’expression  ${maVariable}. >
+La **string interpolation**:
+pour créer une string interpolation on écrit du texte encadrée par le signe  `  et si on veut injecter une variable dans ce code on utilise l’expression  ${maVariable}. 
 
 Exemples:
 
@@ -841,6 +794,8 @@ par ordre croissant
 ->en passant deux paramètres a et b et en indiquant b – a , le tri se fera
 par ordre décroissant
 (7) [74, 28, 17, 12, 8, 4, 1]
+
+--------------------------------------------------------
 
 ## Structures de contrôle, conditions et opérateurs de comparaison JavaScript
 
@@ -1310,6 +1265,8 @@ L'on peut définir une même action pour plusieurs valeurs différentes :
         break;
     }
 
+-------------------------------------------------------------
+
 ## Les fonctions
 
 Une fonction correspond à un bloc de code nommé et réutilisable et dont le but est d’effectuer une tâche précise. En JavaScript, comme dans la plupart des langages les supportant, nous allons très souvent utiliser des **fonctions** car celles-ci possèdent de nombreux atouts que l’on va énumérer par la suite.Utiles, quand le code devient long et répétitif.
@@ -1557,6 +1514,8 @@ De ce fait, ceci permet également, de rendre cet argument optionnel:
     console.log sayHello("vilport");
     -> M/Me vilport
 
+---------------------------------------------------------
+
 ## Introduction à la programmation orientée objet en JavaScript
 
 ### Les paradigmes de programmation
@@ -1635,7 +1594,10 @@ Les intérêts supposés principaux de développer en orienté objet plutôt qu�
 
 ## Création d’un objet littéral
 
-![objet](img/objets.png)
+<p align="center" width="100%">
+    <img width="80%" src="img/objets.png">
+</p>
+
 
 Un objet est un ensemble cohérent de propriétés et de méthodes. Le JavaScript dispose **d’objets natifs** (objets prédéfinis) qui possèdent des propriétés et des méthodes qu’on va pouvoir directement utiliser et nous permet également de définir nos propres objets.
 
@@ -1649,7 +1611,6 @@ Nous pouvons créer des objets de 4 manières différentes en JavaScript. On va 
 Ces différents moyens de procéder vont être utilisés dans des contextes différents, selon
 ce que l’on souhaite réaliser.
 
-### Création d’un objet littéral
 
 Précedemment, nous avons créé un premier objet nommé utilisateur. Pour être tout à fait précis, nous avons créé un **objet littéral** (on parle ici d’objet « littéral » car nous avons défini chacune de ses propriétés et de ses méthodes lors de la création, c’est-à-dire littéralement).
 
@@ -1960,6 +1921,7 @@ Une classe est un modèle pour un objet dans le code. Elle permet de construire 
 
 Pour créer une classe dans JavaScript, utilisez le mot clé   **class**, suivi par un nom. Encadrez ensuite le code de la classe entre accolades :
 
+----------------------------------------------------------------
 
 ## L ' asynchrone en JS
 
@@ -2272,6 +2234,8 @@ Exemple:
     }
     =>sorte de if/else
 
+---------------------------------------------------------------------
+
 ## Le DOM
 
 ### Window
@@ -2283,7 +2247,9 @@ test : console.log(window);
 
 ### Le DOM
 
-![DOM](img/DOM.png)
+<p align="center" width="100%">
+    <img width="80%" src="img/DOM.png">
+</p
 
 Document Object Model, structure du fichier HTML, il nous permet d'atteindre les différents éléments et de pouvoir agir dessus.
 
@@ -2367,7 +2333,7 @@ Evénement qui se produit quand la page web est chargée, et qui indique que tou
         button1.addEventListener("click",changerCouleur);
     })
 
-####RemoveEventListener
+#### RemoveEventListener
 
 Retirer un événement, par exemple désactiver un bouton.
 
@@ -2376,7 +2342,7 @@ button1.removeEventListener("click",changerCouleur);
 Il est important que la fonction de **callback** ainsi que l' événement soient les mêmes que lors de l'ajout.
 >En Javascript (est comme c’est le cas dans d’autres langage de programmation), les fonctions sont des entités d’ordre supérieur ou de classe supérieure. De telles fonctions permettent d’abstraire les valeurs et les actions, c’est-à-dire qu’elles peuvent accepter des fonctions en guise d’arguments au même titre que les variables et elles peuvent aussi retourner des fonctions. Une fonctions passée en argument d’une autre fonction est appelée fonction de rappel ou callback function.
 
-###classList
+### classList
 
 La propriété classList sert à gérer les classes des balises Html
 .
@@ -2387,7 +2353,7 @@ Voici quelques-unes de ses méthodes :
 - monElement.classList.toggle("maClasse) -> ajoute ou enlève une classe
 - monElement.classList.lenght("maClasse) -> retourne le nombre de classe que l'élément contient  
 
-###Variable this
+### Variable this
 
 Dans un gestionnaire d'événement; la variable **this** représente l'objet DOM qui a déclenché l'événement.
 
@@ -2405,7 +2371,7 @@ Puis on crée la fonction :
     }
 Au sein de la fonction, this représentera uniquement la div sur laquelle nous avons passé la souris,celle qui a déclénché l'événement.
 
-###TextContent
+### TextContent
 
 Modifie le contexte textuel d'un noeud du DOM.
 
@@ -2420,7 +2386,7 @@ Exemple :
     maDiv.textContent = "Bonjour";
 ->modifie contenu de la div
 
-###InnerHTML
+### InnerHTML
 
 Equivalent de textContent en HTML:
 **monElement.innerHTML**.
@@ -2431,7 +2397,7 @@ Exemple:
     monElement.textContent = "<strong>Coucou</strong>
 ->retourne une valeur qui ne sera pas en gras alors qu'avec innerHTML si.
 
-##Les timers
+## Les timers
 
 JavaScript s' exécute sur le navigateur du client et permet d' intéragir vec lui.
 Il va donc pouvoir détecter les événements éventuels qui se produisent sur la page.
@@ -2449,9 +2415,9 @@ Nous pouvons intéragir facilement avec ce qu'il se passe sur la page.Mais il ma
 
 La gestion du temps en JS, va nous servr à gérer les animations, temporiser des actions...
 
-###SetTimeout et clearTimeout
+### SetTimeout et clearTimeout
 
-###setTimeout
+### setTimeout
 
 Cette méthode va nous permettre de définir un intervalle en millisecondes avant le déclenchement d'une action.
 
@@ -2491,7 +2457,7 @@ continuellement.
 Valeur de retour:
 timeoutID : un identifiant unique fourni par Javascript si vous souhaitez retrouver et arrêter votre "timer" à tout moment.
 
-####clearInterval
+#### clearInterval
 
 Cette méthode va nous permettre d'arrêter le "timer" à tout moment.
 
@@ -2513,17 +2479,15 @@ valeur de retour:
 animationID : un identifiant unique fourni par Javascript si vous souhaitez retrouver et arrêter votre
 demande de rafraichissement à tout moment.
 
-####cancelAnimationFrame
+#### cancelAnimationFrame
 
 Cette méthode va nous permettre d'arrêter l’exécution du rafraichissement à tout moment.
 
     window.cancelAnimationFrame(animationID);
 
->**Mieux comprendre le fonctionnement : les FPS
-Alors que setInterval et setTimeout fonctionnent avec un délai en millisecondes, requestAnimationFrame lui va
-être exécute à chaque fois que le navigateur fait appel au rafraichissement de l'écran auprès de la machine du
+>Mieux comprendre le fonctionnement : les FPS Alors que setInterval et setTimeout fonctionnent avec un délai en millisecondes, requestAnimationFrame lui va être exécute à chaque fois que le navigateur fait appel au rafraichissement de l'écran auprès de la machine du
 client (rafraichissement assuré en grande parti par le processeur graphique).
-Cela signifie que :
+Cela signifie que : 
 • la méthode requestAnimationFrame est plus adapté à la création d'animations fluides,
 • le rafraichissement va dépendre de la machine client, en général un écran est rafraichi 60 fois par
 seconde, on dit que l'on affiche 60 FPS (frames par seconde),
@@ -2537,9 +2501,11 @@ qu'il a à faire au prochain rafraichissement et va le prioriser et l'optimiser,
 actif, contrairement à setInterval et setTimeout qui continuerons à être exécutés même si un autre
 onglet est actif (donc on optimise la charge du navigateur).
 Alors tout ça à l'air magique mais il y a ici une chose que nous ne maitrisons pas c'est le nombre de frames par
-seconde (FPS). Il nous faudra ralentir le taux de rafraichissement si nous en avons besoin.**
+seconde (FPS). Il nous faudra ralentir le taux de rafraichissement si nous en avons besoin.
 
-##Ajax
+-----------------------------------------------------------
+
+## Ajax
 
 Ajax (Asynchonous Javascript and XML) est méthode qui permet de rafraîchir une partie de page Web
 sans recharger la page complète. Il permet aussi d’afficher dynamiquement des données obtenues en PHP
@@ -2550,7 +2516,7 @@ l’affiche sur votre fil d’actualité. Ajax fait ça !
 Pour mettre à jour une base de données, de quoi a-t-on besoin ? D’un langage côté serveur (donc php) et
 pour rafraîchir la page : d’un langage côté client. Ajax met en relation ces 2 langages !
 
-###Comment fonctionne un appel Ajax :
+### Comment fonctionne un appel Ajax :
 
 - L’utilisateur créé un évènement (un clic ou autre)
 - Le navigateur envoie sa requête ajax(en jquery) à un script PHP
@@ -2558,7 +2524,7 @@ pour rafraîchir la page : d’un langage côté client. Ajax met en relation ce
 - Le script PHP renvoie une réponse à l’appli Jquery
 - Jquery traite la réponse et l’affiche
 
-###Renvoi d'un appel
+### Renvoi d'un appel
 
 Un appel AJAX va renvoyer différents types de données :
 - Des données simples (chaînes de texte)  Dans le fichier PHP, nous aurons soit juste du
@@ -2566,15 +2532,19 @@ texte, soit une fonction qui renvoie du texte
 - Du html  Du code HTML dans le fichier PHP
 - Du Json  Le fichier php renvoie un JSON avec la fonction json_encode()
 
-###Comment fait-on?
+### Comment fait-on?
 
 Il y a plusieurs façons d’écrire une requête Ajax, la syntaxe en JavaScript pur est assez complexe, la voici :
 
 [OpenClassroom code](https://openclassrooms.com/fr/courses/245710-ajax-et-lechange-de-donnees-en-javascript/244798-lobjet-xmlhttprequest)
 
+------------------------------------------------------- 
+
 ## sources
 
-[](https://www.pierre-giraud.com/javascript-apprendre-coder-cours/promesse-promise/)
+[Pierre Giraud](https://www.pierre-giraud.com/javascript-apprendre-coder-cours/promesse-promise/)
+
+--------------------------------------------------------------
 
 ## Exercices dossier exo MM :
 
@@ -2644,6 +2614,8 @@ stop : chifoumi , exo3
 - document.getElementById(id)
 - function
 - array.splice()
+
+-------------------------------------------------------------------
 
 A ajouter :
 
