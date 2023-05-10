@@ -44,50 +44,32 @@ Un langage interprété est un langage qui est exécuté par un autre programme 
 Celui-ci lit une ligne de code, l'analyse, l'exécute si elle est correcte et passe à la suivante ; il répète ce processus pour chaque instruction du programme. Un programme en langage interprété est donc exécuté au fur et à mesure de sa lecture.
 
 Langage de programmation majoritairement **client-side**
-La catégorisation langages statiques / langage dynamique est une première façon de
-classer les différents langages de programmation.
-On peut également classer les différents langages selon l’endroit où ils vont s’exécuter :
+La catégorisation langages statiques / langage dynamique est une première façon de classer les différents langages de programmation.
+On peut également classer les différents langages selon l’endroit où ils vont s’exécuter:
 soit côté client, soit côté serveur.
-Pour comprendre ce que sont les langages « côté client » et « côté serveur », il convient
-avant tout de comprendre ce qu’est un client et ce qu’est un serveur et pour cela il faut
-savoir ce qu’est un site.
-Un site est un ensemble de ressources et de fichiers liés entre eux. Pour que notre site
-soit accessible sur le web pour tous, on va l’héberger sur un serveur, c’est-à-dire envoyer
-l’ensemble de nos fichiers sur le serveur et on va également acheter un nom de domaine
-qui va servir à identifier notre site.
-Un « serveur » est une sorte de super ordinateur, constamment accessible et connectés
-aux autres serveurs (formant ainsi un réseau qu’on appelle le web) et qui va héberger les
+Pour comprendre ce que sont les langages « côté client » et « côté serveur », il convient avant tout de comprendre ce qu’est un client et ce qu’est un serveur et pour cela il faut savoir ce qu’est un site.
+Un site est un ensemble de ressources et de fichiers liés entre eux. Pour que notre site soit accessible sur le web pour tous, on va l’héberger sur un serveur, c’est-à-dire envoyer
+l’ensemble de nos fichiers sur le serveur et on va également acheter un nom de domaine qui va servir à identifier notre site.
+Un « serveur » est une sorte de super ordinateur, constamment accessible et connectés aux autres serveurs (formant ainsi un réseau qu’on appelle le web) et qui va héberger les
 fichiers constituant un (ou plusieurs) site(s) web et le(s) « servir » sur demande du client.
-Lorsqu’on demande à accéder à une page web en tapant une URL dans notre navigateur,
-nous sommes le client ou plus exactement notre navigateur est le logiciel client qui
-effectue une demande ou « requête » au serveur qui est la suivante : « sers-moi le fichier
+Lorsqu’on demande à accéder à une page web en tapant une URL dans notre navigateur,nous sommes le client ou plus exactement notre navigateur est le logiciel client qui effectue une demande ou « requête » au serveur qui est la suivante : « sers-moi le fichier
 correspondant à l’adresse que je t’ai envoyée ».
-Les fichiers ou pages d’un site web vont pouvoir être constituées de deux types de codes
-différents : du code côté serveur et du code côté client. Lorsqu’on demande à un serveur
-de nous servir une page, celui-ci se charge d’exécuter le code côté client s’il y en a et ne
+Les fichiers ou pages d’un site web vont pouvoir être constituées de deux types de codes différents : du code côté serveur et du code côté client. Lorsqu’on demande à un serveur de nous servir une page, celui-ci se charge d’exécuter le code côté client s’il y en a et ne
 va renvoyer que du code côté client en résultat.
-Un langage « côté client » ou « client side » est un langage qui va être exécuté dans le
-navigateur des utilisateurs qui demandent la page. On peut également appeler ces
-langages des langages « web » puisqu’ils sont principalement utilisés dans un contexte
+Un langage « côté client » ou « client side » est un langage qui va être exécuté dans le navigateur des utilisateurs qui demandent la page. On peut également appeler ces langages des langages « web » puisqu’ils sont principalement utilisés dans un contexte
 web.
-Il existe aujourd’hui 3 langages côté client incontournables qui sont le HTML, le CSS et le
-JavaScript.
-Les langages côté serveur sont des langages qui vont s’exécuter sur le serveur. Les
-navigateurs ne sont dans la grande majorité des cas pas capables de comprendre les
-langages serveur.
-Ces langages permettent notamment d’effectuer de manipuler les données pour renvoyer
-des résultats. Les résultats renvoyés le sont sous forme de code compréhensible par le
-navigateur (c’est-à-dire du HTML principalement) pour que le navigateur puisse afficher le
+Il existe aujourd’hui 3 langages côté client incontournables qui sont le HTML, le CSS et le JavaScript.
+Les langages côté serveur sont des langages qui vont s’exécuter sur le serveur. Les navigateurs ne sont dans la grande majorité des cas pas capables de comprendre les langages serveur.
+Ces langages permettent notamment d’effectuer de manipuler les données pour renvoyer des résultats. Les résultats renvoyés le sont sous forme de code compréhensible par le navigateur (c’est-à-dire du HTML principalement) pour que le navigateur puisse afficher le
 résultat final.
-La chose importante à retenir ici est que le JavaScript est un langage principalement utilisé
-côté client, mais qui va également pouvoir s’utiliser côté serveur à condition qu’on mette
+La chose importante à retenir ici est que le JavaScript est un langage principalement utilisé côté client, mais qui va également pouvoir s’utiliser côté serveur à condition qu’on mette
 en place un environnement favorable (en utilisant Node.js par exemple).
 
 
 **Langage orienté objet à prototype**= JS va utiliser des objets dans son fonctionnement global et ces objets sont prototypés.
 Objet= bloc cohérent de code qui sert à effectuer telle ou telle opération.
 
-Js utilisé pour manipuler dynamiquement le code HTML d'un page.
+JavaScript est utilisé pour manipuler dynamiquement le code HTML d'un page.
 >Attention différence JAVA et JS, concepts totalement différents, tâches différentes.
 Retenez ici que ces deux langages, bien que syntaxiquement assez proches à la base,
 reposent sur des concepts fondamentaux complètement différents et servent à effectuer
